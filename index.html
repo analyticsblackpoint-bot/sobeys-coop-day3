@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Haunted Download Bar · Day 3</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Creepster&family=Nunito:wght@400;600;800&display=swap">
+<style>
+  /* Layout: a dark midnight page; one big "everything" button up top, then a candy-counter grid of file cards. Single dark look by choice (Halloween). */
+  :root {
+    --bg: #120a1c;          /* midnight purple-black */
+    --bg2: #1c1030;         /* raised panels */
+    --bg3: #261642;         /* card hover */
+    --fg: #f3ecdc;          /* bone white */
+    --muted: #b7a9c9;       /* lavender grey */
+    --line: #3b2a5a;
+    --pumpkin: #ff7a1a;
+    --pumpkin2: #ffb347;
+    --slime: #9be564;
+    --blood: #c8102e;
+    --display: "Creepster", "Impact", "Arial Black", sans-serif;
+    --body: "Nunito", "Segoe UI", system-ui, sans-serif;
+    color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--bg); color: var(--fg); font-family: var(--body); line-height: 1.5; overflow-x: hidden; }
+  body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); background: var(--bg); z-index: 10; }
+  .wrap { max-width: 1040px; margin: 0 auto; padding-block: 24px 48px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); position: relative; z-index: 1; }
+
+  /* sky: moon, stars, bats */
+  .sky { position: fixed; inset: 0; pointer-events: none; z-index: 0; overflow: hidden; }
+  .moon { position: absolute; top: 48px; right: 8%; width: 110px; height: 110px; border-radius: 50%; background: radial-gradient(circle at 35% 35%, #fff6d8, #e8d9a8 60%, #cbb985); box-shadow: 0 0 60px 18px rgba(255, 230, 170, .18); }
+  .moon::after { content: ""; position: absolute; top: 22px; left: 30px; width: 22px; height: 22px; border-radius: 50%; background: rgba(170, 150, 100, .35); box-shadow: 40px 30px 0 -6px rgba(170, 150, 100, .3), 10px 55px 0 -9px rgba(170, 150, 100, .3); }
+  .star { position: absolute; width: 3px; height: 3px; border-radius: 50%; background: #fff; opacity: .7; animation: twinkle 3s ease-in-out infinite; }
+  .bat { position: absolute; width: 46px; height: 22px; fill: #0a0612; opacity: .9; animation: flap 7s linear infinite; }
+  .ghost-float { position: absolute; width: 70px; opacity: .45; animation: drift 11s ease-in-out infinite; display: none; }
+  @media (min-width: 1400px) { .ghost-float { display: block; } }
+  @keyframes twinkle { 0%, 100% { opacity: .25; } 50% { opacity: .9; } }
+  @keyframes flap { 0% { transform: translate(-60px, 0) scale(1); } 50% { transform: translate(50vw, -40px) scale(.8); } 100% { transform: translate(110vw, 10px) scale(1); } }
+  @keyframes drift { 0%, 100% { transform: translateY(0) rotate(-3deg); } 50% { transform: translateY(-26px) rotate(3deg); } }
+
+  header { display: grid; gap: 10px; margin-bottom: 28px; }
+  .eyebrow { font-weight: 800; letter-spacing: .12em; text-transform: uppercase; font-size: .78rem; color: var(--pumpkin2); }
+  h1 { font-family: var(--display); font-weight: 400; font-size: clamp(2.6rem, 8vw, 5.2rem); line-height: .95; margin: 0; color: var(--pumpkin); text-shadow: 0 4px 0 #7a2f00, 0 0 28px rgba(255, 122, 26, .35); letter-spacing: .02em; text-wrap: balance; }
+  .lede { max-width: 62ch; color: var(--muted); margin: 0; font-size: 1.05rem; }
+  .toolbar { display: flex; flex-wrap: wrap; gap: 10px 18px; align-items: center; font-size: .9rem; color: var(--muted); }
+  .toggle { display: inline-flex; align-items: center; gap: 8px; cursor: pointer; user-select: none; }
+  .toggle input { accent-color: var(--pumpkin); width: 18px; height: 18px; }
+
+  .hero { display: grid; grid-template-columns: 1fr auto; gap: 20px; align-items: center; background: linear-gradient(135deg, #2a1348, #1c1030 60%, #16102a); border: 1px solid var(--line); border-radius: 18px; padding: 22px 24px; margin-bottom: 26px; position: relative; overflow: hidden; }
+  .hero h2 { font-family: var(--display); font-weight: 400; font-size: 1.9rem; margin: 0 0 4px; color: var(--fg); letter-spacing: .03em; }
+  .hero p { margin: 0; color: var(--muted); max-width: 52ch; }
+  .hero .bowl { width: 150px; height: auto; flex: none; }
+  .btn-big { font: 800 1.15rem var(--body); background: var(--pumpkin); color: #1b0a00; border: 0; border-radius: 14px; padding: 16px 24px; cursor: pointer; box-shadow: 0 6px 0 #a34a08, 0 10px 30px rgba(255, 122, 26, .25); transition: transform .08s ease, box-shadow .08s ease; display: inline-flex; align-items: center; gap: 10px; }
+  .btn-big:hover { background: var(--pumpkin2); }
+  .btn-big:active { transform: translateY(4px); box-shadow: 0 2px 0 #a34a08; }
+  .btn-big small { font-weight: 600; opacity: .8; }
+  .btn-big:focus-visible, .btn:focus-visible, .toggle input:focus-visible { outline: 3px solid var(--slime); outline-offset: 3px; }
+
+  .colab { border: 1px dashed var(--pumpkin2); border-radius: 14px; padding: 16px 18px; margin-bottom: 30px; background: rgba(255, 122, 26, .06); }
+  .colab h2 { margin: 0 0 8px; font-size: 1.1rem; color: var(--pumpkin2); display: flex; align-items: center; gap: 8px; }
+  .colab ol { margin: 0; padding-left: 20px; display: grid; gap: 4px; }
+  .colab code { background: #0c0714; padding: 1px 6px; border-radius: 5px; font-size: .9em; color: var(--slime); }
+
+  section.group { margin-bottom: 26px; }
+  .group h2 { font-family: var(--display); font-weight: 400; letter-spacing: .04em; font-size: 1.7rem; margin: 0 0 10px; color: var(--pumpkin2); display: flex; align-items: center; gap: 10px; }
+  .group h2 svg { width: 30px; height: 30px; flex: none; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 12px; }
+  .card { background: var(--bg2); border: 1px solid var(--line); border-radius: 14px; padding: 14px 16px; display: grid; grid-template-rows: auto 1fr auto; gap: 8px; min-width: 0; transition: background .15s ease, border-color .15s ease; }
+  .card:hover { background: var(--bg3); border-color: #5a4284; }
+  .card .name { font-weight: 800; font-size: 1.05rem; display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+  .card .ext { font-size: .72rem; font-weight: 800; letter-spacing: .08em; color: #1b0a00; background: var(--pumpkin2); border-radius: 6px; padding: 1px 7px; }
+  .card .ext.zip { background: var(--slime); }
+  .card p { margin: 0; color: var(--muted); font-size: .93rem; }
+  .card .row { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+  .card .size { color: var(--muted); font-size: .85rem; font-variant-numeric: tabular-nums; }
+  .btn { font: 700 .95rem var(--body); background: transparent; color: var(--pumpkin2); border: 2px solid var(--pumpkin); border-radius: 10px; padding: 8px 14px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; transition: background .12s ease, color .12s ease; }
+  .btn:hover { background: var(--pumpkin); color: #1b0a00; }
+  .btn[disabled] { opacity: .55; cursor: default; }
+  .btn svg { width: 16px; height: 16px; }
+  .btn, .btn-big { text-decoration: none; }
+  .btn.colab { border-color: var(--slime); color: var(--slime); }
+  .btn.colab:hover { background: var(--slime); color: #0b1a05; }
+  .btns { display: flex; gap: 8px; flex-wrap: wrap; justify-content: flex-end; }
+  .status { font-size: .85rem; color: var(--slime); min-height: 1.2em; }
+  .status.bad { color: #ff8a8a; }
+
+  .note { color: var(--muted); font-size: .9rem; border-top: 1px solid var(--line); padding-top: 14px; margin-top: 10px; position: relative; padding-right: 150px; min-height: 120px; }
+  .note b { color: var(--fg); }
+  .scarecrow { position: absolute; right: 8px; bottom: 0; width: 110px; opacity: .95; pointer-events: none; }
+  @media (max-width: 640px) {
+    .hero { grid-template-columns: 1fr; }
+    .hero .bowl { width: 110px; }
+    .scarecrow { display: none; }
+    .note { padding-right: 0; min-height: 0; }
+  }
+
+  /* jump scare */
+  #scare { position: fixed; inset: 0; z-index: 50; display: grid; place-items: center; background: #000; animation: flash .9s steps(1) forwards; }
+  #scare svg { width: min(80vw, 70vh); height: auto; animation: lunge .9s ease-out forwards; }
+  #scare[hidden] { display: none; }
+  body.shake { animation: shake .5s linear; }
+  @keyframes flash { 0% { background: #000; } 10% { background: #2b0000; } 60% { background: #000; } 100% { background: #000; opacity: 0; } }
+  @keyframes lunge { 0% { transform: scale(.2) rotate(-6deg); opacity: 0; } 15% { transform: scale(1.05) rotate(2deg); opacity: 1; } 70% { transform: scale(1.3); opacity: 1; } 100% { transform: scale(1.6); opacity: 0; } }
+  @keyframes shake { 0%, 100% { transform: translate(0); } 10% { transform: translate(-9px, 4px); } 30% { transform: translate(8px, -6px); } 50% { transform: translate(-7px, 7px); } 70% { transform: translate(6px, -4px); } 90% { transform: translate(-4px, 2px); } }
+  .flicker { animation: flick .35s steps(2) 1; }
+  @keyframes flick { 0% { filter: invert(1) hue-rotate(90deg); } 100% { filter: none; } }
+  @media (prefers-reduced-motion: reduce) {
+    .bat, .ghost-float, .star { animation: none; }
+    body.shake { animation: none; }
+    #scare { animation-duration: .6s; } #scare svg { animation: none; }
+  }
+</style>
+</head>
+<body>
+
+
+<div class="sky" aria-hidden="true">
+  <div class="moon"></div>
+  <div class="star" style="top:12%;left:14%"></div><div class="star" style="top:22%;left:40%;animation-delay:1s"></div>
+  <div class="star" style="top:8%;left:62%;animation-delay:2s"></div><div class="star" style="top:30%;left:78%;animation-delay:.5s"></div>
+  <div class="star" style="top:48%;left:6%;animation-delay:1.5s"></div><div class="star" style="top:60%;left:92%;animation-delay:2.4s"></div>
+  <svg class="bat" style="top:18%" viewBox="0 0 46 22"><path d="M23 6c-2-4-7-6-11-4 1 3 0 6-3 7-3-1-6 0-9 3 4 0 8 2 10 6 3-2 7-2 10 1 2-3 6-4 10-2 2-4 6-6 10-6-3-3-6-4-9-3-3-1-4-4-3-7-4-2-9 0-11 5z"/></svg>
+  <svg class="bat" style="top:36%;animation-delay:-3.5s;animation-duration:9s" viewBox="0 0 46 22"><path d="M23 6c-2-4-7-6-11-4 1 3 0 6-3 7-3-1-6 0-9 3 4 0 8 2 10 6 3-2 7-2 10 1 2-3 6-4 10-2 2-4 6-6 10-6-3-3-6-4-9-3-3-1-4-4-3-7-4-2-9 0-11 5z"/></svg>
+  <svg class="ghost-float" style="top:58%;left:4%" viewBox="0 0 70 90"><path d="M35 4C18 4 8 18 8 36v48l9-8 9 8 9-8 9 8 9-8 9 8V36C62 18 52 4 35 4z" fill="#e9e2ff"/><circle cx="26" cy="36" r="5" fill="#1b1030"/><circle cx="44" cy="36" r="5" fill="#1b1030"/><ellipse cx="35" cy="52" rx="6" ry="8" fill="#1b1030"/></svg>
+  <svg class="ghost-float" style="top:70%;right:6%;animation-delay:-5s" viewBox="0 0 70 90"><path d="M35 4C18 4 8 18 8 36v48l9-8 9 8 9-8 9 8 9-8 9 8V36C62 18 52 4 35 4z" fill="#e9e2ff"/><circle cx="26" cy="36" r="5" fill="#1b1030"/><circle cx="44" cy="36" r="5" fill="#1b1030"/><ellipse cx="35" cy="52" rx="6" ry="8" fill="#1b1030"/></svg>
+</div>
+
+<div class="wrap">
+  <header>
+    <div class="eyebrow">Sobey High School Co-Op · Business Analytics &amp; AI · Day 3 · Friday, October 30</div>
+    <h1>The Haunted Download Bar</h1>
+    <p class="lede">Everything you need for today, one button each: the two notebooks, the three data files, the slides, the activity brief and the dashboard skill. No student data lives here; it only hands out files.</p>
+    <div class="toolbar">
+      <label class="toggle"><input type="checkbox" id="scares" checked> <span>👻 Scares: on</span></label>
+      <span>Click a button: the file saves straight to your Downloads folder.</span>
+    </div>
+  </header>
+
+  <div class="hero">
+    <div>
+      <h2>Grab the whole candy bowl</h2>
+      <p>One zip with all ten files. Or skip the download: the two notebooks open straight in Colab from the buttons below.</p>
+      <p style="margin-top:12px"><a class="btn-big" id="btn-all" href="Day%203%20Everything.zip" download>🎃 Download everything <small id="size-all"></small></a></p>
+          </div>
+    <svg class="bowl" viewBox="0 0 160 120" aria-hidden="true">
+      <ellipse cx="80" cy="104" rx="64" ry="12" fill="#0a0612"/>
+      <path d="M18 58h124c0 30-24 50-62 50S18 88 18 58z" fill="#3b1d66"/>
+      <path d="M18 58h124" stroke="#6a44a8" stroke-width="6" stroke-linecap="round"/>
+      <g>
+        <rect x="40" y="38" width="26" height="14" rx="4" fill="#ff7a1a" transform="rotate(-18 53 45)"/>
+        <rect x="66" y="30" width="26" height="14" rx="4" fill="#9be564" transform="rotate(10 79 37)"/>
+        <rect x="92" y="40" width="26" height="14" rx="4" fill="#c8102e" transform="rotate(-8 105 47)"/>
+        <circle cx="60" cy="52" r="7" fill="#ffd166"/><circle cx="100" cy="54" r="7" fill="#e9e2ff"/>
+        <path d="M30 56l8-18 8 18z" fill="#ffb347"/><path d="M118 56l8-18 8 18z" fill="#ffb347"/>
+      </g>
+    </svg>
+  </div>
+
+  <div class="colab" id="colab">
+    <h2>🧪 Get these into Colab</h2>
+    <ol>
+      <li>Go to <a href="https://colab.research.google.com" style="color:var(--pumpkin2)">colab.research.google.com</a> and sign in. Click <b>Open in Colab</b> on a notebook below (it opens straight from GitHub), then <b>File → Save a copy in Drive</b> so your typing sticks.</li>
+      <li>For the Haunted Snack Bar, cell 8 needs <code>Snack Bar Data.csv</code>: click the 📁 <b>folder icon</b> on the left edge, then the <b>upload</b> icon, and pick the file. It disappears when Colab restarts; upload it again.</li>
+      <li>Run a cell with <b>Shift + Enter</b>. Stuck? <b>Runtime → Run all</b>. Prefer a file? Download the notebook and use <b>File → Upload notebook</b>.</li>
+    </ol>
+  </div>
+
+  <section class="group">
+    <h2><svg viewBox="0 0 70 90"><path d="M35 4C18 4 8 18 8 36v48l9-8 9 8 9-8 9 8 9-8 9 8V36C62 18 52 4 35 4z" fill="#e9e2ff"/><circle cx="26" cy="36" r="5" fill="#1b1030"/><circle cx="44" cy="36" r="5" fill="#1b1030"/></svg> Notebooks</h2>
+    <div class="grid" id="g-notebooks"></div>
+  </section>
+  <section class="group">
+    <h2><svg viewBox="0 0 64 64"><rect x="8" y="12" width="48" height="40" rx="6" fill="#ffb347"/><path d="M8 24h48M8 36h48M24 12v40M40 12v40" stroke="#1b0a00" stroke-width="2"/></svg> Data</h2>
+    <div class="grid" id="g-data"></div>
+  </section>
+  <section class="group">
+    <h2><svg viewBox="0 0 64 64"><path d="M32 6l6 14 15 2-11 10 3 15-13-7-13 7 3-15L11 22l15-2z" fill="#ffd166"/></svg> Slides</h2>
+    <div class="grid" id="g-slides"></div>
+  </section>
+  <section class="group">
+    <h2><svg viewBox="0 0 64 64"><path d="M32 6c-14 0-24 10-24 24 0 10 6 14 6 20h36c0-6 6-10 6-20C56 16 46 6 32 6z" fill="#ff7a1a"/><path d="M20 30l8 6-8 6zM44 30l-8 6 8 6zM22 48c7-4 13-4 20 0" fill="#1b0a00" stroke="#1b0a00" stroke-width="2"/><path d="M30 4h4v6h-4z" fill="#9be564"/></svg> The activity: Pitch the season</h2>
+    <div class="grid" id="g-activity"></div>
+  </section>
+
+  <p class="note"><b>Sources.</b> Google Trends, Canada, web search, weekly, Oct 2021 to Oct 2026 (relative interest, 0 to 100 per lane, read Oct 29, 2026). NRF / Prosper Insights &amp; Analytics annual Halloween survey, 2005 to 2026 (US consumers, US dollars). Candy ranking: CandyStore.com 2026 top 10; the snack bar's prices and stock counts are practice numbers. Made for Gavin's Day 3 class; this page stores nothing and tracks nobody.
+    <svg class="scarecrow" viewBox="0 0 120 160" aria-hidden="true">
+      <rect x="57" y="40" width="6" height="118" fill="#7a4a1e"/><rect x="18" y="72" width="84" height="6" fill="#7a4a1e"/>
+      <path d="M30 76h60l-6 46H36z" fill="#2f6b3a"/><path d="M36 122h48v22H36z" fill="#6b4a9a"/>
+      <circle cx="60" cy="44" r="22" fill="#e8c67a"/><path d="M34 40c6-22 46-22 52 0z" fill="#b57b2a"/>
+      <path d="M50 42l5 5-5 5zM70 42l-5 5 5 5zM50 56c6 4 14 4 20 0" stroke="#1b0a00" stroke-width="3" fill="none"/>
+      <path d="M26 78l-8 10M94 78l8 10M32 78l-4 14M88 78l4 14" stroke="#e8c67a" stroke-width="3"/>
+    </svg></p>
+</div>
+
+<div id="scare" hidden aria-hidden="true">
+  <svg viewBox="0 0 200 240">
+    <path d="M100 8C52 8 22 46 22 100v128l16-16 15 16 16-16 15 16 16-16 15 16 16-16 16 16 16-16 15 16V100C194 46 148 8 100 8z" fill="#f4f1ff"/>
+    <ellipse cx="68" cy="96" rx="19" ry="31" fill="#0b0612" transform="rotate(-14 68 96)"/>
+    <ellipse cx="132" cy="96" rx="19" ry="31" fill="#0b0612" transform="rotate(14 132 96)"/>
+    <path d="M62 150c10 44 66 44 76 0-14-14-62-14-76 0z" fill="#0b0612"/>
+    <path d="M70 158c18 10 42 10 60 0" stroke="#5a0010" stroke-width="5" fill="none"/>
+  </svg>
+</div>
+
+<script>
+(function () {
+  var OWNER = "analyticsblackpoint-bot", REPO = "sobeys-coop-day3";
+  var COLAB = "https://colab.research.google.com/github/" + OWNER + "/" + REPO + "/blob/main/notebooks/";
+  var FILES = {
+    notebooks: [
+      { path: "notebooks/Haunted Snack Bar Notebook.ipynb", title: "Haunted Snack Bar Notebook", ext: "ipynb", colab: "Haunted%20Snack%20Bar%20Notebook.ipynb", what: "Notebook 1, the type-along: eight empty cells you fill in with Gavin. Open it in Colab, then File → Save a copy in Drive." },
+      { path: "notebooks/Seasonal Workbook.ipynb", title: "Seasonal Workbook", ext: "ipynb", colab: "Seasonal%20Workbook.ipynb", what: "Notebook 2, the run-along: five years of seasonal data, the chart gallery, season maths and your lane (section 6). Data is built in." }
+    ],
+    data: [
+      { path: "data/Snack Bar Data.csv", title: "Snack Bar Data", ext: "csv", what: "The 10 most popular Halloween candies with the snack bar's prices and stock. Needed for cell 8 of Notebook 1." },
+      { path: "data/Seasonal Trends Canada.csv", title: "Seasonal Trends Canada", ext: "csv", what: "2,096 rows: weekly Google Trends interest for eight lanes, Oct 2021 to Oct 2026. Same data the workbook carries built in." },
+      { path: "data/Halloween Spending.csv", title: "Halloween Spending", ext: "csv", what: "NRF Halloween spending, 2005 to 2026: total, per person, and by category (costumes, candy, decorations, cards)." }
+    ],
+    slides: [
+      { path: "slides/Day 3 Slides.pptx", title: "Day 3 Slides", ext: "pptx", what: "The 42 slides, PowerPoint." },
+      { path: "slides/Day 3 Slides.pdf", title: "Day 3 Slides", ext: "pdf", what: "The same slides as a PDF, for reading on anything." }
+    ],
+    activity: [
+      { path: "activity/Activity Brief and Rubric.pdf", title: "Activity Brief and Rubric", ext: "pdf", what: "One page: your lane, the decision, the three slides, the honest limits, the 16-point rubric and the presentation order." },
+      { path: "activity/Results Pack.pdf", title: "Results Pack", ext: "pdf", what: "Every chart and table from the teacher's run (halloween costume lane). Use it if you fall behind." },
+      { path: "activity/Dashboard Skill.md", title: "Dashboard Skill", ext: "md", what: "Paste this into any chatbot with your small table from step 6f and get an AI-built HTML dashboard back. Check every number." }
+    ]
+  };
+  var SIZES = { "Day 3 Everything.zip": 5733404, "notebooks/Haunted Snack Bar Notebook.ipynb": 7050, "notebooks/Seasonal Workbook.ipynb": 46661, "data/Snack Bar Data.csv": 336,
+    "data/Seasonal Trends Canada.csv": 71059, "data/Halloween Spending.csv": 1784, "slides/Day 3 Slides.pptx": 2896754, "slides/Day 3 Slides.pdf": 2648848,
+    "activity/Activity Brief and Rubric.pdf": 52962, "activity/Results Pack.pdf": 712514, "activity/Dashboard Skill.md": 4966 };
+  function fmt(b) { return b >= 1048576 ? (b / 1048576).toFixed(1) + " MB" : b >= 1024 ? Math.round(b / 1024) + " KB" : b + " B"; }
+  var ICON = '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v9M4 7l4 4 4-4M2 13h12"/></svg>';
+  function enc(p) { return p.split("/").map(encodeURIComponent).join("/"); }
+  function card(f) {
+    var el = document.createElement("div"); el.className = "card";
+    var colab = f.colab ? '<a class="btn colab" href="' + COLAB + f.colab + '" target="_blank" rel="noopener">▶ Open in Colab</a>' : '';
+    el.innerHTML = '<div class="name"><span>' + f.title + '</span><span class="ext ' + f.ext + '">' + f.ext + '</span></div>' +
+      '<p>' + f.what + '</p>' +
+      '<div class="row"><span class="size">' + fmt(SIZES[f.path]) + '</span><span class="btns">' + colab + '<a class="btn" href="' + enc(f.path) + '" download>' + ICON + ' Download</a></span></div>';
+    return el;
+  }
+  Object.keys(FILES).forEach(function (g) {
+    var host = document.getElementById("g-" + g);
+    FILES[g].forEach(function (f) { host.appendChild(card(f)); });
+  });
+  document.getElementById("size-all").textContent = "(" + fmt(SIZES["Day 3 Everything.zip"]) + ")";
+
+  var scares = document.getElementById("scares");
+  try { var s = localStorage.getItem("hdb-scares"); if (s === "off") scares.checked = false; } catch (e) {}
+  function labelScares() { scares.nextElementSibling.textContent = scares.checked ? "👻 Scares: on" : "👻 Scares: off"; }
+  labelScares();
+  scares.addEventListener("change", function () { labelScares(); try { localStorage.setItem("hdb-scares", scares.checked ? "on" : "off"); } catch (e) {} });
+
+  var scared = false;
+  function screech() {
+    try {
+      var AC = window.AudioContext || window.webkitAudioContext; if (!AC) return;
+      var ac = new AC(); var t = ac.currentTime;
+      var g = ac.createGain(); g.gain.setValueAtTime(0.0001, t); g.gain.exponentialRampToValueAtTime(0.5, t + 0.05); g.gain.exponentialRampToValueAtTime(0.0001, t + 0.9); g.connect(ac.destination);
+      [1, 1.5, 2.3].forEach(function (m) {
+        var o = ac.createOscillator(); o.type = "sawtooth";
+        o.frequency.setValueAtTime(180 * m, t); o.frequency.exponentialRampToValueAtTime(1400 * m, t + 0.25); o.frequency.exponentialRampToValueAtTime(300 * m, t + 0.9);
+        o.connect(g); o.start(t); o.stop(t + 0.95);
+      });
+      var buf = ac.createBuffer(1, ac.sampleRate * 0.4, ac.sampleRate); var d = buf.getChannelData(0);
+      for (var i = 0; i < d.length; i++) d[i] = (Math.random() * 2 - 1) * (1 - i / d.length);
+      var n = ac.createBufferSource(); n.buffer = buf; var ng = ac.createGain(); ng.gain.value = 0.25; n.connect(ng); ng.connect(ac.destination); n.start(t + 0.02);
+      setTimeout(function () { try { ac.close(); } catch (e) {} }, 1500);
+    } catch (e) {}
+  }
+  function jumpScare() {
+    if (!scares.checked) return;
+    if (scared) { document.body.classList.remove("flicker"); void document.body.offsetWidth; document.body.classList.add("flicker"); return; }
+    scared = true;
+    var el = document.getElementById("scare"); el.hidden = false;
+    document.body.classList.add("shake"); screech();
+    setTimeout(function () { el.hidden = true; document.body.classList.remove("shake"); }, 950);
+  }
+  document.addEventListener("click", function (ev) {
+    var a = ev.target.closest("a[download], a.btn-big");
+    if (a) jumpScare();
+  });
+})();
+</script>
+
+</body>
+</html>
