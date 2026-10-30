@@ -1,0 +1,2097 @@
+week,year,month,lane,interest
+2021-10-24,2021,10,back to school,6
+2021-10-31,2021,10,back to school,7
+2021-11-07,2021,11,back to school,8
+2021-11-14,2021,11,back to school,7
+2021-11-21,2021,11,back to school,6
+2021-11-28,2021,11,back to school,6
+2021-12-05,2021,12,back to school,7
+2021-12-12,2021,12,back to school,9
+2021-12-19,2021,12,back to school,11
+2021-12-26,2021,12,back to school,90
+2022-01-02,2022,1,back to school,62
+2022-01-09,2022,1,back to school,64
+2022-01-16,2022,1,back to school,22
+2022-01-23,2022,1,back to school,9
+2022-01-30,2022,1,back to school,9
+2022-02-06,2022,2,back to school,7
+2022-02-13,2022,2,back to school,7
+2022-02-20,2022,2,back to school,7
+2022-02-27,2022,2,back to school,7
+2022-03-06,2022,3,back to school,7
+2022-03-13,2022,3,back to school,6
+2022-03-20,2022,3,back to school,8
+2022-03-27,2022,3,back to school,8
+2022-04-03,2022,4,back to school,8
+2022-04-10,2022,4,back to school,7
+2022-04-17,2022,4,back to school,8
+2022-04-24,2022,4,back to school,7
+2022-05-01,2022,5,back to school,7
+2022-05-08,2022,5,back to school,7
+2022-05-15,2022,5,back to school,7
+2022-05-22,2022,5,back to school,8
+2022-05-29,2022,5,back to school,10
+2022-06-05,2022,6,back to school,10
+2022-06-12,2022,6,back to school,13
+2022-06-19,2022,6,back to school,17
+2022-06-26,2022,6,back to school,13
+2022-07-03,2022,7,back to school,13
+2022-07-10,2022,7,back to school,15
+2022-07-17,2022,7,back to school,19
+2022-07-24,2022,7,back to school,27
+2022-07-31,2022,7,back to school,39
+2022-08-07,2022,8,back to school,53
+2022-08-14,2022,8,back to school,66
+2022-08-21,2022,8,back to school,78
+2022-08-28,2022,8,back to school,95
+2022-09-04,2022,9,back to school,89
+2022-09-11,2022,9,back to school,25
+2022-09-18,2022,9,back to school,16
+2022-09-25,2022,9,back to school,11
+2022-10-02,2022,10,back to school,7
+2022-10-09,2022,10,back to school,7
+2022-10-16,2022,10,back to school,7
+2022-10-23,2022,10,back to school,6
+2022-10-30,2022,10,back to school,8
+2022-11-06,2022,11,back to school,16
+2022-11-13,2022,11,back to school,7
+2022-11-20,2022,11,back to school,8
+2022-11-27,2022,11,back to school,6
+2022-12-04,2022,12,back to school,5
+2022-12-11,2022,12,back to school,5
+2022-12-18,2022,12,back to school,6
+2022-12-25,2022,12,back to school,14
+2023-01-01,2023,1,back to school,25
+2023-01-08,2023,1,back to school,11
+2023-01-15,2023,1,back to school,7
+2023-01-22,2023,1,back to school,6
+2023-01-29,2023,1,back to school,6
+2023-02-05,2023,2,back to school,6
+2023-02-12,2023,2,back to school,6
+2023-02-19,2023,2,back to school,5
+2023-02-26,2023,2,back to school,6
+2023-03-05,2023,3,back to school,7
+2023-03-12,2023,3,back to school,6
+2023-03-19,2023,3,back to school,6
+2023-03-26,2023,3,back to school,7
+2023-04-02,2023,4,back to school,7
+2023-04-09,2023,4,back to school,7
+2023-04-16,2023,4,back to school,6
+2023-04-23,2023,4,back to school,7
+2023-04-30,2023,4,back to school,7
+2023-05-07,2023,5,back to school,7
+2023-05-14,2023,5,back to school,8
+2023-05-21,2023,5,back to school,9
+2023-05-28,2023,5,back to school,9
+2023-06-04,2023,6,back to school,13
+2023-06-11,2023,6,back to school,15
+2023-06-18,2023,6,back to school,14
+2023-06-25,2023,6,back to school,12
+2023-07-02,2023,7,back to school,11
+2023-07-09,2023,7,back to school,14
+2023-07-16,2023,7,back to school,20
+2023-07-23,2023,7,back to school,25
+2023-07-30,2023,7,back to school,40
+2023-08-06,2023,8,back to school,50
+2023-08-13,2023,8,back to school,60
+2023-08-20,2023,8,back to school,68
+2023-08-27,2023,8,back to school,89
+2023-09-03,2023,9,back to school,93
+2023-09-10,2023,9,back to school,24
+2023-09-17,2023,9,back to school,14
+2023-09-24,2023,9,back to school,11
+2023-10-01,2023,10,back to school,8
+2023-10-08,2023,10,back to school,7
+2023-10-15,2023,10,back to school,7
+2023-10-22,2023,10,back to school,6
+2023-10-29,2023,10,back to school,7
+2023-11-05,2023,11,back to school,6
+2023-11-12,2023,11,back to school,6
+2023-11-19,2023,11,back to school,6
+2023-11-26,2023,11,back to school,7
+2023-12-03,2023,12,back to school,7
+2023-12-10,2023,12,back to school,7
+2023-12-17,2023,12,back to school,8
+2023-12-24,2023,12,back to school,12
+2023-12-31,2023,12,back to school,20
+2024-01-07,2024,1,back to school,11
+2024-01-14,2024,1,back to school,7
+2024-01-21,2024,1,back to school,7
+2024-01-28,2024,1,back to school,7
+2024-02-04,2024,2,back to school,6
+2024-02-11,2024,2,back to school,7
+2024-02-18,2024,2,back to school,5
+2024-02-25,2024,2,back to school,7
+2024-03-03,2024,3,back to school,6
+2024-03-10,2024,3,back to school,6
+2024-03-17,2024,3,back to school,6
+2024-03-24,2024,3,back to school,7
+2024-03-31,2024,3,back to school,7
+2024-04-07,2024,4,back to school,7
+2024-04-14,2024,4,back to school,7
+2024-04-21,2024,4,back to school,6
+2024-04-28,2024,4,back to school,6
+2024-05-05,2024,5,back to school,8
+2024-05-12,2024,5,back to school,7
+2024-05-19,2024,5,back to school,8
+2024-05-26,2024,5,back to school,9
+2024-06-02,2024,6,back to school,13
+2024-06-09,2024,6,back to school,18
+2024-06-16,2024,6,back to school,19
+2024-06-23,2024,6,back to school,11
+2024-06-30,2024,6,back to school,12
+2024-07-07,2024,7,back to school,14
+2024-07-14,2024,7,back to school,19
+2024-07-21,2024,7,back to school,25
+2024-07-28,2024,7,back to school,37
+2024-08-04,2024,8,back to school,49
+2024-08-11,2024,8,back to school,63
+2024-08-18,2024,8,back to school,76
+2024-08-25,2024,8,back to school,94
+2024-09-01,2024,9,back to school,86
+2024-09-08,2024,9,back to school,23
+2024-09-15,2024,9,back to school,14
+2024-09-22,2024,9,back to school,10
+2024-09-29,2024,9,back to school,9
+2024-10-06,2024,10,back to school,5
+2024-10-13,2024,10,back to school,6
+2024-10-20,2024,10,back to school,6
+2024-10-27,2024,10,back to school,7
+2024-11-03,2024,11,back to school,5
+2024-11-10,2024,11,back to school,6
+2024-11-17,2024,11,back to school,6
+2024-11-24,2024,11,back to school,5
+2024-12-01,2024,12,back to school,5
+2024-12-08,2024,12,back to school,6
+2024-12-15,2024,12,back to school,6
+2024-12-22,2024,12,back to school,9
+2024-12-29,2024,12,back to school,14
+2025-01-05,2025,1,back to school,14
+2025-01-12,2025,1,back to school,7
+2025-01-19,2025,1,back to school,6
+2025-01-26,2025,1,back to school,6
+2025-02-02,2025,2,back to school,6
+2025-02-09,2025,2,back to school,6
+2025-02-16,2025,2,back to school,6
+2025-02-23,2025,2,back to school,6
+2025-03-02,2025,3,back to school,6
+2025-03-09,2025,3,back to school,7
+2025-03-16,2025,3,back to school,7
+2025-03-23,2025,3,back to school,7
+2025-03-30,2025,3,back to school,8
+2025-04-06,2025,4,back to school,5
+2025-04-13,2025,4,back to school,7
+2025-04-20,2025,4,back to school,7
+2025-04-27,2025,4,back to school,6
+2025-05-04,2025,5,back to school,6
+2025-05-11,2025,5,back to school,7
+2025-05-18,2025,5,back to school,7
+2025-05-25,2025,5,back to school,9
+2025-06-01,2025,6,back to school,9
+2025-06-08,2025,6,back to school,11
+2025-06-15,2025,6,back to school,15
+2025-06-22,2025,6,back to school,12
+2025-06-29,2025,6,back to school,11
+2025-07-06,2025,7,back to school,14
+2025-07-13,2025,7,back to school,20
+2025-07-20,2025,7,back to school,27
+2025-07-27,2025,7,back to school,36
+2025-08-03,2025,8,back to school,50
+2025-08-10,2025,8,back to school,64
+2025-08-17,2025,8,back to school,75
+2025-08-24,2025,8,back to school,97
+2025-08-31,2025,8,back to school,96
+2025-09-07,2025,9,back to school,27
+2025-09-14,2025,9,back to school,16
+2025-09-21,2025,9,back to school,10
+2025-09-28,2025,9,back to school,10
+2025-10-05,2025,10,back to school,9
+2025-10-12,2025,10,back to school,12
+2025-10-19,2025,10,back to school,26
+2025-10-26,2025,10,back to school,58
+2025-11-02,2025,11,back to school,9
+2025-11-09,2025,11,back to school,9
+2025-11-16,2025,11,back to school,8
+2025-11-23,2025,11,back to school,10
+2025-11-30,2025,11,back to school,10
+2025-12-07,2025,12,back to school,11
+2025-12-14,2025,12,back to school,11
+2025-12-21,2025,12,back to school,11
+2025-12-28,2025,12,back to school,19
+2026-01-04,2026,1,back to school,22
+2026-01-11,2026,1,back to school,13
+2026-01-18,2026,1,back to school,14
+2026-01-25,2026,1,back to school,13
+2026-02-01,2026,2,back to school,13
+2026-02-08,2026,2,back to school,18
+2026-02-15,2026,2,back to school,18
+2026-02-22,2026,2,back to school,14
+2026-03-01,2026,3,back to school,12
+2026-03-08,2026,3,back to school,12
+2026-03-15,2026,3,back to school,12
+2026-03-22,2026,3,back to school,12
+2026-03-29,2026,3,back to school,11
+2026-04-05,2026,4,back to school,11
+2026-04-12,2026,4,back to school,12
+2026-04-19,2026,4,back to school,10
+2026-04-26,2026,4,back to school,11
+2026-05-03,2026,5,back to school,12
+2026-05-10,2026,5,back to school,14
+2026-05-17,2026,5,back to school,12
+2026-05-24,2026,5,back to school,13
+2026-05-31,2026,5,back to school,15
+2026-06-07,2026,6,back to school,16
+2026-06-14,2026,6,back to school,26
+2026-06-21,2026,6,back to school,34
+2026-06-28,2026,6,back to school,24
+2026-07-05,2026,7,back to school,27
+2026-07-12,2026,7,back to school,34
+2026-07-19,2026,7,back to school,33
+2026-07-26,2026,7,back to school,40
+2026-08-02,2026,8,back to school,54
+2026-08-09,2026,8,back to school,69
+2026-08-16,2026,8,back to school,77
+2026-08-23,2026,8,back to school,89
+2026-08-30,2026,8,back to school,100
+2026-09-06,2026,9,back to school,74
+2026-09-13,2026,9,back to school,27
+2026-09-20,2026,9,back to school,19
+2026-09-27,2026,9,back to school,15
+2026-10-04,2026,10,back to school,14
+2026-10-11,2026,10,back to school,11
+2026-10-18,2026,10,back to school,11
+2026-10-25,2026,10,back to school,12
+2021-10-24,2021,10,candy,72
+2021-10-31,2021,10,candy,75
+2021-11-07,2021,11,candy,54
+2021-11-14,2021,11,candy,52
+2021-11-21,2021,11,candy,56
+2021-11-28,2021,11,candy,60
+2021-12-05,2021,12,candy,64
+2021-12-12,2021,12,candy,68
+2021-12-19,2021,12,candy,76
+2021-12-26,2021,12,candy,86
+2022-01-02,2022,1,candy,46
+2022-01-09,2022,1,candy,40
+2022-01-16,2022,1,candy,39
+2022-01-23,2022,1,candy,44
+2022-01-30,2022,1,candy,41
+2022-02-06,2022,2,candy,42
+2022-02-13,2022,2,candy,41
+2022-02-20,2022,2,candy,43
+2022-02-27,2022,2,candy,42
+2022-03-06,2022,3,candy,43
+2022-03-13,2022,3,candy,45
+2022-03-20,2022,3,candy,42
+2022-03-27,2022,3,candy,44
+2022-04-03,2022,4,candy,44
+2022-04-10,2022,4,candy,48
+2022-04-17,2022,4,candy,42
+2022-04-24,2022,4,candy,43
+2022-05-01,2022,5,candy,42
+2022-05-08,2022,5,candy,46
+2022-05-15,2022,5,candy,44
+2022-05-22,2022,5,candy,39
+2022-05-29,2022,5,candy,44
+2022-06-05,2022,6,candy,43
+2022-06-12,2022,6,candy,42
+2022-06-19,2022,6,candy,42
+2022-06-26,2022,6,candy,42
+2022-07-03,2022,7,candy,41
+2022-07-10,2022,7,candy,41
+2022-07-17,2022,7,candy,49
+2022-07-24,2022,7,candy,50
+2022-07-31,2022,7,candy,55
+2022-08-07,2022,8,candy,47
+2022-08-14,2022,8,candy,45
+2022-08-21,2022,8,candy,44
+2022-08-28,2022,8,candy,43
+2022-09-04,2022,9,candy,40
+2022-09-11,2022,9,candy,43
+2022-09-18,2022,9,candy,44
+2022-09-25,2022,9,candy,45
+2022-10-02,2022,10,candy,49
+2022-10-09,2022,10,candy,57
+2022-10-16,2022,10,candy,58
+2022-10-23,2022,10,candy,66
+2022-10-30,2022,10,candy,86
+2022-11-06,2022,11,candy,53
+2022-11-13,2022,11,candy,54
+2022-11-20,2022,11,candy,55
+2022-11-27,2022,11,candy,61
+2022-12-04,2022,12,candy,63
+2022-12-11,2022,12,candy,69
+2022-12-18,2022,12,candy,71
+2022-12-25,2022,12,candy,57
+2023-01-01,2023,1,candy,47
+2023-01-08,2023,1,candy,44
+2023-01-15,2023,1,candy,44
+2023-01-22,2023,1,candy,47
+2023-01-29,2023,1,candy,46
+2023-02-05,2023,2,candy,50
+2023-02-12,2023,2,candy,49
+2023-02-19,2023,2,candy,45
+2023-02-26,2023,2,candy,42
+2023-03-05,2023,3,candy,45
+2023-03-12,2023,3,candy,42
+2023-03-19,2023,3,candy,44
+2023-03-26,2023,3,candy,46
+2023-04-02,2023,4,candy,44
+2023-04-09,2023,4,candy,42
+2023-04-16,2023,4,candy,45
+2023-04-23,2023,4,candy,43
+2023-04-30,2023,4,candy,46
+2023-05-07,2023,5,candy,45
+2023-05-14,2023,5,candy,45
+2023-05-21,2023,5,candy,48
+2023-05-28,2023,5,candy,41
+2023-06-04,2023,6,candy,40
+2023-06-11,2023,6,candy,41
+2023-06-18,2023,6,candy,40
+2023-06-25,2023,6,candy,40
+2023-07-02,2023,7,candy,39
+2023-07-09,2023,7,candy,40
+2023-07-16,2023,7,candy,38
+2023-07-23,2023,7,candy,38
+2023-07-30,2023,7,candy,41
+2023-08-06,2023,8,candy,43
+2023-08-13,2023,8,candy,39
+2023-08-20,2023,8,candy,43
+2023-08-27,2023,8,candy,39
+2023-09-03,2023,9,candy,36
+2023-09-10,2023,9,candy,39
+2023-09-17,2023,9,candy,41
+2023-09-24,2023,9,candy,42
+2023-10-01,2023,10,candy,43
+2023-10-08,2023,10,candy,50
+2023-10-15,2023,10,candy,57
+2023-10-22,2023,10,candy,56
+2023-10-29,2023,10,candy,81
+2023-11-05,2023,11,candy,51
+2023-11-12,2023,11,candy,51
+2023-11-19,2023,11,candy,54
+2023-11-26,2023,11,candy,66
+2023-12-03,2023,12,candy,74
+2023-12-10,2023,12,candy,80
+2023-12-17,2023,12,candy,82
+2023-12-24,2023,12,candy,69
+2023-12-31,2023,12,candy,41
+2024-01-07,2024,1,candy,37
+2024-01-14,2024,1,candy,40
+2024-01-21,2024,1,candy,41
+2024-01-28,2024,1,candy,41
+2024-02-04,2024,2,candy,44
+2024-02-11,2024,2,candy,49
+2024-02-18,2024,2,candy,40
+2024-02-25,2024,2,candy,39
+2024-03-03,2024,3,candy,45
+2024-03-10,2024,3,candy,38
+2024-03-17,2024,3,candy,41
+2024-03-24,2024,3,candy,41
+2024-03-31,2024,3,candy,43
+2024-04-07,2024,4,candy,37
+2024-04-14,2024,4,candy,40
+2024-04-21,2024,4,candy,38
+2024-04-28,2024,4,candy,39
+2024-05-05,2024,5,candy,36
+2024-05-12,2024,5,candy,37
+2024-05-19,2024,5,candy,38
+2024-05-26,2024,5,candy,39
+2024-06-02,2024,6,candy,40
+2024-06-09,2024,6,candy,39
+2024-06-16,2024,6,candy,37
+2024-06-23,2024,6,candy,39
+2024-06-30,2024,6,candy,37
+2024-07-07,2024,7,candy,35
+2024-07-14,2024,7,candy,35
+2024-07-21,2024,7,candy,35
+2024-07-28,2024,7,candy,34
+2024-08-04,2024,8,candy,36
+2024-08-11,2024,8,candy,40
+2024-08-18,2024,8,candy,38
+2024-08-25,2024,8,candy,39
+2024-09-01,2024,9,candy,38
+2024-09-08,2024,9,candy,37
+2024-09-15,2024,9,candy,39
+2024-09-22,2024,9,candy,40
+2024-09-29,2024,9,candy,44
+2024-10-06,2024,10,candy,48
+2024-10-13,2024,10,candy,48
+2024-10-20,2024,10,candy,53
+2024-10-27,2024,10,candy,93
+2024-11-03,2024,11,candy,55
+2024-11-10,2024,11,candy,51
+2024-11-17,2024,11,candy,57
+2024-11-24,2024,11,candy,56
+2024-12-01,2024,12,candy,63
+2024-12-08,2024,12,candy,66
+2024-12-15,2024,12,candy,75
+2024-12-22,2024,12,candy,65
+2024-12-29,2024,12,candy,45
+2025-01-05,2025,1,candy,36
+2025-01-12,2025,1,candy,46
+2025-01-19,2025,1,candy,41
+2025-01-26,2025,1,candy,44
+2025-02-02,2025,2,candy,41
+2025-02-09,2025,2,candy,44
+2025-02-16,2025,2,candy,34
+2025-02-23,2025,2,candy,36
+2025-03-02,2025,3,candy,37
+2025-03-09,2025,3,candy,41
+2025-03-16,2025,3,candy,40
+2025-03-23,2025,3,candy,37
+2025-03-30,2025,3,candy,39
+2025-04-06,2025,4,candy,37
+2025-04-13,2025,4,candy,40
+2025-04-20,2025,4,candy,36
+2025-04-27,2025,4,candy,35
+2025-05-04,2025,5,candy,34
+2025-05-11,2025,5,candy,37
+2025-05-18,2025,5,candy,38
+2025-05-25,2025,5,candy,38
+2025-06-01,2025,6,candy,37
+2025-06-08,2025,6,candy,39
+2025-06-15,2025,6,candy,41
+2025-06-22,2025,6,candy,38
+2025-06-29,2025,6,candy,36
+2025-07-06,2025,7,candy,36
+2025-07-13,2025,7,candy,36
+2025-07-20,2025,7,candy,37
+2025-07-27,2025,7,candy,35
+2025-08-03,2025,8,candy,39
+2025-08-10,2025,8,candy,37
+2025-08-17,2025,8,candy,38
+2025-08-24,2025,8,candy,37
+2025-08-31,2025,8,candy,55
+2025-09-07,2025,9,candy,46
+2025-09-14,2025,9,candy,38
+2025-09-21,2025,9,candy,40
+2025-09-28,2025,9,candy,42
+2025-10-05,2025,10,candy,55
+2025-10-12,2025,10,candy,68
+2025-10-19,2025,10,candy,60
+2025-10-26,2025,10,candy,100
+2025-11-02,2025,11,candy,63
+2025-11-09,2025,11,candy,53
+2025-11-16,2025,11,candy,55
+2025-11-23,2025,11,candy,61
+2025-11-30,2025,11,candy,67
+2025-12-07,2025,12,candy,72
+2025-12-14,2025,12,candy,72
+2025-12-21,2025,12,candy,76
+2025-12-28,2025,12,candy,47
+2026-01-04,2026,1,candy,44
+2026-01-11,2026,1,candy,42
+2026-01-18,2026,1,candy,41
+2026-01-25,2026,1,candy,46
+2026-02-01,2026,2,candy,49
+2026-02-08,2026,2,candy,50
+2026-02-15,2026,2,candy,45
+2026-02-22,2026,2,candy,42
+2026-03-01,2026,3,candy,43
+2026-03-08,2026,3,candy,40
+2026-03-15,2026,3,candy,44
+2026-03-22,2026,3,candy,42
+2026-03-29,2026,3,candy,45
+2026-04-05,2026,4,candy,41
+2026-04-12,2026,4,candy,38
+2026-04-19,2026,4,candy,37
+2026-04-26,2026,4,candy,51
+2026-05-03,2026,5,candy,36
+2026-05-10,2026,5,candy,46
+2026-05-17,2026,5,candy,37
+2026-05-24,2026,5,candy,35
+2026-05-31,2026,5,candy,40
+2026-06-07,2026,6,candy,35
+2026-06-14,2026,6,candy,39
+2026-06-21,2026,6,candy,39
+2026-06-28,2026,6,candy,37
+2026-07-05,2026,7,candy,56
+2026-07-12,2026,7,candy,41
+2026-07-19,2026,7,candy,41
+2026-07-26,2026,7,candy,40
+2026-08-02,2026,8,candy,40
+2026-08-09,2026,8,candy,36
+2026-08-16,2026,8,candy,42
+2026-08-23,2026,8,candy,40
+2026-08-30,2026,8,candy,39
+2026-09-06,2026,9,candy,40
+2026-09-13,2026,9,candy,39
+2026-09-20,2026,9,candy,42
+2026-09-27,2026,9,candy,45
+2026-10-04,2026,10,candy,51
+2026-10-11,2026,10,candy,52
+2026-10-18,2026,10,candy,57
+2026-10-25,2026,10,candy,71
+2021-10-24,2021,10,christmas gifts,26
+2021-10-31,2021,10,christmas gifts,42
+2021-11-07,2021,11,christmas gifts,57
+2021-11-14,2021,11,christmas gifts,67
+2021-11-21,2021,11,christmas gifts,80
+2021-11-28,2021,11,christmas gifts,86
+2021-12-05,2021,12,christmas gifts,96
+2021-12-12,2021,12,christmas gifts,91
+2021-12-19,2021,12,christmas gifts,78
+2021-12-26,2021,12,christmas gifts,10
+2022-01-02,2022,1,christmas gifts,5
+2022-01-09,2022,1,christmas gifts,3
+2022-01-16,2022,1,christmas gifts,2
+2022-01-23,2022,1,christmas gifts,1
+2022-01-30,2022,1,christmas gifts,1
+2022-02-06,2022,2,christmas gifts,1
+2022-02-13,2022,2,christmas gifts,1
+2022-02-20,2022,2,christmas gifts,1
+2022-02-27,2022,2,christmas gifts,1
+2022-03-06,2022,3,christmas gifts,2
+2022-03-13,2022,3,christmas gifts,1
+2022-03-20,2022,3,christmas gifts,1
+2022-03-27,2022,3,christmas gifts,1
+2022-04-03,2022,4,christmas gifts,1
+2022-04-10,2022,4,christmas gifts,1
+2022-04-17,2022,4,christmas gifts,1
+2022-04-24,2022,4,christmas gifts,1
+2022-05-01,2022,5,christmas gifts,1
+2022-05-08,2022,5,christmas gifts,0
+2022-05-15,2022,5,christmas gifts,1
+2022-05-22,2022,5,christmas gifts,1
+2022-05-29,2022,5,christmas gifts,1
+2022-06-05,2022,6,christmas gifts,1
+2022-06-12,2022,6,christmas gifts,1
+2022-06-19,2022,6,christmas gifts,1
+2022-06-26,2022,6,christmas gifts,1
+2022-07-03,2022,7,christmas gifts,1
+2022-07-10,2022,7,christmas gifts,2
+2022-07-17,2022,7,christmas gifts,2
+2022-07-24,2022,7,christmas gifts,2
+2022-07-31,2022,7,christmas gifts,2
+2022-08-07,2022,8,christmas gifts,2
+2022-08-14,2022,8,christmas gifts,2
+2022-08-21,2022,8,christmas gifts,2
+2022-08-28,2022,8,christmas gifts,3
+2022-09-04,2022,9,christmas gifts,4
+2022-09-11,2022,9,christmas gifts,5
+2022-09-18,2022,9,christmas gifts,6
+2022-09-25,2022,9,christmas gifts,7
+2022-10-02,2022,10,christmas gifts,10
+2022-10-09,2022,10,christmas gifts,13
+2022-10-16,2022,10,christmas gifts,14
+2022-10-23,2022,10,christmas gifts,19
+2022-10-30,2022,10,christmas gifts,29
+2022-11-06,2022,11,christmas gifts,45
+2022-11-13,2022,11,christmas gifts,61
+2022-11-20,2022,11,christmas gifts,72
+2022-11-27,2022,11,christmas gifts,78
+2022-12-04,2022,12,christmas gifts,88
+2022-12-11,2022,12,christmas gifts,100
+2022-12-18,2022,12,christmas gifts,87
+2022-12-25,2022,12,christmas gifts,19
+2023-01-01,2023,1,christmas gifts,5
+2023-01-08,2023,1,christmas gifts,3
+2023-01-15,2023,1,christmas gifts,2
+2023-01-22,2023,1,christmas gifts,2
+2023-01-29,2023,1,christmas gifts,1
+2023-02-05,2023,2,christmas gifts,1
+2023-02-12,2023,2,christmas gifts,1
+2023-02-19,2023,2,christmas gifts,1
+2023-02-26,2023,2,christmas gifts,1
+2023-03-05,2023,3,christmas gifts,1
+2023-03-12,2023,3,christmas gifts,1
+2023-03-19,2023,3,christmas gifts,1
+2023-03-26,2023,3,christmas gifts,1
+2023-04-02,2023,4,christmas gifts,1
+2023-04-09,2023,4,christmas gifts,2
+2023-04-16,2023,4,christmas gifts,2
+2023-04-23,2023,4,christmas gifts,1
+2023-04-30,2023,4,christmas gifts,2
+2023-05-07,2023,5,christmas gifts,1
+2023-05-14,2023,5,christmas gifts,1
+2023-05-21,2023,5,christmas gifts,1
+2023-05-28,2023,5,christmas gifts,2
+2023-06-04,2023,6,christmas gifts,1
+2023-06-11,2023,6,christmas gifts,2
+2023-06-18,2023,6,christmas gifts,2
+2023-06-25,2023,6,christmas gifts,2
+2023-07-02,2023,7,christmas gifts,2
+2023-07-09,2023,7,christmas gifts,2
+2023-07-16,2023,7,christmas gifts,2
+2023-07-23,2023,7,christmas gifts,3
+2023-07-30,2023,7,christmas gifts,2
+2023-08-06,2023,8,christmas gifts,2
+2023-08-13,2023,8,christmas gifts,2
+2023-08-20,2023,8,christmas gifts,3
+2023-08-27,2023,8,christmas gifts,2
+2023-09-03,2023,9,christmas gifts,4
+2023-09-10,2023,9,christmas gifts,4
+2023-09-17,2023,9,christmas gifts,5
+2023-09-24,2023,9,christmas gifts,6
+2023-10-01,2023,10,christmas gifts,8
+2023-10-08,2023,10,christmas gifts,12
+2023-10-15,2023,10,christmas gifts,13
+2023-10-22,2023,10,christmas gifts,18
+2023-10-29,2023,10,christmas gifts,25
+2023-11-05,2023,11,christmas gifts,39
+2023-11-12,2023,11,christmas gifts,50
+2023-11-19,2023,11,christmas gifts,62
+2023-11-26,2023,11,christmas gifts,72
+2023-12-03,2023,12,christmas gifts,83
+2023-12-10,2023,12,christmas gifts,91
+2023-12-17,2023,12,christmas gifts,90
+2023-12-24,2023,12,christmas gifts,27
+2023-12-31,2023,12,christmas gifts,4
+2024-01-07,2024,1,christmas gifts,3
+2024-01-14,2024,1,christmas gifts,2
+2024-01-21,2024,1,christmas gifts,1
+2024-01-28,2024,1,christmas gifts,1
+2024-02-04,2024,2,christmas gifts,1
+2024-02-11,2024,2,christmas gifts,1
+2024-02-18,2024,2,christmas gifts,1
+2024-02-25,2024,2,christmas gifts,1
+2024-03-03,2024,3,christmas gifts,1
+2024-03-10,2024,3,christmas gifts,1
+2024-03-17,2024,3,christmas gifts,1
+2024-03-24,2024,3,christmas gifts,1
+2024-03-31,2024,3,christmas gifts,1
+2024-04-07,2024,4,christmas gifts,1
+2024-04-14,2024,4,christmas gifts,1
+2024-04-21,2024,4,christmas gifts,1
+2024-04-28,2024,4,christmas gifts,1
+2024-05-05,2024,5,christmas gifts,1
+2024-05-12,2024,5,christmas gifts,1
+2024-05-19,2024,5,christmas gifts,1
+2024-05-26,2024,5,christmas gifts,1
+2024-06-02,2024,6,christmas gifts,1
+2024-06-09,2024,6,christmas gifts,1
+2024-06-16,2024,6,christmas gifts,1
+2024-06-23,2024,6,christmas gifts,1
+2024-06-30,2024,6,christmas gifts,1
+2024-07-07,2024,7,christmas gifts,1
+2024-07-14,2024,7,christmas gifts,2
+2024-07-21,2024,7,christmas gifts,1
+2024-07-28,2024,7,christmas gifts,2
+2024-08-04,2024,8,christmas gifts,2
+2024-08-11,2024,8,christmas gifts,2
+2024-08-18,2024,8,christmas gifts,3
+2024-08-25,2024,8,christmas gifts,2
+2024-09-01,2024,9,christmas gifts,4
+2024-09-08,2024,9,christmas gifts,4
+2024-09-15,2024,9,christmas gifts,5
+2024-09-22,2024,9,christmas gifts,6
+2024-09-29,2024,9,christmas gifts,8
+2024-10-06,2024,10,christmas gifts,9
+2024-10-13,2024,10,christmas gifts,14
+2024-10-20,2024,10,christmas gifts,17
+2024-10-27,2024,10,christmas gifts,22
+2024-11-03,2024,11,christmas gifts,34
+2024-11-10,2024,11,christmas gifts,49
+2024-11-17,2024,11,christmas gifts,61
+2024-11-24,2024,11,christmas gifts,73
+2024-12-01,2024,12,christmas gifts,88
+2024-12-08,2024,12,christmas gifts,91
+2024-12-15,2024,12,christmas gifts,95
+2024-12-22,2024,12,christmas gifts,51
+2024-12-29,2024,12,christmas gifts,7
+2025-01-05,2025,1,christmas gifts,3
+2025-01-12,2025,1,christmas gifts,2
+2025-01-19,2025,1,christmas gifts,1
+2025-01-26,2025,1,christmas gifts,1
+2025-02-02,2025,2,christmas gifts,1
+2025-02-09,2025,2,christmas gifts,1
+2025-02-16,2025,2,christmas gifts,1
+2025-02-23,2025,2,christmas gifts,1
+2025-03-02,2025,3,christmas gifts,1
+2025-03-09,2025,3,christmas gifts,1
+2025-03-16,2025,3,christmas gifts,1
+2025-03-23,2025,3,christmas gifts,1
+2025-03-30,2025,3,christmas gifts,1
+2025-04-06,2025,4,christmas gifts,1
+2025-04-13,2025,4,christmas gifts,1
+2025-04-20,2025,4,christmas gifts,1
+2025-04-27,2025,4,christmas gifts,1
+2025-05-04,2025,5,christmas gifts,1
+2025-05-11,2025,5,christmas gifts,1
+2025-05-18,2025,5,christmas gifts,1
+2025-05-25,2025,5,christmas gifts,1
+2025-06-01,2025,6,christmas gifts,1
+2025-06-08,2025,6,christmas gifts,1
+2025-06-15,2025,6,christmas gifts,2
+2025-06-22,2025,6,christmas gifts,1
+2025-06-29,2025,6,christmas gifts,1
+2025-07-06,2025,7,christmas gifts,1
+2025-07-13,2025,7,christmas gifts,1
+2025-07-20,2025,7,christmas gifts,1
+2025-07-27,2025,7,christmas gifts,1
+2025-08-03,2025,8,christmas gifts,1
+2025-08-10,2025,8,christmas gifts,2
+2025-08-17,2025,8,christmas gifts,2
+2025-08-24,2025,8,christmas gifts,2
+2025-08-31,2025,8,christmas gifts,3
+2025-09-07,2025,9,christmas gifts,3
+2025-09-14,2025,9,christmas gifts,4
+2025-09-21,2025,9,christmas gifts,5
+2025-09-28,2025,9,christmas gifts,6
+2025-10-05,2025,10,christmas gifts,9
+2025-10-12,2025,10,christmas gifts,12
+2025-10-19,2025,10,christmas gifts,15
+2025-10-26,2025,10,christmas gifts,19
+2025-11-02,2025,11,christmas gifts,33
+2025-11-09,2025,11,christmas gifts,46
+2025-11-16,2025,11,christmas gifts,62
+2025-11-23,2025,11,christmas gifts,76
+2025-11-30,2025,11,christmas gifts,91
+2025-12-07,2025,12,christmas gifts,95
+2025-12-14,2025,12,christmas gifts,96
+2025-12-21,2025,12,christmas gifts,72
+2025-12-28,2025,12,christmas gifts,9
+2026-01-04,2026,1,christmas gifts,4
+2026-01-11,2026,1,christmas gifts,3
+2026-01-18,2026,1,christmas gifts,2
+2026-01-25,2026,1,christmas gifts,1
+2026-02-01,2026,2,christmas gifts,2
+2026-02-08,2026,2,christmas gifts,9
+2026-02-15,2026,2,christmas gifts,8
+2026-02-22,2026,2,christmas gifts,6
+2026-03-01,2026,3,christmas gifts,3
+2026-03-08,2026,3,christmas gifts,1
+2026-03-15,2026,3,christmas gifts,1
+2026-03-22,2026,3,christmas gifts,1
+2026-03-29,2026,3,christmas gifts,1
+2026-04-05,2026,4,christmas gifts,1
+2026-04-12,2026,4,christmas gifts,1
+2026-04-19,2026,4,christmas gifts,1
+2026-04-26,2026,4,christmas gifts,3
+2026-05-03,2026,5,christmas gifts,6
+2026-05-10,2026,5,christmas gifts,4
+2026-05-17,2026,5,christmas gifts,1
+2026-05-24,2026,5,christmas gifts,1
+2026-05-31,2026,5,christmas gifts,2
+2026-06-07,2026,6,christmas gifts,1
+2026-06-14,2026,6,christmas gifts,3
+2026-06-21,2026,6,christmas gifts,3
+2026-06-28,2026,6,christmas gifts,2
+2026-07-05,2026,7,christmas gifts,2
+2026-07-12,2026,7,christmas gifts,2
+2026-07-19,2026,7,christmas gifts,2
+2026-07-26,2026,7,christmas gifts,2
+2026-08-02,2026,8,christmas gifts,2
+2026-08-09,2026,8,christmas gifts,2
+2026-08-16,2026,8,christmas gifts,3
+2026-08-23,2026,8,christmas gifts,3
+2026-08-30,2026,8,christmas gifts,4
+2026-09-06,2026,9,christmas gifts,4
+2026-09-13,2026,9,christmas gifts,6
+2026-09-20,2026,9,christmas gifts,7
+2026-09-27,2026,9,christmas gifts,8
+2026-10-04,2026,10,christmas gifts,11
+2026-10-11,2026,10,christmas gifts,13
+2026-10-18,2026,10,christmas gifts,14
+2026-10-25,2026,10,christmas gifts,17
+2021-10-24,2021,10,halloween costume,100
+2021-10-31,2021,10,halloween costume,26
+2021-11-07,2021,11,halloween costume,3
+2021-11-14,2021,11,halloween costume,2
+2021-11-21,2021,11,halloween costume,1
+2021-11-28,2021,11,halloween costume,1
+2021-12-05,2021,12,halloween costume,1
+2021-12-12,2021,12,halloween costume,1
+2021-12-19,2021,12,halloween costume,1
+2021-12-26,2021,12,halloween costume,1
+2022-01-02,2022,1,halloween costume,1
+2022-01-09,2022,1,halloween costume,1
+2022-01-16,2022,1,halloween costume,1
+2022-01-23,2022,1,halloween costume,1
+2022-01-30,2022,1,halloween costume,1
+2022-02-06,2022,2,halloween costume,1
+2022-02-13,2022,2,halloween costume,1
+2022-02-20,2022,2,halloween costume,1
+2022-02-27,2022,2,halloween costume,1
+2022-03-06,2022,3,halloween costume,1
+2022-03-13,2022,3,halloween costume,1
+2022-03-20,2022,3,halloween costume,1
+2022-03-27,2022,3,halloween costume,1
+2022-04-03,2022,4,halloween costume,1
+2022-04-10,2022,4,halloween costume,1
+2022-04-17,2022,4,halloween costume,1
+2022-04-24,2022,4,halloween costume,1
+2022-05-01,2022,5,halloween costume,1
+2022-05-08,2022,5,halloween costume,1
+2022-05-15,2022,5,halloween costume,1
+2022-05-22,2022,5,halloween costume,1
+2022-05-29,2022,5,halloween costume,1
+2022-06-05,2022,6,halloween costume,1
+2022-06-12,2022,6,halloween costume,1
+2022-06-19,2022,6,halloween costume,1
+2022-06-26,2022,6,halloween costume,1
+2022-07-03,2022,7,halloween costume,1
+2022-07-10,2022,7,halloween costume,2
+2022-07-17,2022,7,halloween costume,2
+2022-07-24,2022,7,halloween costume,3
+2022-07-31,2022,7,halloween costume,4
+2022-08-07,2022,8,halloween costume,5
+2022-08-14,2022,8,halloween costume,8
+2022-08-21,2022,8,halloween costume,10
+2022-08-28,2022,8,halloween costume,13
+2022-09-04,2022,9,halloween costume,16
+2022-09-11,2022,9,halloween costume,21
+2022-09-18,2022,9,halloween costume,23
+2022-09-25,2022,9,halloween costume,29
+2022-10-02,2022,10,halloween costume,42
+2022-10-09,2022,10,halloween costume,53
+2022-10-16,2022,10,halloween costume,61
+2022-10-23,2022,10,halloween costume,96
+2022-10-30,2022,10,halloween costume,45
+2022-11-06,2022,11,halloween costume,4
+2022-11-13,2022,11,halloween costume,2
+2022-11-20,2022,11,halloween costume,1
+2022-11-27,2022,11,halloween costume,2
+2022-12-04,2022,12,halloween costume,1
+2022-12-11,2022,12,halloween costume,1
+2022-12-18,2022,12,halloween costume,1
+2022-12-25,2022,12,halloween costume,1
+2023-01-01,2023,1,halloween costume,1
+2023-01-08,2023,1,halloween costume,1
+2023-01-15,2023,1,halloween costume,1
+2023-01-22,2023,1,halloween costume,1
+2023-01-29,2023,1,halloween costume,1
+2023-02-05,2023,2,halloween costume,1
+2023-02-12,2023,2,halloween costume,1
+2023-02-19,2023,2,halloween costume,1
+2023-02-26,2023,2,halloween costume,1
+2023-03-05,2023,3,halloween costume,1
+2023-03-12,2023,3,halloween costume,1
+2023-03-19,2023,3,halloween costume,1
+2023-03-26,2023,3,halloween costume,1
+2023-04-02,2023,4,halloween costume,1
+2023-04-09,2023,4,halloween costume,1
+2023-04-16,2023,4,halloween costume,1
+2023-04-23,2023,4,halloween costume,1
+2023-04-30,2023,4,halloween costume,1
+2023-05-07,2023,5,halloween costume,1
+2023-05-14,2023,5,halloween costume,1
+2023-05-21,2023,5,halloween costume,1
+2023-05-28,2023,5,halloween costume,1
+2023-06-04,2023,6,halloween costume,1
+2023-06-11,2023,6,halloween costume,1
+2023-06-18,2023,6,halloween costume,1
+2023-06-25,2023,6,halloween costume,1
+2023-07-02,2023,7,halloween costume,2
+2023-07-09,2023,7,halloween costume,2
+2023-07-16,2023,7,halloween costume,2
+2023-07-23,2023,7,halloween costume,3
+2023-07-30,2023,7,halloween costume,4
+2023-08-06,2023,8,halloween costume,5
+2023-08-13,2023,8,halloween costume,7
+2023-08-20,2023,8,halloween costume,9
+2023-08-27,2023,8,halloween costume,11
+2023-09-03,2023,9,halloween costume,14
+2023-09-10,2023,9,halloween costume,18
+2023-09-17,2023,9,halloween costume,22
+2023-09-24,2023,9,halloween costume,26
+2023-10-01,2023,10,halloween costume,33
+2023-10-08,2023,10,halloween costume,42
+2023-10-15,2023,10,halloween costume,51
+2023-10-22,2023,10,halloween costume,73
+2023-10-29,2023,10,halloween costume,46
+2023-11-05,2023,11,halloween costume,5
+2023-11-12,2023,11,halloween costume,2
+2023-11-19,2023,11,halloween costume,1
+2023-11-26,2023,11,halloween costume,1
+2023-12-03,2023,12,halloween costume,1
+2023-12-10,2023,12,halloween costume,1
+2023-12-17,2023,12,halloween costume,1
+2023-12-24,2023,12,halloween costume,1
+2023-12-31,2023,12,halloween costume,1
+2024-01-07,2024,1,halloween costume,1
+2024-01-14,2024,1,halloween costume,1
+2024-01-21,2024,1,halloween costume,1
+2024-01-28,2024,1,halloween costume,1
+2024-02-04,2024,2,halloween costume,1
+2024-02-11,2024,2,halloween costume,1
+2024-02-18,2024,2,halloween costume,1
+2024-02-25,2024,2,halloween costume,1
+2024-03-03,2024,3,halloween costume,1
+2024-03-10,2024,3,halloween costume,1
+2024-03-17,2024,3,halloween costume,1
+2024-03-24,2024,3,halloween costume,1
+2024-03-31,2024,3,halloween costume,1
+2024-04-07,2024,4,halloween costume,1
+2024-04-14,2024,4,halloween costume,1
+2024-04-21,2024,4,halloween costume,1
+2024-04-28,2024,4,halloween costume,1
+2024-05-05,2024,5,halloween costume,1
+2024-05-12,2024,5,halloween costume,1
+2024-05-19,2024,5,halloween costume,1
+2024-05-26,2024,5,halloween costume,1
+2024-06-02,2024,6,halloween costume,1
+2024-06-09,2024,6,halloween costume,1
+2024-06-16,2024,6,halloween costume,1
+2024-06-23,2024,6,halloween costume,1
+2024-06-30,2024,6,halloween costume,1
+2024-07-07,2024,7,halloween costume,2
+2024-07-14,2024,7,halloween costume,2
+2024-07-21,2024,7,halloween costume,3
+2024-07-28,2024,7,halloween costume,3
+2024-08-04,2024,8,halloween costume,5
+2024-08-11,2024,8,halloween costume,6
+2024-08-18,2024,8,halloween costume,9
+2024-08-25,2024,8,halloween costume,10
+2024-09-01,2024,9,halloween costume,14
+2024-09-08,2024,9,halloween costume,18
+2024-09-15,2024,9,halloween costume,20
+2024-09-22,2024,9,halloween costume,24
+2024-09-29,2024,9,halloween costume,30
+2024-10-06,2024,10,halloween costume,40
+2024-10-13,2024,10,halloween costume,44
+2024-10-20,2024,10,halloween costume,62
+2024-10-27,2024,10,halloween costume,71
+2024-11-03,2024,11,halloween costume,6
+2024-11-10,2024,11,halloween costume,2
+2024-11-17,2024,11,halloween costume,2
+2024-11-24,2024,11,halloween costume,1
+2024-12-01,2024,12,halloween costume,1
+2024-12-08,2024,12,halloween costume,1
+2024-12-15,2024,12,halloween costume,1
+2024-12-22,2024,12,halloween costume,1
+2024-12-29,2024,12,halloween costume,1
+2025-01-05,2025,1,halloween costume,1
+2025-01-12,2025,1,halloween costume,1
+2025-01-19,2025,1,halloween costume,1
+2025-01-26,2025,1,halloween costume,1
+2025-02-02,2025,2,halloween costume,1
+2025-02-09,2025,2,halloween costume,1
+2025-02-16,2025,2,halloween costume,1
+2025-02-23,2025,2,halloween costume,1
+2025-03-02,2025,3,halloween costume,1
+2025-03-09,2025,3,halloween costume,1
+2025-03-16,2025,3,halloween costume,1
+2025-03-23,2025,3,halloween costume,1
+2025-03-30,2025,3,halloween costume,1
+2025-04-06,2025,4,halloween costume,1
+2025-04-13,2025,4,halloween costume,1
+2025-04-20,2025,4,halloween costume,1
+2025-04-27,2025,4,halloween costume,1
+2025-05-04,2025,5,halloween costume,1
+2025-05-11,2025,5,halloween costume,1
+2025-05-18,2025,5,halloween costume,1
+2025-05-25,2025,5,halloween costume,1
+2025-06-01,2025,6,halloween costume,1
+2025-06-08,2025,6,halloween costume,1
+2025-06-15,2025,6,halloween costume,1
+2025-06-22,2025,6,halloween costume,1
+2025-06-29,2025,6,halloween costume,1
+2025-07-06,2025,7,halloween costume,2
+2025-07-13,2025,7,halloween costume,2
+2025-07-20,2025,7,halloween costume,3
+2025-07-27,2025,7,halloween costume,4
+2025-08-03,2025,8,halloween costume,5
+2025-08-10,2025,8,halloween costume,6
+2025-08-17,2025,8,halloween costume,8
+2025-08-24,2025,8,halloween costume,11
+2025-08-31,2025,8,halloween costume,14
+2025-09-07,2025,9,halloween costume,18
+2025-09-14,2025,9,halloween costume,21
+2025-09-21,2025,9,halloween costume,24
+2025-09-28,2025,9,halloween costume,32
+2025-10-05,2025,10,halloween costume,39
+2025-10-12,2025,10,halloween costume,46
+2025-10-19,2025,10,halloween costume,55
+2025-10-26,2025,10,halloween costume,82
+2025-11-02,2025,11,halloween costume,9
+2025-11-09,2025,11,halloween costume,2
+2025-11-16,2025,11,halloween costume,1
+2025-11-23,2025,11,halloween costume,1
+2025-11-30,2025,11,halloween costume,1
+2025-12-07,2025,12,halloween costume,1
+2025-12-14,2025,12,halloween costume,1
+2025-12-21,2025,12,halloween costume,1
+2025-12-28,2025,12,halloween costume,1
+2026-01-04,2026,1,halloween costume,1
+2026-01-11,2026,1,halloween costume,1
+2026-01-18,2026,1,halloween costume,1
+2026-01-25,2026,1,halloween costume,1
+2026-02-01,2026,2,halloween costume,1
+2026-02-08,2026,2,halloween costume,2
+2026-02-15,2026,2,halloween costume,2
+2026-02-22,2026,2,halloween costume,1
+2026-03-01,2026,3,halloween costume,1
+2026-03-08,2026,3,halloween costume,1
+2026-03-15,2026,3,halloween costume,1
+2026-03-22,2026,3,halloween costume,1
+2026-03-29,2026,3,halloween costume,1
+2026-04-05,2026,4,halloween costume,1
+2026-04-12,2026,4,halloween costume,1
+2026-04-19,2026,4,halloween costume,1
+2026-04-26,2026,4,halloween costume,1
+2026-05-03,2026,5,halloween costume,1
+2026-05-10,2026,5,halloween costume,1
+2026-05-17,2026,5,halloween costume,1
+2026-05-24,2026,5,halloween costume,1
+2026-05-31,2026,5,halloween costume,1
+2026-06-07,2026,6,halloween costume,1
+2026-06-14,2026,6,halloween costume,1
+2026-06-21,2026,6,halloween costume,1
+2026-06-28,2026,6,halloween costume,1
+2026-07-05,2026,7,halloween costume,2
+2026-07-12,2026,7,halloween costume,2
+2026-07-19,2026,7,halloween costume,3
+2026-07-26,2026,7,halloween costume,3
+2026-08-02,2026,8,halloween costume,5
+2026-08-09,2026,8,halloween costume,6
+2026-08-16,2026,8,halloween costume,8
+2026-08-23,2026,8,halloween costume,15
+2026-08-30,2026,8,halloween costume,13
+2026-09-06,2026,9,halloween costume,16
+2026-09-13,2026,9,halloween costume,19
+2026-09-20,2026,9,halloween costume,23
+2026-09-27,2026,9,halloween costume,30
+2026-10-04,2026,10,halloween costume,41
+2026-10-11,2026,10,halloween costume,46
+2026-10-18,2026,10,halloween costume,54
+2026-10-25,2026,10,halloween costume,86
+2021-10-24,2021,10,pumpkin spice,36
+2021-10-31,2021,10,pumpkin spice,25
+2021-11-07,2021,11,pumpkin spice,19
+2021-11-14,2021,11,pumpkin spice,12
+2021-11-21,2021,11,pumpkin spice,10
+2021-11-28,2021,11,pumpkin spice,9
+2021-12-05,2021,12,pumpkin spice,8
+2021-12-12,2021,12,pumpkin spice,8
+2021-12-19,2021,12,pumpkin spice,11
+2021-12-26,2021,12,pumpkin spice,5
+2022-01-02,2022,1,pumpkin spice,5
+2022-01-09,2022,1,pumpkin spice,5
+2022-01-16,2022,1,pumpkin spice,4
+2022-01-23,2022,1,pumpkin spice,4
+2022-01-30,2022,1,pumpkin spice,4
+2022-02-06,2022,2,pumpkin spice,4
+2022-02-13,2022,2,pumpkin spice,4
+2022-02-20,2022,2,pumpkin spice,4
+2022-02-27,2022,2,pumpkin spice,3
+2022-03-06,2022,3,pumpkin spice,3
+2022-03-13,2022,3,pumpkin spice,3
+2022-03-20,2022,3,pumpkin spice,2
+2022-03-27,2022,3,pumpkin spice,3
+2022-04-03,2022,4,pumpkin spice,3
+2022-04-10,2022,4,pumpkin spice,3
+2022-04-17,2022,4,pumpkin spice,3
+2022-04-24,2022,4,pumpkin spice,2
+2022-05-01,2022,5,pumpkin spice,2
+2022-05-08,2022,5,pumpkin spice,2
+2022-05-15,2022,5,pumpkin spice,2
+2022-05-22,2022,5,pumpkin spice,3
+2022-05-29,2022,5,pumpkin spice,2
+2022-06-05,2022,6,pumpkin spice,2
+2022-06-12,2022,6,pumpkin spice,3
+2022-06-19,2022,6,pumpkin spice,1
+2022-06-26,2022,6,pumpkin spice,2
+2022-07-03,2022,7,pumpkin spice,2
+2022-07-10,2022,7,pumpkin spice,2
+2022-07-17,2022,7,pumpkin spice,3
+2022-07-24,2022,7,pumpkin spice,5
+2022-07-31,2022,7,pumpkin spice,8
+2022-08-07,2022,8,pumpkin spice,12
+2022-08-14,2022,8,pumpkin spice,25
+2022-08-21,2022,8,pumpkin spice,52
+2022-08-28,2022,8,pumpkin spice,71
+2022-09-04,2022,9,pumpkin spice,53
+2022-09-11,2022,9,pumpkin spice,54
+2022-09-18,2022,9,pumpkin spice,65
+2022-09-25,2022,9,pumpkin spice,70
+2022-10-02,2022,10,pumpkin spice,96
+2022-10-09,2022,10,pumpkin spice,73
+2022-10-16,2022,10,pumpkin spice,47
+2022-10-23,2022,10,pumpkin spice,42
+2022-10-30,2022,10,pumpkin spice,31
+2022-11-06,2022,11,pumpkin spice,20
+2022-11-13,2022,11,pumpkin spice,13
+2022-11-20,2022,11,pumpkin spice,11
+2022-11-27,2022,11,pumpkin spice,8
+2022-12-04,2022,12,pumpkin spice,7
+2022-12-11,2022,12,pumpkin spice,8
+2022-12-18,2022,12,pumpkin spice,10
+2022-12-25,2022,12,pumpkin spice,6
+2023-01-01,2023,1,pumpkin spice,5
+2023-01-08,2023,1,pumpkin spice,4
+2023-01-15,2023,1,pumpkin spice,4
+2023-01-22,2023,1,pumpkin spice,4
+2023-01-29,2023,1,pumpkin spice,4
+2023-02-05,2023,2,pumpkin spice,4
+2023-02-12,2023,2,pumpkin spice,3
+2023-02-19,2023,2,pumpkin spice,3
+2023-02-26,2023,2,pumpkin spice,3
+2023-03-05,2023,3,pumpkin spice,4
+2023-03-12,2023,3,pumpkin spice,3
+2023-03-19,2023,3,pumpkin spice,2
+2023-03-26,2023,3,pumpkin spice,4
+2023-04-02,2023,4,pumpkin spice,3
+2023-04-09,2023,4,pumpkin spice,2
+2023-04-16,2023,4,pumpkin spice,3
+2023-04-23,2023,4,pumpkin spice,3
+2023-04-30,2023,4,pumpkin spice,2
+2023-05-07,2023,5,pumpkin spice,2
+2023-05-14,2023,5,pumpkin spice,3
+2023-05-21,2023,5,pumpkin spice,3
+2023-05-28,2023,5,pumpkin spice,2
+2023-06-04,2023,6,pumpkin spice,3
+2023-06-11,2023,6,pumpkin spice,2
+2023-06-18,2023,6,pumpkin spice,2
+2023-06-25,2023,6,pumpkin spice,2
+2023-07-02,2023,7,pumpkin spice,3
+2023-07-09,2023,7,pumpkin spice,3
+2023-07-16,2023,7,pumpkin spice,3
+2023-07-23,2023,7,pumpkin spice,4
+2023-07-30,2023,7,pumpkin spice,8
+2023-08-06,2023,8,pumpkin spice,14
+2023-08-13,2023,8,pumpkin spice,24
+2023-08-20,2023,8,pumpkin spice,66
+2023-08-27,2023,8,pumpkin spice,68
+2023-09-03,2023,9,pumpkin spice,69
+2023-09-10,2023,9,pumpkin spice,75
+2023-09-17,2023,9,pumpkin spice,78
+2023-09-24,2023,9,pumpkin spice,76
+2023-10-01,2023,10,pumpkin spice,100
+2023-10-08,2023,10,pumpkin spice,74
+2023-10-15,2023,10,pumpkin spice,50
+2023-10-22,2023,10,pumpkin spice,42
+2023-10-29,2023,10,pumpkin spice,33
+2023-11-05,2023,11,pumpkin spice,20
+2023-11-12,2023,11,pumpkin spice,15
+2023-11-19,2023,11,pumpkin spice,11
+2023-11-26,2023,11,pumpkin spice,9
+2023-12-03,2023,12,pumpkin spice,7
+2023-12-10,2023,12,pumpkin spice,7
+2023-12-17,2023,12,pumpkin spice,9
+2023-12-24,2023,12,pumpkin spice,9
+2023-12-31,2023,12,pumpkin spice,4
+2024-01-07,2024,1,pumpkin spice,3
+2024-01-14,2024,1,pumpkin spice,3
+2024-01-21,2024,1,pumpkin spice,3
+2024-01-28,2024,1,pumpkin spice,2
+2024-02-04,2024,2,pumpkin spice,3
+2024-02-11,2024,2,pumpkin spice,3
+2024-02-18,2024,2,pumpkin spice,3
+2024-02-25,2024,2,pumpkin spice,2
+2024-03-03,2024,3,pumpkin spice,2
+2024-03-10,2024,3,pumpkin spice,3
+2024-03-17,2024,3,pumpkin spice,3
+2024-03-24,2024,3,pumpkin spice,4
+2024-03-31,2024,3,pumpkin spice,3
+2024-04-07,2024,4,pumpkin spice,2
+2024-04-14,2024,4,pumpkin spice,3
+2024-04-21,2024,4,pumpkin spice,3
+2024-04-28,2024,4,pumpkin spice,2
+2024-05-05,2024,5,pumpkin spice,1
+2024-05-12,2024,5,pumpkin spice,1
+2024-05-19,2024,5,pumpkin spice,2
+2024-05-26,2024,5,pumpkin spice,2
+2024-06-02,2024,6,pumpkin spice,0
+2024-06-09,2024,6,pumpkin spice,2
+2024-06-16,2024,6,pumpkin spice,1
+2024-06-23,2024,6,pumpkin spice,2
+2024-06-30,2024,6,pumpkin spice,2
+2024-07-07,2024,7,pumpkin spice,2
+2024-07-14,2024,7,pumpkin spice,3
+2024-07-21,2024,7,pumpkin spice,5
+2024-07-28,2024,7,pumpkin spice,7
+2024-08-04,2024,8,pumpkin spice,12
+2024-08-11,2024,8,pumpkin spice,21
+2024-08-18,2024,8,pumpkin spice,63
+2024-08-25,2024,8,pumpkin spice,47
+2024-09-01,2024,9,pumpkin spice,58
+2024-09-08,2024,9,pumpkin spice,58
+2024-09-15,2024,9,pumpkin spice,57
+2024-09-22,2024,9,pumpkin spice,64
+2024-09-29,2024,9,pumpkin spice,69
+2024-10-06,2024,10,pumpkin spice,81
+2024-10-13,2024,10,pumpkin spice,65
+2024-10-20,2024,10,pumpkin spice,42
+2024-10-27,2024,10,pumpkin spice,33
+2024-11-03,2024,11,pumpkin spice,20
+2024-11-10,2024,11,pumpkin spice,14
+2024-11-17,2024,11,pumpkin spice,12
+2024-11-24,2024,11,pumpkin spice,10
+2024-12-01,2024,12,pumpkin spice,8
+2024-12-08,2024,12,pumpkin spice,7
+2024-12-15,2024,12,pumpkin spice,7
+2024-12-22,2024,12,pumpkin spice,10
+2024-12-29,2024,12,pumpkin spice,5
+2025-01-05,2025,1,pumpkin spice,6
+2025-01-12,2025,1,pumpkin spice,4
+2025-01-19,2025,1,pumpkin spice,3
+2025-01-26,2025,1,pumpkin spice,3
+2025-02-02,2025,2,pumpkin spice,4
+2025-02-09,2025,2,pumpkin spice,3
+2025-02-16,2025,2,pumpkin spice,3
+2025-02-23,2025,2,pumpkin spice,3
+2025-03-02,2025,3,pumpkin spice,3
+2025-03-09,2025,3,pumpkin spice,4
+2025-03-16,2025,3,pumpkin spice,4
+2025-03-23,2025,3,pumpkin spice,4
+2025-03-30,2025,3,pumpkin spice,3
+2025-04-06,2025,4,pumpkin spice,2
+2025-04-13,2025,4,pumpkin spice,5
+2025-04-20,2025,4,pumpkin spice,3
+2025-04-27,2025,4,pumpkin spice,2
+2025-05-04,2025,5,pumpkin spice,2
+2025-05-11,2025,5,pumpkin spice,2
+2025-05-18,2025,5,pumpkin spice,2
+2025-05-25,2025,5,pumpkin spice,3
+2025-06-01,2025,6,pumpkin spice,2
+2025-06-08,2025,6,pumpkin spice,3
+2025-06-15,2025,6,pumpkin spice,4
+2025-06-22,2025,6,pumpkin spice,3
+2025-06-29,2025,6,pumpkin spice,3
+2025-07-06,2025,7,pumpkin spice,4
+2025-07-13,2025,7,pumpkin spice,4
+2025-07-20,2025,7,pumpkin spice,6
+2025-07-27,2025,7,pumpkin spice,7
+2025-08-03,2025,8,pumpkin spice,13
+2025-08-10,2025,8,pumpkin spice,17
+2025-08-17,2025,8,pumpkin spice,51
+2025-08-24,2025,8,pumpkin spice,71
+2025-08-31,2025,8,pumpkin spice,60
+2025-09-07,2025,9,pumpkin spice,56
+2025-09-14,2025,9,pumpkin spice,59
+2025-09-21,2025,9,pumpkin spice,60
+2025-09-28,2025,9,pumpkin spice,65
+2025-10-05,2025,10,pumpkin spice,86
+2025-10-12,2025,10,pumpkin spice,65
+2025-10-19,2025,10,pumpkin spice,39
+2025-10-26,2025,10,pumpkin spice,33
+2025-11-02,2025,11,pumpkin spice,24
+2025-11-09,2025,11,pumpkin spice,17
+2025-11-16,2025,11,pumpkin spice,13
+2025-11-23,2025,11,pumpkin spice,11
+2025-11-30,2025,11,pumpkin spice,9
+2025-12-07,2025,12,pumpkin spice,8
+2025-12-14,2025,12,pumpkin spice,8
+2025-12-21,2025,12,pumpkin spice,9
+2025-12-28,2025,12,pumpkin spice,6
+2026-01-04,2026,1,pumpkin spice,4
+2026-01-11,2026,1,pumpkin spice,5
+2026-01-18,2026,1,pumpkin spice,4
+2026-01-25,2026,1,pumpkin spice,5
+2026-02-01,2026,2,pumpkin spice,5
+2026-02-08,2026,2,pumpkin spice,4
+2026-02-15,2026,2,pumpkin spice,5
+2026-02-22,2026,2,pumpkin spice,5
+2026-03-01,2026,3,pumpkin spice,4
+2026-03-08,2026,3,pumpkin spice,3
+2026-03-15,2026,3,pumpkin spice,4
+2026-03-22,2026,3,pumpkin spice,2
+2026-03-29,2026,3,pumpkin spice,4
+2026-04-05,2026,4,pumpkin spice,3
+2026-04-12,2026,4,pumpkin spice,3
+2026-04-19,2026,4,pumpkin spice,3
+2026-04-26,2026,4,pumpkin spice,3
+2026-05-03,2026,5,pumpkin spice,3
+2026-05-10,2026,5,pumpkin spice,2
+2026-05-17,2026,5,pumpkin spice,3
+2026-05-24,2026,5,pumpkin spice,3
+2026-05-31,2026,5,pumpkin spice,2
+2026-06-07,2026,6,pumpkin spice,2
+2026-06-14,2026,6,pumpkin spice,2
+2026-06-21,2026,6,pumpkin spice,3
+2026-06-28,2026,6,pumpkin spice,3
+2026-07-05,2026,7,pumpkin spice,4
+2026-07-12,2026,7,pumpkin spice,3
+2026-07-19,2026,7,pumpkin spice,6
+2026-07-26,2026,7,pumpkin spice,8
+2026-08-02,2026,8,pumpkin spice,12
+2026-08-09,2026,8,pumpkin spice,15
+2026-08-16,2026,8,pumpkin spice,32
+2026-08-23,2026,8,pumpkin spice,64
+2026-08-30,2026,8,pumpkin spice,54
+2026-09-06,2026,9,pumpkin spice,53
+2026-09-13,2026,9,pumpkin spice,55
+2026-09-20,2026,9,pumpkin spice,64
+2026-09-27,2026,9,pumpkin spice,72
+2026-10-04,2026,10,pumpkin spice,82
+2026-10-11,2026,10,pumpkin spice,63
+2026-10-18,2026,10,pumpkin spice,45
+2026-10-25,2026,10,pumpkin spice,38
+2021-10-24,2021,10,snow tires,40
+2021-10-31,2021,10,snow tires,47
+2021-11-07,2021,11,snow tires,46
+2021-11-14,2021,11,snow tires,49
+2021-11-21,2021,11,snow tires,42
+2021-11-28,2021,11,snow tires,46
+2021-12-05,2021,12,snow tires,38
+2021-12-12,2021,12,snow tires,27
+2021-12-19,2021,12,snow tires,29
+2021-12-26,2021,12,snow tires,35
+2022-01-02,2022,1,snow tires,31
+2022-01-09,2022,1,snow tires,16
+2022-01-16,2022,1,snow tires,21
+2022-01-23,2022,1,snow tires,16
+2022-01-30,2022,1,snow tires,18
+2022-02-06,2022,2,snow tires,12
+2022-02-13,2022,2,snow tires,10
+2022-02-20,2022,2,snow tires,13
+2022-02-27,2022,2,snow tires,12
+2022-03-06,2022,3,snow tires,10
+2022-03-13,2022,3,snow tires,11
+2022-03-20,2022,3,snow tires,12
+2022-03-27,2022,3,snow tires,10
+2022-04-03,2022,4,snow tires,9
+2022-04-10,2022,4,snow tires,11
+2022-04-17,2022,4,snow tires,9
+2022-04-24,2022,4,snow tires,5
+2022-05-01,2022,5,snow tires,7
+2022-05-08,2022,5,snow tires,6
+2022-05-15,2022,5,snow tires,5
+2022-05-22,2022,5,snow tires,4
+2022-05-29,2022,5,snow tires,4
+2022-06-05,2022,6,snow tires,5
+2022-06-12,2022,6,snow tires,4
+2022-06-19,2022,6,snow tires,4
+2022-06-26,2022,6,snow tires,4
+2022-07-03,2022,7,snow tires,6
+2022-07-10,2022,7,snow tires,5
+2022-07-17,2022,7,snow tires,6
+2022-07-24,2022,7,snow tires,6
+2022-07-31,2022,7,snow tires,6
+2022-08-07,2022,8,snow tires,7
+2022-08-14,2022,8,snow tires,8
+2022-08-21,2022,8,snow tires,9
+2022-08-28,2022,8,snow tires,14
+2022-09-04,2022,9,snow tires,17
+2022-09-11,2022,9,snow tires,19
+2022-09-18,2022,9,snow tires,21
+2022-09-25,2022,9,snow tires,26
+2022-10-02,2022,10,snow tires,30
+2022-10-09,2022,10,snow tires,34
+2022-10-16,2022,10,snow tires,40
+2022-10-23,2022,10,snow tires,39
+2022-10-30,2022,10,snow tires,49
+2022-11-06,2022,11,snow tires,57
+2022-11-13,2022,11,snow tires,73
+2022-11-20,2022,11,snow tires,41
+2022-11-27,2022,11,snow tires,61
+2022-12-04,2022,12,snow tires,29
+2022-12-11,2022,12,snow tires,37
+2022-12-18,2022,12,snow tires,60
+2022-12-25,2022,12,snow tires,27
+2023-01-01,2023,1,snow tires,16
+2023-01-08,2023,1,snow tires,12
+2023-01-15,2023,1,snow tires,13
+2023-01-22,2023,1,snow tires,17
+2023-01-29,2023,1,snow tires,16
+2023-02-05,2023,2,snow tires,9
+2023-02-12,2023,2,snow tires,10
+2023-02-19,2023,2,snow tires,13
+2023-02-26,2023,2,snow tires,17
+2023-03-05,2023,3,snow tires,11
+2023-03-12,2023,3,snow tires,12
+2023-03-19,2023,3,snow tires,12
+2023-03-26,2023,3,snow tires,10
+2023-04-02,2023,4,snow tires,11
+2023-04-09,2023,4,snow tires,12
+2023-04-16,2023,4,snow tires,8
+2023-04-23,2023,4,snow tires,8
+2023-04-30,2023,4,snow tires,7
+2023-05-07,2023,5,snow tires,7
+2023-05-14,2023,5,snow tires,5
+2023-05-21,2023,5,snow tires,5
+2023-05-28,2023,5,snow tires,4
+2023-06-04,2023,6,snow tires,3
+2023-06-11,2023,6,snow tires,7
+2023-06-18,2023,6,snow tires,4
+2023-06-25,2023,6,snow tires,5
+2023-07-02,2023,7,snow tires,4
+2023-07-09,2023,7,snow tires,9
+2023-07-16,2023,7,snow tires,6
+2023-07-23,2023,7,snow tires,6
+2023-07-30,2023,7,snow tires,9
+2023-08-06,2023,8,snow tires,8
+2023-08-13,2023,8,snow tires,9
+2023-08-20,2023,8,snow tires,13
+2023-08-27,2023,8,snow tires,15
+2023-09-03,2023,9,snow tires,17
+2023-09-10,2023,9,snow tires,20
+2023-09-17,2023,9,snow tires,26
+2023-09-24,2023,9,snow tires,31
+2023-10-01,2023,10,snow tires,33
+2023-10-08,2023,10,snow tires,36
+2023-10-15,2023,10,snow tires,42
+2023-10-22,2023,10,snow tires,62
+2023-10-29,2023,10,snow tires,61
+2023-11-05,2023,11,snow tires,47
+2023-11-12,2023,11,snow tires,37
+2023-11-19,2023,11,snow tires,32
+2023-11-26,2023,11,snow tires,41
+2023-12-03,2023,12,snow tires,30
+2023-12-10,2023,12,snow tires,24
+2023-12-17,2023,12,snow tires,21
+2023-12-24,2023,12,snow tires,14
+2023-12-31,2023,12,snow tires,14
+2024-01-07,2024,1,snow tires,35
+2024-01-14,2024,1,snow tires,36
+2024-01-21,2024,1,snow tires,15
+2024-01-28,2024,1,snow tires,10
+2024-02-04,2024,2,snow tires,10
+2024-02-11,2024,2,snow tires,11
+2024-02-18,2024,2,snow tires,11
+2024-02-25,2024,2,snow tires,9
+2024-03-03,2024,3,snow tires,15
+2024-03-10,2024,3,snow tires,9
+2024-03-17,2024,3,snow tires,11
+2024-03-24,2024,3,snow tires,10
+2024-03-31,2024,3,snow tires,12
+2024-04-07,2024,4,snow tires,8
+2024-04-14,2024,4,snow tires,6
+2024-04-21,2024,4,snow tires,6
+2024-04-28,2024,4,snow tires,6
+2024-05-05,2024,5,snow tires,5
+2024-05-12,2024,5,snow tires,6
+2024-05-19,2024,5,snow tires,5
+2024-05-26,2024,5,snow tires,5
+2024-06-02,2024,6,snow tires,4
+2024-06-09,2024,6,snow tires,5
+2024-06-16,2024,6,snow tires,4
+2024-06-23,2024,6,snow tires,4
+2024-06-30,2024,6,snow tires,5
+2024-07-07,2024,7,snow tires,5
+2024-07-14,2024,7,snow tires,3
+2024-07-21,2024,7,snow tires,7
+2024-07-28,2024,7,snow tires,8
+2024-08-04,2024,8,snow tires,6
+2024-08-11,2024,8,snow tires,11
+2024-08-18,2024,8,snow tires,13
+2024-08-25,2024,8,snow tires,13
+2024-09-01,2024,9,snow tires,17
+2024-09-08,2024,9,snow tires,21
+2024-09-15,2024,9,snow tires,18
+2024-09-22,2024,9,snow tires,26
+2024-09-29,2024,9,snow tires,35
+2024-10-06,2024,10,snow tires,34
+2024-10-13,2024,10,snow tires,38
+2024-10-20,2024,10,snow tires,37
+2024-10-27,2024,10,snow tires,39
+2024-11-03,2024,11,snow tires,37
+2024-11-10,2024,11,snow tires,37
+2024-11-17,2024,11,snow tires,51
+2024-11-24,2024,11,snow tires,53
+2024-12-01,2024,12,snow tires,60
+2024-12-08,2024,12,snow tires,37
+2024-12-15,2024,12,snow tires,27
+2024-12-22,2024,12,snow tires,23
+2024-12-29,2024,12,snow tires,20
+2025-01-05,2025,1,snow tires,16
+2025-01-12,2025,1,snow tires,14
+2025-01-19,2025,1,snow tires,12
+2025-01-26,2025,1,snow tires,21
+2025-02-02,2025,2,snow tires,27
+2025-02-09,2025,2,snow tires,20
+2025-02-16,2025,2,snow tires,23
+2025-02-23,2025,2,snow tires,10
+2025-03-02,2025,3,snow tires,11
+2025-03-09,2025,3,snow tires,12
+2025-03-16,2025,3,snow tires,11
+2025-03-23,2025,3,snow tires,13
+2025-03-30,2025,3,snow tires,11
+2025-04-06,2025,4,snow tires,12
+2025-04-13,2025,4,snow tires,8
+2025-04-20,2025,4,snow tires,8
+2025-04-27,2025,4,snow tires,6
+2025-05-04,2025,5,snow tires,5
+2025-05-11,2025,5,snow tires,5
+2025-05-18,2025,5,snow tires,6
+2025-05-25,2025,5,snow tires,6
+2025-06-01,2025,6,snow tires,5
+2025-06-08,2025,6,snow tires,5
+2025-06-15,2025,6,snow tires,6
+2025-06-22,2025,6,snow tires,6
+2025-06-29,2025,6,snow tires,7
+2025-07-06,2025,7,snow tires,7
+2025-07-13,2025,7,snow tires,6
+2025-07-20,2025,7,snow tires,8
+2025-07-27,2025,7,snow tires,9
+2025-08-03,2025,8,snow tires,8
+2025-08-10,2025,8,snow tires,8
+2025-08-17,2025,8,snow tires,10
+2025-08-24,2025,8,snow tires,14
+2025-08-31,2025,8,snow tires,17
+2025-09-07,2025,9,snow tires,21
+2025-09-14,2025,9,snow tires,20
+2025-09-21,2025,9,snow tires,27
+2025-09-28,2025,9,snow tires,32
+2025-10-05,2025,10,snow tires,33
+2025-10-12,2025,10,snow tires,44
+2025-10-19,2025,10,snow tires,41
+2025-10-26,2025,10,snow tires,45
+2025-11-02,2025,11,snow tires,60
+2025-11-09,2025,11,snow tires,100
+2025-11-16,2025,11,snow tires,45
+2025-11-23,2025,11,snow tires,53
+2025-11-30,2025,11,snow tires,52
+2025-12-07,2025,12,snow tires,47
+2025-12-14,2025,12,snow tires,34
+2025-12-21,2025,12,snow tires,30
+2025-12-28,2025,12,snow tires,33
+2026-01-04,2026,1,snow tires,28
+2026-01-11,2026,1,snow tires,24
+2026-01-18,2026,1,snow tires,25
+2026-01-25,2026,1,snow tires,23
+2026-02-01,2026,2,snow tires,14
+2026-02-08,2026,2,snow tires,15
+2026-02-15,2026,2,snow tires,15
+2026-02-22,2026,2,snow tires,17
+2026-03-01,2026,3,snow tires,15
+2026-03-08,2026,3,snow tires,16
+2026-03-15,2026,3,snow tires,14
+2026-03-22,2026,3,snow tires,13
+2026-03-29,2026,3,snow tires,17
+2026-04-05,2026,4,snow tires,13
+2026-04-12,2026,4,snow tires,12
+2026-04-19,2026,4,snow tires,12
+2026-04-26,2026,4,snow tires,9
+2026-05-03,2026,5,snow tires,8
+2026-05-10,2026,5,snow tires,6
+2026-05-17,2026,5,snow tires,8
+2026-05-24,2026,5,snow tires,9
+2026-05-31,2026,5,snow tires,8
+2026-06-07,2026,6,snow tires,6
+2026-06-14,2026,6,snow tires,5
+2026-06-21,2026,6,snow tires,6
+2026-06-28,2026,6,snow tires,7
+2026-07-05,2026,7,snow tires,7
+2026-07-12,2026,7,snow tires,8
+2026-07-19,2026,7,snow tires,10
+2026-07-26,2026,7,snow tires,9
+2026-08-02,2026,8,snow tires,10
+2026-08-09,2026,8,snow tires,12
+2026-08-16,2026,8,snow tires,15
+2026-08-23,2026,8,snow tires,16
+2026-08-30,2026,8,snow tires,18
+2026-09-06,2026,9,snow tires,21
+2026-09-13,2026,9,snow tires,22
+2026-09-20,2026,9,snow tires,31
+2026-09-27,2026,9,snow tires,36
+2026-10-04,2026,10,snow tires,39
+2026-10-11,2026,10,snow tires,44
+2026-10-18,2026,10,snow tires,41
+2026-10-25,2026,10,snow tires,51
+2021-10-24,2021,10,sunscreen,9
+2021-10-31,2021,10,sunscreen,10
+2021-11-07,2021,11,sunscreen,12
+2021-11-14,2021,11,sunscreen,11
+2021-11-21,2021,11,sunscreen,11
+2021-11-28,2021,11,sunscreen,11
+2021-12-05,2021,12,sunscreen,9
+2021-12-12,2021,12,sunscreen,9
+2021-12-19,2021,12,sunscreen,8
+2021-12-26,2021,12,sunscreen,10
+2022-01-02,2022,1,sunscreen,13
+2022-01-09,2022,1,sunscreen,14
+2022-01-16,2022,1,sunscreen,14
+2022-01-23,2022,1,sunscreen,17
+2022-01-30,2022,1,sunscreen,16
+2022-02-06,2022,2,sunscreen,18
+2022-02-13,2022,2,sunscreen,20
+2022-02-20,2022,2,sunscreen,23
+2022-02-27,2022,2,sunscreen,23
+2022-03-06,2022,3,sunscreen,27
+2022-03-13,2022,3,sunscreen,28
+2022-03-20,2022,3,sunscreen,30
+2022-03-27,2022,3,sunscreen,33
+2022-04-03,2022,4,sunscreen,36
+2022-04-10,2022,4,sunscreen,37
+2022-04-17,2022,4,sunscreen,36
+2022-04-24,2022,4,sunscreen,46
+2022-05-01,2022,5,sunscreen,47
+2022-05-08,2022,5,sunscreen,88
+2022-05-15,2022,5,sunscreen,57
+2022-05-22,2022,5,sunscreen,56
+2022-05-29,2022,5,sunscreen,65
+2022-06-05,2022,6,sunscreen,50
+2022-06-12,2022,6,sunscreen,48
+2022-06-19,2022,6,sunscreen,57
+2022-06-26,2022,6,sunscreen,58
+2022-07-03,2022,7,sunscreen,54
+2022-07-10,2022,7,sunscreen,58
+2022-07-17,2022,7,sunscreen,52
+2022-07-24,2022,7,sunscreen,51
+2022-07-31,2022,7,sunscreen,49
+2022-08-07,2022,8,sunscreen,39
+2022-08-14,2022,8,sunscreen,39
+2022-08-21,2022,8,sunscreen,31
+2022-08-28,2022,8,sunscreen,28
+2022-09-04,2022,9,sunscreen,25
+2022-09-11,2022,9,sunscreen,21
+2022-09-18,2022,9,sunscreen,19
+2022-09-25,2022,9,sunscreen,18
+2022-10-02,2022,10,sunscreen,18
+2022-10-09,2022,10,sunscreen,17
+2022-10-16,2022,10,sunscreen,17
+2022-10-23,2022,10,sunscreen,16
+2022-10-30,2022,10,sunscreen,17
+2022-11-06,2022,11,sunscreen,18
+2022-11-13,2022,11,sunscreen,17
+2022-11-20,2022,11,sunscreen,18
+2022-11-27,2022,11,sunscreen,17
+2022-12-04,2022,12,sunscreen,16
+2022-12-11,2022,12,sunscreen,15
+2022-12-18,2022,12,sunscreen,16
+2022-12-25,2022,12,sunscreen,21
+2023-01-01,2023,1,sunscreen,22
+2023-01-08,2023,1,sunscreen,25
+2023-01-15,2023,1,sunscreen,24
+2023-01-22,2023,1,sunscreen,24
+2023-01-29,2023,1,sunscreen,25
+2023-02-05,2023,2,sunscreen,25
+2023-02-12,2023,2,sunscreen,28
+2023-02-19,2023,2,sunscreen,32
+2023-02-26,2023,2,sunscreen,31
+2023-03-05,2023,3,sunscreen,33
+2023-03-12,2023,3,sunscreen,37
+2023-03-19,2023,3,sunscreen,39
+2023-03-26,2023,3,sunscreen,41
+2023-04-02,2023,4,sunscreen,40
+2023-04-09,2023,4,sunscreen,70
+2023-04-16,2023,4,sunscreen,56
+2023-04-23,2023,4,sunscreen,54
+2023-04-30,2023,4,sunscreen,58
+2023-05-07,2023,5,sunscreen,73
+2023-05-14,2023,5,sunscreen,78
+2023-05-21,2023,5,sunscreen,67
+2023-05-28,2023,5,sunscreen,93
+2023-06-04,2023,6,sunscreen,61
+2023-06-11,2023,6,sunscreen,51
+2023-06-18,2023,6,sunscreen,56
+2023-06-25,2023,6,sunscreen,54
+2023-07-02,2023,7,sunscreen,61
+2023-07-09,2023,7,sunscreen,62
+2023-07-16,2023,7,sunscreen,52
+2023-07-23,2023,7,sunscreen,50
+2023-07-30,2023,7,sunscreen,51
+2023-08-06,2023,8,sunscreen,40
+2023-08-13,2023,8,sunscreen,40
+2023-08-20,2023,8,sunscreen,33
+2023-08-27,2023,8,sunscreen,31
+2023-09-03,2023,9,sunscreen,31
+2023-09-10,2023,9,sunscreen,24
+2023-09-17,2023,9,sunscreen,24
+2023-09-24,2023,9,sunscreen,20
+2023-10-01,2023,10,sunscreen,20
+2023-10-08,2023,10,sunscreen,20
+2023-10-15,2023,10,sunscreen,19
+2023-10-22,2023,10,sunscreen,19
+2023-10-29,2023,10,sunscreen,17
+2023-11-05,2023,11,sunscreen,20
+2023-11-12,2023,11,sunscreen,19
+2023-11-19,2023,11,sunscreen,22
+2023-11-26,2023,11,sunscreen,20
+2023-12-03,2023,12,sunscreen,20
+2023-12-10,2023,12,sunscreen,20
+2023-12-17,2023,12,sunscreen,22
+2023-12-24,2023,12,sunscreen,23
+2023-12-31,2023,12,sunscreen,26
+2024-01-07,2024,1,sunscreen,26
+2024-01-14,2024,1,sunscreen,25
+2024-01-21,2024,1,sunscreen,29
+2024-01-28,2024,1,sunscreen,28
+2024-02-04,2024,2,sunscreen,30
+2024-02-11,2024,2,sunscreen,30
+2024-02-18,2024,2,sunscreen,36
+2024-02-25,2024,2,sunscreen,35
+2024-03-03,2024,3,sunscreen,39
+2024-03-10,2024,3,sunscreen,41
+2024-03-17,2024,3,sunscreen,43
+2024-03-24,2024,3,sunscreen,43
+2024-03-31,2024,3,sunscreen,46
+2024-04-07,2024,4,sunscreen,54
+2024-04-14,2024,4,sunscreen,53
+2024-04-21,2024,4,sunscreen,59
+2024-04-28,2024,4,sunscreen,54
+2024-05-05,2024,5,sunscreen,62
+2024-05-12,2024,5,sunscreen,65
+2024-05-19,2024,5,sunscreen,87
+2024-05-26,2024,5,sunscreen,71
+2024-06-02,2024,6,sunscreen,68
+2024-06-09,2024,6,sunscreen,63
+2024-06-16,2024,6,sunscreen,71
+2024-06-23,2024,6,sunscreen,63
+2024-06-30,2024,6,sunscreen,83
+2024-07-07,2024,7,sunscreen,78
+2024-07-14,2024,7,sunscreen,68
+2024-07-21,2024,7,sunscreen,60
+2024-07-28,2024,7,sunscreen,54
+2024-08-04,2024,8,sunscreen,44
+2024-08-11,2024,8,sunscreen,42
+2024-08-18,2024,8,sunscreen,34
+2024-08-25,2024,8,sunscreen,33
+2024-09-01,2024,9,sunscreen,30
+2024-09-08,2024,9,sunscreen,26
+2024-09-15,2024,9,sunscreen,26
+2024-09-22,2024,9,sunscreen,23
+2024-09-29,2024,9,sunscreen,22
+2024-10-06,2024,10,sunscreen,19
+2024-10-13,2024,10,sunscreen,20
+2024-10-20,2024,10,sunscreen,20
+2024-10-27,2024,10,sunscreen,19
+2024-11-03,2024,11,sunscreen,20
+2024-11-10,2024,11,sunscreen,21
+2024-11-17,2024,11,sunscreen,18
+2024-11-24,2024,11,sunscreen,20
+2024-12-01,2024,12,sunscreen,18
+2024-12-08,2024,12,sunscreen,19
+2024-12-15,2024,12,sunscreen,15
+2024-12-22,2024,12,sunscreen,20
+2024-12-29,2024,12,sunscreen,24
+2025-01-05,2025,1,sunscreen,22
+2025-01-12,2025,1,sunscreen,24
+2025-01-19,2025,1,sunscreen,24
+2025-01-26,2025,1,sunscreen,27
+2025-02-02,2025,2,sunscreen,28
+2025-02-09,2025,2,sunscreen,27
+2025-02-16,2025,2,sunscreen,31
+2025-02-23,2025,2,sunscreen,31
+2025-03-02,2025,3,sunscreen,32
+2025-03-09,2025,3,sunscreen,43
+2025-03-16,2025,3,sunscreen,43
+2025-03-23,2025,3,sunscreen,42
+2025-03-30,2025,3,sunscreen,44
+2025-04-06,2025,4,sunscreen,47
+2025-04-13,2025,4,sunscreen,55
+2025-04-20,2025,4,sunscreen,59
+2025-04-27,2025,4,sunscreen,63
+2025-05-04,2025,5,sunscreen,68
+2025-05-11,2025,5,sunscreen,73
+2025-05-18,2025,5,sunscreen,58
+2025-05-25,2025,5,sunscreen,66
+2025-06-01,2025,6,sunscreen,74
+2025-06-08,2025,6,sunscreen,68
+2025-06-15,2025,6,sunscreen,72
+2025-06-22,2025,6,sunscreen,72
+2025-06-29,2025,6,sunscreen,80
+2025-07-06,2025,7,sunscreen,72
+2025-07-13,2025,7,sunscreen,67
+2025-07-20,2025,7,sunscreen,59
+2025-07-27,2025,7,sunscreen,58
+2025-08-03,2025,8,sunscreen,54
+2025-08-10,2025,8,sunscreen,48
+2025-08-17,2025,8,sunscreen,38
+2025-08-24,2025,8,sunscreen,37
+2025-08-31,2025,8,sunscreen,32
+2025-09-07,2025,9,sunscreen,24
+2025-09-14,2025,9,sunscreen,25
+2025-09-21,2025,9,sunscreen,21
+2025-09-28,2025,9,sunscreen,23
+2025-10-05,2025,10,sunscreen,23
+2025-10-12,2025,10,sunscreen,21
+2025-10-19,2025,10,sunscreen,20
+2025-10-26,2025,10,sunscreen,21
+2025-11-02,2025,11,sunscreen,26
+2025-11-09,2025,11,sunscreen,28
+2025-11-16,2025,11,sunscreen,27
+2025-11-23,2025,11,sunscreen,29
+2025-11-30,2025,11,sunscreen,29
+2025-12-07,2025,12,sunscreen,28
+2025-12-14,2025,12,sunscreen,27
+2025-12-21,2025,12,sunscreen,24
+2025-12-28,2025,12,sunscreen,30
+2026-01-04,2026,1,sunscreen,33
+2026-01-11,2026,1,sunscreen,37
+2026-01-18,2026,1,sunscreen,37
+2026-01-25,2026,1,sunscreen,38
+2026-02-01,2026,2,sunscreen,44
+2026-02-08,2026,2,sunscreen,43
+2026-02-15,2026,2,sunscreen,47
+2026-02-22,2026,2,sunscreen,42
+2026-03-01,2026,3,sunscreen,44
+2026-03-08,2026,3,sunscreen,51
+2026-03-15,2026,3,sunscreen,57
+2026-03-22,2026,3,sunscreen,50
+2026-03-29,2026,3,sunscreen,53
+2026-04-05,2026,4,sunscreen,57
+2026-04-12,2026,4,sunscreen,58
+2026-04-19,2026,4,sunscreen,75
+2026-04-26,2026,4,sunscreen,73
+2026-05-03,2026,5,sunscreen,66
+2026-05-10,2026,5,sunscreen,64
+2026-05-17,2026,5,sunscreen,100
+2026-05-24,2026,5,sunscreen,94
+2026-05-31,2026,5,sunscreen,100
+2026-06-07,2026,6,sunscreen,88
+2026-06-14,2026,6,sunscreen,78
+2026-06-21,2026,6,sunscreen,95
+2026-06-28,2026,6,sunscreen,89
+2026-07-05,2026,7,sunscreen,90
+2026-07-12,2026,7,sunscreen,79
+2026-07-19,2026,7,sunscreen,61
+2026-07-26,2026,7,sunscreen,64
+2026-08-02,2026,8,sunscreen,58
+2026-08-09,2026,8,sunscreen,51
+2026-08-16,2026,8,sunscreen,51
+2026-08-23,2026,8,sunscreen,37
+2026-08-30,2026,8,sunscreen,37
+2026-09-06,2026,9,sunscreen,36
+2026-09-13,2026,9,sunscreen,32
+2026-09-20,2026,9,sunscreen,27
+2026-09-27,2026,9,sunscreen,26
+2026-10-04,2026,10,sunscreen,26
+2026-10-11,2026,10,sunscreen,24
+2026-10-18,2026,10,sunscreen,26
+2026-10-25,2026,10,sunscreen,24
+2021-10-24,2021,10,valentines day,1
+2021-10-31,2021,10,valentines day,1
+2021-11-07,2021,11,valentines day,1
+2021-11-14,2021,11,valentines day,1
+2021-11-21,2021,11,valentines day,1
+2021-11-28,2021,11,valentines day,1
+2021-12-05,2021,12,valentines day,1
+2021-12-12,2021,12,valentines day,1
+2021-12-19,2021,12,valentines day,1
+2021-12-26,2021,12,valentines day,2
+2022-01-02,2022,1,valentines day,5
+2022-01-09,2022,1,valentines day,9
+2022-01-16,2022,1,valentines day,13
+2022-01-23,2022,1,valentines day,18
+2022-01-30,2022,1,valentines day,26
+2022-02-06,2022,2,valentines day,53
+2022-02-13,2022,2,valentines day,87
+2022-02-20,2022,2,valentines day,2
+2022-02-27,2022,2,valentines day,1
+2022-03-06,2022,3,valentines day,1
+2022-03-13,2022,3,valentines day,1
+2022-03-20,2022,3,valentines day,1
+2022-03-27,2022,3,valentines day,1
+2022-04-03,2022,4,valentines day,1
+2022-04-10,2022,4,valentines day,1
+2022-04-17,2022,4,valentines day,1
+2022-04-24,2022,4,valentines day,1
+2022-05-01,2022,5,valentines day,1
+2022-05-08,2022,5,valentines day,1
+2022-05-15,2022,5,valentines day,0
+2022-05-22,2022,5,valentines day,1
+2022-05-29,2022,5,valentines day,1
+2022-06-05,2022,6,valentines day,1
+2022-06-12,2022,6,valentines day,0
+2022-06-19,2022,6,valentines day,0
+2022-06-26,2022,6,valentines day,0
+2022-07-03,2022,7,valentines day,0
+2022-07-10,2022,7,valentines day,0
+2022-07-17,2022,7,valentines day,0
+2022-07-24,2022,7,valentines day,1
+2022-07-31,2022,7,valentines day,1
+2022-08-07,2022,8,valentines day,0
+2022-08-14,2022,8,valentines day,0
+2022-08-21,2022,8,valentines day,0
+2022-08-28,2022,8,valentines day,1
+2022-09-04,2022,9,valentines day,0
+2022-09-11,2022,9,valentines day,0
+2022-09-18,2022,9,valentines day,0
+2022-09-25,2022,9,valentines day,1
+2022-10-02,2022,10,valentines day,1
+2022-10-09,2022,10,valentines day,1
+2022-10-16,2022,10,valentines day,1
+2022-10-23,2022,10,valentines day,1
+2022-10-30,2022,10,valentines day,1
+2022-11-06,2022,11,valentines day,1
+2022-11-13,2022,11,valentines day,1
+2022-11-20,2022,11,valentines day,1
+2022-11-27,2022,11,valentines day,1
+2022-12-04,2022,12,valentines day,1
+2022-12-11,2022,12,valentines day,1
+2022-12-18,2022,12,valentines day,1
+2022-12-25,2022,12,valentines day,2
+2023-01-01,2023,1,valentines day,4
+2023-01-08,2023,1,valentines day,8
+2023-01-15,2023,1,valentines day,12
+2023-01-22,2023,1,valentines day,15
+2023-01-29,2023,1,valentines day,24
+2023-02-05,2023,2,valentines day,39
+2023-02-12,2023,2,valentines day,95
+2023-02-19,2023,2,valentines day,2
+2023-02-26,2023,2,valentines day,1
+2023-03-05,2023,3,valentines day,1
+2023-03-12,2023,3,valentines day,1
+2023-03-19,2023,3,valentines day,1
+2023-03-26,2023,3,valentines day,1
+2023-04-02,2023,4,valentines day,1
+2023-04-09,2023,4,valentines day,1
+2023-04-16,2023,4,valentines day,1
+2023-04-23,2023,4,valentines day,1
+2023-04-30,2023,4,valentines day,1
+2023-05-07,2023,5,valentines day,1
+2023-05-14,2023,5,valentines day,1
+2023-05-21,2023,5,valentines day,1
+2023-05-28,2023,5,valentines day,1
+2023-06-04,2023,6,valentines day,1
+2023-06-11,2023,6,valentines day,1
+2023-06-18,2023,6,valentines day,1
+2023-06-25,2023,6,valentines day,1
+2023-07-02,2023,7,valentines day,0
+2023-07-09,2023,7,valentines day,1
+2023-07-16,2023,7,valentines day,0
+2023-07-23,2023,7,valentines day,1
+2023-07-30,2023,7,valentines day,0
+2023-08-06,2023,8,valentines day,0
+2023-08-13,2023,8,valentines day,1
+2023-08-20,2023,8,valentines day,1
+2023-08-27,2023,8,valentines day,0
+2023-09-03,2023,9,valentines day,1
+2023-09-10,2023,9,valentines day,0
+2023-09-17,2023,9,valentines day,1
+2023-09-24,2023,9,valentines day,1
+2023-10-01,2023,10,valentines day,1
+2023-10-08,2023,10,valentines day,1
+2023-10-15,2023,10,valentines day,1
+2023-10-22,2023,10,valentines day,1
+2023-10-29,2023,10,valentines day,1
+2023-11-05,2023,11,valentines day,1
+2023-11-12,2023,11,valentines day,1
+2023-11-19,2023,11,valentines day,1
+2023-11-26,2023,11,valentines day,1
+2023-12-03,2023,12,valentines day,1
+2023-12-10,2023,12,valentines day,1
+2023-12-17,2023,12,valentines day,1
+2023-12-24,2023,12,valentines day,2
+2023-12-31,2023,12,valentines day,5
+2024-01-07,2024,1,valentines day,8
+2024-01-14,2024,1,valentines day,11
+2024-01-21,2024,1,valentines day,15
+2024-01-28,2024,1,valentines day,22
+2024-02-04,2024,2,valentines day,33
+2024-02-11,2024,2,valentines day,93
+2024-02-18,2024,2,valentines day,3
+2024-02-25,2024,2,valentines day,1
+2024-03-03,2024,3,valentines day,1
+2024-03-10,2024,3,valentines day,1
+2024-03-17,2024,3,valentines day,1
+2024-03-24,2024,3,valentines day,1
+2024-03-31,2024,3,valentines day,1
+2024-04-07,2024,4,valentines day,1
+2024-04-14,2024,4,valentines day,1
+2024-04-21,2024,4,valentines day,0
+2024-04-28,2024,4,valentines day,0
+2024-05-05,2024,5,valentines day,0
+2024-05-12,2024,5,valentines day,0
+2024-05-19,2024,5,valentines day,0
+2024-05-26,2024,5,valentines day,0
+2024-06-02,2024,6,valentines day,0
+2024-06-09,2024,6,valentines day,0
+2024-06-16,2024,6,valentines day,0
+2024-06-23,2024,6,valentines day,0
+2024-06-30,2024,6,valentines day,0
+2024-07-07,2024,7,valentines day,0
+2024-07-14,2024,7,valentines day,0
+2024-07-21,2024,7,valentines day,0
+2024-07-28,2024,7,valentines day,0
+2024-08-04,2024,8,valentines day,1
+2024-08-11,2024,8,valentines day,1
+2024-08-18,2024,8,valentines day,1
+2024-08-25,2024,8,valentines day,0
+2024-09-01,2024,9,valentines day,1
+2024-09-08,2024,9,valentines day,0
+2024-09-15,2024,9,valentines day,1
+2024-09-22,2024,9,valentines day,1
+2024-09-29,2024,9,valentines day,1
+2024-10-06,2024,10,valentines day,1
+2024-10-13,2024,10,valentines day,1
+2024-10-20,2024,10,valentines day,1
+2024-10-27,2024,10,valentines day,1
+2024-11-03,2024,11,valentines day,1
+2024-11-10,2024,11,valentines day,1
+2024-11-17,2024,11,valentines day,1
+2024-11-24,2024,11,valentines day,1
+2024-12-01,2024,12,valentines day,1
+2024-12-08,2024,12,valentines day,1
+2024-12-15,2024,12,valentines day,1
+2024-12-22,2024,12,valentines day,2
+2024-12-29,2024,12,valentines day,4
+2025-01-05,2025,1,valentines day,8
+2025-01-12,2025,1,valentines day,11
+2025-01-19,2025,1,valentines day,14
+2025-01-26,2025,1,valentines day,21
+2025-02-02,2025,2,valentines day,32
+2025-02-09,2025,2,valentines day,94
+2025-02-16,2025,2,valentines day,5
+2025-02-23,2025,2,valentines day,2
+2025-03-02,2025,3,valentines day,1
+2025-03-09,2025,3,valentines day,1
+2025-03-16,2025,3,valentines day,1
+2025-03-23,2025,3,valentines day,0
+2025-03-30,2025,3,valentines day,1
+2025-04-06,2025,4,valentines day,0
+2025-04-13,2025,4,valentines day,0
+2025-04-20,2025,4,valentines day,1
+2025-04-27,2025,4,valentines day,0
+2025-05-04,2025,5,valentines day,1
+2025-05-11,2025,5,valentines day,0
+2025-05-18,2025,5,valentines day,0
+2025-05-25,2025,5,valentines day,0
+2025-06-01,2025,6,valentines day,0
+2025-06-08,2025,6,valentines day,1
+2025-06-15,2025,6,valentines day,0
+2025-06-22,2025,6,valentines day,0
+2025-06-29,2025,6,valentines day,1
+2025-07-06,2025,7,valentines day,0
+2025-07-13,2025,7,valentines day,0
+2025-07-20,2025,7,valentines day,1
+2025-07-27,2025,7,valentines day,0
+2025-08-03,2025,8,valentines day,0
+2025-08-10,2025,8,valentines day,0
+2025-08-17,2025,8,valentines day,0
+2025-08-24,2025,8,valentines day,1
+2025-08-31,2025,8,valentines day,1
+2025-09-07,2025,9,valentines day,0
+2025-09-14,2025,9,valentines day,1
+2025-09-21,2025,9,valentines day,0
+2025-09-28,2025,9,valentines day,0
+2025-10-05,2025,10,valentines day,1
+2025-10-12,2025,10,valentines day,0
+2025-10-19,2025,10,valentines day,0
+2025-10-26,2025,10,valentines day,0
+2025-11-02,2025,11,valentines day,1
+2025-11-09,2025,11,valentines day,1
+2025-11-16,2025,11,valentines day,1
+2025-11-23,2025,11,valentines day,1
+2025-11-30,2025,11,valentines day,1
+2025-12-07,2025,12,valentines day,1
+2025-12-14,2025,12,valentines day,1
+2025-12-21,2025,12,valentines day,1
+2025-12-28,2025,12,valentines day,3
+2026-01-04,2026,1,valentines day,8
+2026-01-11,2026,1,valentines day,11
+2026-01-18,2026,1,valentines day,14
+2026-01-25,2026,1,valentines day,21
+2026-02-01,2026,2,valentines day,32
+2026-02-08,2026,2,valentines day,100
+2026-02-15,2026,2,valentines day,15
+2026-02-22,2026,2,valentines day,2
+2026-03-01,2026,3,valentines day,1
+2026-03-08,2026,3,valentines day,1
+2026-03-15,2026,3,valentines day,1
+2026-03-22,2026,3,valentines day,1
+2026-03-29,2026,3,valentines day,1
+2026-04-05,2026,4,valentines day,1
+2026-04-12,2026,4,valentines day,1
+2026-04-19,2026,4,valentines day,0
+2026-04-26,2026,4,valentines day,1
+2026-05-03,2026,5,valentines day,1
+2026-05-10,2026,5,valentines day,1
+2026-05-17,2026,5,valentines day,1
+2026-05-24,2026,5,valentines day,1
+2026-05-31,2026,5,valentines day,0
+2026-06-07,2026,6,valentines day,1
+2026-06-14,2026,6,valentines day,1
+2026-06-21,2026,6,valentines day,1
+2026-06-28,2026,6,valentines day,1
+2026-07-05,2026,7,valentines day,1
+2026-07-12,2026,7,valentines day,1
+2026-07-19,2026,7,valentines day,1
+2026-07-26,2026,7,valentines day,0
+2026-08-02,2026,8,valentines day,0
+2026-08-09,2026,8,valentines day,1
+2026-08-16,2026,8,valentines day,1
+2026-08-23,2026,8,valentines day,0
+2026-08-30,2026,8,valentines day,0
+2026-09-06,2026,9,valentines day,1
+2026-09-13,2026,9,valentines day,1
+2026-09-20,2026,9,valentines day,1
+2026-09-27,2026,9,valentines day,1
+2026-10-04,2026,10,valentines day,1
+2026-10-11,2026,10,valentines day,1
+2026-10-18,2026,10,valentines day,1
+2026-10-25,2026,10,valentines day,1
