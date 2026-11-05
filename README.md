@@ -1,49 +1,22 @@
-# Day 3 · The Haunted Snack Bar and the Seasonal Workbook 🎃
+# Day 4 · Build an AI assistant, test it, pitch it
 
-**Sobey High School Co-Op · Business Analytics & AI · Friday, October 30, 2026**
+**Sobey High School Co-Op · Business Analytics & AI · Friday, November 6, 2026 · the final class**
 
-Everything you need for today is in this repo. Two ways to get it:
+Everything for today is on the class page: **https://analyticsblackpoint-bot.github.io/sobeys-coop-day3/**
 
-## Fastest: open the notebooks straight in Colab (no upload)
-
-| Notebook | Open it | What it is |
-|---|---|---|
-| **Haunted Snack Bar Notebook** | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/analyticsblackpoint-bot/sobeys-coop-day3/blob/main/notebooks/Haunted%20Snack%20Bar%20Notebook.ipynb) | Notebook 1: eight empty cells you type into with Gavin |
-| **Seasonal Workbook** | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/analyticsblackpoint-bot/sobeys-coop-day3/blob/main/notebooks/Seasonal%20Workbook.ipynb) | Notebook 2: five years of seasonal data, the chart gallery, season maths, your lane |
-
-After it opens: **File → Save a copy in Drive** so your work is yours. Run a cell with **Shift + Enter**. Stuck? **Runtime → Run all**.
-
-Cell 8 of the Haunted Snack Bar needs `Snack Bar Data.csv`. Run this in a new cell first and it appears in the Files panel:
-
-```python
-!wget -q "https://raw.githubusercontent.com/analyticsblackpoint-bot/sobeys-coop-day3/main/data/Snack%20Bar%20Data.csv" -O "Snack Bar Data.csv"
-```
-
-(or download it below and upload it with the 📁 folder icon on the left edge of Colab; it disappears when Colab restarts).
-
-## Or download the files
-
-| File | For |
+| What | Where |
 |---|---|
-| [Day 3 Everything.zip](Day%203%20Everything.zip) | all of the below in one zip |
-| [notebooks/Haunted Snack Bar Notebook.ipynb](notebooks/Haunted%20Snack%20Bar%20Notebook.ipynb) | Notebook 1 (File → Upload notebook in Colab) |
-| [notebooks/Seasonal Workbook.ipynb](notebooks/Seasonal%20Workbook.ipynb) | Notebook 2 (data is built in) |
-| [data/Snack Bar Data.csv](data/Snack%20Bar%20Data.csv) | the 10 most popular Halloween candies, with the snack bar's prices and stock |
-| [data/Seasonal Trends Canada.csv](data/Seasonal%20Trends%20Canada.csv) | 2,096 rows: weekly Google Trends interest for eight lanes, Oct 2021 to Oct 2026 |
-| [data/Halloween Spending.csv](data/Halloween%20Spending.csv) | NRF Halloween spending, 2005 to 2026 |
-| [slides/Day 3 Slides.pdf](slides/Day%203%20Slides.pdf) · [.pptx](slides/Day%203%20Slides.pptx) | the slides |
-| [activity/Activity Brief and Rubric.pdf](activity/Activity%20Brief%20and%20Rubric.pdf) | Pitch the season: your lane, the decision, the three slides, the rubric |
-| [activity/Results Pack.pdf](activity/Results%20Pack.pdf) | every chart and table from the teacher's run, if you fall behind |
-| [activity/Dashboard Skill.md](activity/Dashboard%20Skill.md) | paste into a chatbot with your small table to get an AI-built dashboard |
+| **Prompt Lab**: pick your hat, type a prompt, get a score out of 10 and the skill that fixes each gap | [prompt-lab.html](https://analyticsblackpoint-bot.github.io/sobeys-coop-day3/prompt-lab.html) |
+| **Student pack (zip, 5 MB)**: brief and rubric, build workbook, the five skills and cards, the Snack Bar example, the Prompt Lab for offline use, the slides | [pack/Day4_students_2026-11-06.zip](https://analyticsblackpoint-bot.github.io/sobeys-coop-day3/pack/Day4_students_2026-11-06.zip) |
+| **The worked example**: the Haunted Snack Bar Clearance Helper, from a real run of all five skills | [snack-bar-assistant.html](https://analyticsblackpoint-bot.github.io/sobeys-coop-day3/snack-bar-assistant.html) |
+| **AGI class vote** (the instructor tallies on the projector) | [dashboard.html#vote](https://analyticsblackpoint-bot.github.io/sobeys-coop-day3/dashboard.html#vote) |
+| The five skills as web pages | [skills/README.html](https://analyticsblackpoint-bot.github.io/sobeys-coop-day3/skills/README.html) |
+| The Day 3 data the hats use (practice numbers) | `data/` |
 
-To download a single file on GitHub: click it, then the **Download raw file** button (the ⬇ icon at the top right of the file view).
+**Submit by 12:18:** email your `.html` + a photo of your assistant card (with initials) and your red-team log to the address on the board. Subject line: your team name.
 
-## The activity in one line
-Teams of 2 or 3, one lane each (halloween costume, candy, pumpkin spice, christmas gifts, valentines day, sunscreen, snow tires, back to school). Find the peak week, the stock-up week and the season length; decide the stock date, ad start and markdown date; back it with 2 or 3 charts (at least one box plot, heatmap, histogram or scatter) and one honest limit. Title + 3 slides, emailed by 12:10.
+**The rules, all day:** no real people in anything you generate · nothing explicit · no names, emails or phone numbers in a prompt, a file or a bot · facts with links only ("not found" beats a guess) · the bot never invents. When it doesn't know: *"I'm not sure about that. Please ask [your real contact]."*
 
-## Sources
-- Google Trends: Canada, web search, weekly, "past 5 years", read October 29, 2026. Relative search interest, 0 to 100 per term; not counts, not sales; Canada-wide.
-- NRF Halloween Data Center: the National Retail Federation's annual Halloween consumer survey by Prosper Insights & Analytics, 2005 to 2026. US consumers, US dollars; each year's figure is that September's forecast.
-- Candy ranking: CandyStore.com, most popular Halloween candy 2026 (national top 10). Prices and stock counts are practice numbers.
+Prices, stock and store facts in the examples are practice numbers. Prototype pages made with AI, checked by us; they can be wrong. Nothing you type on these pages is sent anywhere.
 
-No student data is in this repo.
+*Day 3 (Oct 30) materials were replaced by Day 4 on Nov 5, 2026; they remain in this repository's history.*

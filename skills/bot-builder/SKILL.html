@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Bot Builder: one HTML file, your chatbot on a page</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <style>body{max-width:860px;margin:0 auto;padding:24px 16px;font-family:Calibri,Carlito,"Segoe UI",system-ui,sans-serif;font-size:16px;line-height:1.45;color:#2A1A22;background:#F6F2EC}
+h1,h2,h3{font-family:Cambria,Caladea,Georgia,serif;font-weight:normal;color:#612141} pre{background:#fff;border:1px solid #E2D9D3;border-radius:8px;padding:12px;white-space:pre-wrap;font-size:13.5px} code{font-size:13.5px}
+table{border-collapse:collapse;width:100%;font-size:14px} th,td{border:1px solid #D9D3D3;padding:4px 6px;vertical-align:top;text-align:left} th{background:#F4EEF1}
+a{color:#9D2235} .top{font-size:13px;letter-spacing:1px;text-transform:uppercase;color:#9D2235;font-weight:bold}
+</style>
+</head>
+<body>
+<p class="top"><a href="../../index.html">← Day 4 home</a></p>
+<h1 id="bot-builder-one-html-file-your-chatbot-on-a-page">Bot Builder:
+one HTML file, your chatbot on a page</h1>
+<p><em>Sobey HS Co-Op · Day 4 · Build step 4 (Page, 15 min). Works in
+any free chatbot. Output: <code>[your bot name].html</code>.</em></p>
+<h2 id="what-its-for">What it’s for</h2>
+<p>This skill turns your assistant card, system prompt, ✔ facts and
+chart table into <strong>one HTML file</strong> that works offline. The
+page has a chat window with starter buttons, a “brain” of 8 to 10
+topics, a safe fallback, a privacy warning, a chart, and a panel that
+shows how the bot works. No keys, no internet, no library. Open the file
+in any browser and it runs.</p>
+<h2 id="how-to-use-it-students">How to use it (students)</h2>
+<ol type="1">
+<li>Open your chatbot. Copy <strong>everything in the box
+below</strong>, from <code>BEGIN</code> to <code>END</code>.</li>
+<li>Fill in the blanks (delete the square brackets). Paste your system
+prompt v2, your ✔ facts and your chart table where it says. No names of
+people, no personal information.</li>
+<li>Send it once. The reply is one long code block. Copy <strong>all of
+it</strong> (from <code>&lt;!DOCTYPE html&gt;</code> to
+<code>&lt;/html&gt;</code>) into a new text file. Save it as
+<code>[your bot name].html</code>. <strong>Windows tip:</strong> in
+Notepad, set “Save as type” to <strong>All files</strong> so it doesn’t
+become <code>.html.txt</code>. If the reply stopped before
+<code>&lt;/html&gt;</code>, send the first fix-it prompt.</li>
+<li>Open the file in a browser (double-click it). Click every starter
+button. Type an off-topic question. Type a fake email like
+<code>test@example.com</code>. Check the list below.</li>
+<li>Anything wrong? Use a fix-it prompt, then save the new file over the
+old one. Add your logo in the Brand step (build step 5).</li>
+</ol>
+<h2 id="what-you-paste-in-with-the-snack-bar-example">What you paste in
+(with the Snack Bar example)</h2>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Blank</th>
+<th>What to write</th>
+<th>Snack Bar example</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>BOT NAME</td>
+<td>Same as the system prompt</td>
+<td>Haunted Snack Bar Clearance Helper</td>
+</tr>
+<tr class="even">
+<td>EMOJI</td>
+<td>One emoji as a stand-in logo</td>
+<td>🎃</td>
+</tr>
+<tr class="odd">
+<td>TAGLINE</td>
+<td>Under 8 words</td>
+<td>Leftover candy, lower prices, zero guessing.</td>
+</tr>
+<tr class="even">
+<td>WHO IT’S FOR</td>
+<td>One line</td>
+<td>Shoppers after Halloween, and the Snack Bar owner</td>
+</tr>
+<tr class="odd">
+<td>TEAM NAME + DATE</td>
+<td>A team name (no student names) and the date</td>
+<td>Team Demo · Nov 6, 2026</td>
+</tr>
+<tr class="even">
+<td>REAL CONTACT</td>
+<td>Same as the system prompt</td>
+<td>the Snack Bar counter</td>
+</tr>
+<tr class="odd">
+<td>COLOURS</td>
+<td>Two colours, as names or hex codes</td>
+<td>dark purple, gold (or #612141, #EEDC00)</td>
+</tr>
+<tr class="even">
+<td>REFUSE WORDS</td>
+<td>Words about offers your facts do NOT cover</td>
+<td>coupon, refund, 2-for-1, free, guarantee, promise, policy</td>
+</tr>
+<tr class="odd">
+<td>MY SYSTEM PROMPT</td>
+<td>Paste v2</td>
+<td>(the 8-heading prompt from step 3)</td>
+</tr>
+<tr class="even">
+<td>MY ✔ FACTS</td>
+<td>Paste the ✔ rows</td>
+<td>(the 10-row Snack Bar table, “practice numbers”)</td>
+</tr>
+<tr class="odd">
+<td>MY CHART TABLE</td>
+<td>3 to 8 rows: label, number</td>
+<td>Candy, stock: M&amp;M’s 48 · Sour Patch Kids 36 · Skittles 40 ·
+Reese’s Cups 30 · Nerds Gummy Clusters 18 · Starburst 24 · Candy Corn
+60</td>
+</tr>
+<tr class="even">
+<td>WHAT IT MEANS</td>
+<td>One true sentence about the chart</td>
+<td>Candy Corn has the most stock left, so it goes on clearance first.
+(Stock is a practice number.)</td>
+</tr>
+<tr class="odd">
+<td>SOURCE LINE</td>
+<td>Where the table comes from</td>
+<td>Snack Bar Data.csv (rank via CandyStore.com / NBC; prices and stock
+are practice numbers)</td>
+</tr>
+</tbody>
+</table>
+<pre><code>BEGIN BOT BUILDER
+You are a careful front-end developer. Build ONE self-contained HTML page: a rule-based chatbot for the assistant described below.
+
+RULES (follow all of them; do not ask me any questions):
+1. Reply with ONLY one complete HTML file in a single code block, from &lt;!DOCTYPE html&gt; to &lt;/html&gt;. No words before or after it. All CSS and JavaScript go inside the file. No external files, no libraries, no fonts, no images. The page must work offline from a local file. The only links allowed are the source links from my facts, shown under answers.
+2. HEADER: the bot name, my emoji as the logo, the tagline, and &quot;For: &quot; + who it&#39;s for.
+3. CHAT: a scrolling box of chat bubbles (user on the right, bot on the left), a text input, a Send button, and Enter to send. Show three animated &quot;typing&quot; dots for about 600 ms before each bot reply.
+4. STARTER BUTTONS: 3 or 4 buttons above the input with the most useful questions. Clicking one sends that question.
+5. BRAIN: a JavaScript array of 8 to 10 topics. Each topic has three fields: keywords (lowercase words or phrases), answer (1 to 3 sentences, using ONLY my facts), and source (a link or the source line). To reply, count keyword hits in the user&#39;s message and pick the topic with the most hits. Show the source under the answer in small text. Copy every number exactly from my facts. Never add facts, prices, discounts or policies I did not give you.
+6. FALLBACK: reply exactly &quot;I&#39;m not sure about that. Please ask [REAL CONTACT].&quot; when (a) no topic has a keyword hit, or (b) the message contains any of my REFUSE WORDS. Rule (b) wins even if a topic matched. Never guess, never invent a policy.
+7. PRIVACY WARNING: check this first, before the brain. If the user&#39;s message contains an email address or a phone number (match each with a pattern: an email has @ and a dot; a phone number has 7 or more digits with optional spaces, dashes or brackets), reply ONLY: &quot;Please don&#39;t share personal information here, like emails or phone numbers. I don&#39;t store anything, but it&#39;s safer not to.&quot; Do not answer the question.
+8. INSIGHT PANEL beside or below the chat: a heading &quot;What the data says&quot;, ONE bar chart drawn as inline SVG from my chart table (bars start at zero, each bar labelled with its name and its number, no 3D), then the &quot;what it means&quot; line, then &quot;Source: &quot; + my source line.
+9. DRAWER: a button &quot;How this bot works&quot; that opens a panel showing (a) the full system prompt as plain text in a box, (b) the rules and the refuse words as a bulleted list, (c) the sources as a list. The panel starts closed.
+10. FOOTER: exactly this text on one line: &quot;Prototype made with AI, checked by us. It can be wrong.&quot; then my team name and date on the next line.
+11. STYLE: clean and readable on a laptop and a phone; main colour and accent colour from my colours; body text at least 16px; the bot name as an &lt;h1&gt;. Keep the file under 300 lines.
+12. No names of people, no personal information, no tracking, no forms other than the chat input, no cookies, nothing saved to the browser (the chat can stay on screen).
+
+BOT NAME: [name]
+EMOJI: [one emoji]
+TAGLINE: [under 8 words]
+WHO IT&#39;S FOR: [one line]
+TEAM NAME + DATE: [team name, no student names · date]
+REAL CONTACT: [a place or a role, not a person]
+COLOURS: [main colour], [accent colour]
+REFUSE WORDS: [words about offers my facts do not cover, for example coupon, refund, 2-for-1]
+MY SYSTEM PROMPT:
+[paste system_prompt_v2]
+MY ✔ FACTS (copy numbers exactly):
+[paste the ✔ rows]
+MY CHART TABLE (label, number; 3 to 8 rows):
+[paste]
+WHAT IT MEANS: [one true sentence]
+SOURCE LINE: [where the table comes from]
+END BOT BUILDER</code></pre>
+<h2 id="what-you-get-back">What you get back</h2>
+<p>One code block: a complete HTML file. Save it as
+<code>[your bot name].html</code> and open it in a browser.</p>
+<h2 id="how-to-check-it-click-test">How to check it (click test)</h2>
+<ul class="task-list">
+<li><label><input type="checkbox" />The page opens from the file with no
+internet. Header shows the name, emoji, tagline and “For:”.</label></li>
+<li><label><input type="checkbox" />Every starter button gives a real
+answer with a source line under it.</label></li>
+<li><label><input type="checkbox" />Type something off-topic (“What’s
+the weather?”). You get the fallback line with your real contact,
+nothing else.</label></li>
+<li><label><input type="checkbox" />Type <code>test@example.com</code>.
+You get the privacy warning, not an answer.</label></li>
+<li><label><input type="checkbox" />The chart shows your numbers
+exactly; the “what it means” line and the source are under
+it.</label></li>
+<li><label><input type="checkbox" />“How this bot works” opens and shows
+the system prompt, the rules and the sources.</label></li>
+<li><label><input type="checkbox" />Footer says “Prototype made with AI,
+checked by us. It can be wrong.” plus your team name and
+date.</label></li>
+</ul>
+<h2
+id="fix-it-prompts-send-one-line-then-save-the-whole-new-file">Fix-it
+prompts (send one line, then save the whole new file)</h2>
+<ul>
+<li>“The file was cut off. Continue from exactly where you stopped,
+starting with the last line you wrote, until
+</html>
+.”</li>
+<li>“The bot answered a made-up offer. Add these REFUSE WORDS: [words].
+Any message with one of them gets the exact fallback line. Show the full
+file again.”</li>
+<li>“The chart numbers are wrong. Use exactly these rows: [paste]. Show
+the full file again.”</li>
+<li>“Make the page work on a phone: one column, chat first, chart below.
+Show the full file again.”</li>
+<li>“Add a starter button for ‘[question]’. Show the full file
+again.”</li>
+</ul>
+<h2 id="why-these-rules-for-the-instructor">Why these rules (for the
+instructor)</h2>
+<ul>
+<li><strong>Rule-based brain, not a live model:</strong> no keys, no
+accounts, no cost, no internet, and every answer is checkable against
+the facts. It also makes the point that a bot is only as good as its
+context.</li>
+<li><strong>Inline SVG chart, no library:</strong> Gavin’s decision Nov
+5. Works offline in class; nothing to download; nothing to block.</li>
+<li><strong>The fallback and the privacy warning are exact
+strings:</strong> <code>test_day4_botbuilder.py</code> greps for them,
+and the Red-Team Tester expects them.</li>
+<li><strong>REFUSE WORDS:</strong> a keyword bot will happily answer “Is
+there a 2-for-1 on Candy Corn?” with the Candy Corn stock. The refuse
+list is the cheap fix for the Air Canada case, and it’s what the
+red-team fix usually touches.</li>
+<li><strong>Drawer with the system prompt:</strong> the “anatomy of an
+AI product” slide made visible. Judges can open it during the
+pitch.</li>
+<li><strong>Under 300 lines:</strong> fits in one reply on a free plan;
+fix-it prompts always ask for the whole file so nothing is
+half-patched.</li>
+<li><strong>Snack Bar run (Nov 5):</strong>
+<code>snackbar_run\04_bot_builder_*</code> and
+<code>Snack Bar Assistant.html</code> (answer key). The test passed and
+the click test is on the Bot Builder slide.</li>
+</ul>
+</body>
+</html>

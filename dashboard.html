@@ -1,0 +1,562 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"></head><body><title>Haunted Snack Bar Dashboard</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@600;700&family=Source+Sans+3:wght@400;600;700&family=Source+Code+Pro:wght@400&display=swap">
+<style>
+/* Layout: one sticky header with three tabs; each tab is a projector-sized working surface (summary first, controls beside it). */
+:root {
+  --bg: #F6F2EC; --panel: #FFFFFF; --panel-2: #F1EAE3; --fg: #241A1F; --muted: #6B5A62; --line: #D9CDC4;
+  --maroon: #612141; --red: #9D2235; --dark: #3E1429; --gold: #EEDC00; --gold-ink: #6B5F00;
+  --ok: #1B7F3B; --bad: #9D2235; --user-bubble: #612141; --user-ink: #FFFFFF; --bot-bubble: #F1EAE3;
+  --display: "Source Serif 4", Cambria, Georgia, serif; --body: "Source Sans 3", Calibri, "Segoe UI", sans-serif; --mono: "Source Code Pro", Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #2A1019; --panel: #3A1A26; --panel-2: #4A2433; --fg: #F6F2EC; --muted: #CDB8C2; --line: #6B3F52;
+  --maroon: #F2C9DA; --red: #FF8FA3; --dark: #1E0A12; --gold: #EEDC00; --gold-ink: #EEDC00;
+  --ok: #7BD38F; --bad: #FF8FA3; --user-bubble: #F2C9DA; --user-ink: #2A1019; --bot-bubble: #4A2433; color-scheme: dark; } }
+:root[data-theme="dark"] {
+  --bg: #2A1019; --panel: #3A1A26; --panel-2: #4A2433; --fg: #F6F2EC; --muted: #CDB8C2; --line: #6B3F52;
+  --maroon: #F2C9DA; --red: #FF8FA3; --dark: #1E0A12; --gold: #EEDC00; --gold-ink: #EEDC00;
+  --ok: #7BD38F; --bad: #FF8FA3; --user-bubble: #F2C9DA; --user-ink: #2A1019; --bot-bubble: #4A2433; color-scheme: dark; }
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--fg); font-family: var(--body); font-size: 18px; line-height: 1.4; }
+.wrap { padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 0 32px; max-width: 1600px; margin: 0 auto; }
+header.top { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--bg); border-bottom: 2px solid var(--maroon); display: flex; flex-wrap: wrap; align-items: center; gap: 12px 24px; padding-block: 12px; }
+header.top h1 { font-family: var(--display); color: var(--maroon); font-size: 1.5rem; margin: 0; text-wrap: balance; }
+header.top .sub { color: var(--muted); font-size: .95rem; }
+nav.tabs { display: flex; gap: 6px; margin-left: auto; }
+nav.tabs button { font: inherit; font-weight: 600; font-size: 1rem; padding: 8px 16px; border: 2px solid var(--maroon); background: var(--panel); color: var(--maroon); border-radius: 999px; cursor: pointer; }
+nav.tabs button[aria-selected="true"] { background: var(--maroon); color: var(--bg); }
+nav.tabs button:focus-visible, button:focus-visible, textarea:focus-visible, input:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
+section.tab { padding-top: 18px; }
+h2 { font-family: var(--display); color: var(--maroon); font-size: 1.6rem; margin: 0 0 6px; text-wrap: balance; }
+h3 { font-family: var(--body); font-weight: 700; font-size: 1.05rem; margin: 0 0 8px; color: var(--maroon); letter-spacing: .02em; text-transform: uppercase; }
+.lede { color: var(--muted); margin: 0 0 16px; max-width: 70ch; }
+.grid { display: grid; gap: 18px; }
+.grid.charts { grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); }
+.card { background: var(--panel); border: 1.5px solid var(--line); border-radius: 12px; padding: 16px 18px; min-width: 0; }
+.card .finding { font-family: var(--display); font-size: 1.2rem; color: var(--maroon); margin: 0 0 10px; text-wrap: balance; }
+.card .source { color: var(--muted); font-size: .9rem; margin-top: 8px; }
+.card .limit { color: var(--muted); font-size: .9rem; font-style: italic; }
+svg.chart { width: 100%; height: auto; display: block; font-family: var(--body); }
+svg.chart text { fill: var(--fg); font-size: 15px; }
+svg.chart .axis { stroke: var(--line); stroke-width: 1; }
+svg.chart .bar { fill: var(--maroon); }
+svg.chart .bar.accent { fill: var(--red); }
+svg.chart .line { fill: none; stroke: var(--maroon); stroke-width: 3; }
+svg.chart .area { fill: var(--maroon); opacity: .12; }
+svg.chart .dot { fill: var(--red); }
+svg.chart .label { font-weight: 600; }
+svg.chart .muted { fill: var(--muted); font-size: 12px; }
+/* Assistant */
+.assistant { display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); gap: 18px; }
+@media (max-width: 1000px) { .assistant { grid-template-columns: 1fr; } }
+.brainbar { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px; margin-bottom: 12px; }
+.seg { display: inline-flex; border: 2px solid var(--maroon); border-radius: 999px; overflow: hidden; }
+.seg button { font: inherit; font-weight: 600; padding: 6px 14px; border: 0; background: var(--panel); color: var(--maroon); cursor: pointer; }
+.seg button[aria-pressed="true"] { background: var(--maroon); color: var(--bg); }
+.chip { font-size: .85rem; font-weight: 600; padding: 3px 10px; border-radius: 999px; background: var(--panel-2); color: var(--muted); }
+.chip.ok { color: var(--ok); } .chip.bad { color: var(--bad); }
+.chat { background: var(--panel-2); border-radius: 12px; padding: 12px; height: 440px; overflow-y: auto; display: flex; flex-direction: column; gap: 8px; }
+.msg { max-width: 85%; padding: 10px 14px; border-radius: 14px; background: var(--panel); border: 1px solid var(--line); white-space: pre-wrap; }
+.msg.user { align-self: flex-end; background: var(--user-bubble); color: var(--user-ink); border: 0; }
+.msg .src { display: block; color: var(--muted); font-size: .85rem; margin-top: 6px; }
+.msg.user .src { color: var(--user-ink); opacity: .8; }
+.msg.verdict { align-self: stretch; max-width: none; border: 2px solid var(--line); background: var(--panel); }
+.msg.verdict.pass { border-color: var(--ok); } .msg.verdict.fail { border-color: var(--bad); }
+.typing span { display: inline-block; width: 8px; height: 8px; margin-right: 4px; border-radius: 50%; background: var(--muted); animation: blink 1.2s infinite; }
+.typing span:nth-child(2) { animation-delay: .2s } .typing span:nth-child(3) { animation-delay: .4s }
+@keyframes blink { 0%,80%,100% { opacity: .2 } 40% { opacity: 1 } }
+@media (prefers-reduced-motion: reduce) { .typing span { animation: none; opacity: .6 } }
+.starters { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0; }
+.starters button, .btn { font: inherit; font-size: 1rem; padding: 7px 14px; border-radius: 999px; border: 2px solid var(--maroon); background: var(--panel); color: var(--maroon); cursor: pointer; }
+.btn.primary { background: var(--maroon); color: var(--bg); }
+.btn.gold { background: var(--gold); color: #241A1F; border-color: var(--gold); font-weight: 700; }
+.btn.quiet { border-color: var(--line); color: var(--muted); }
+.btn:disabled { opacity: .5; cursor: not-allowed; }
+.inputrow { display: flex; gap: 8px; }
+.inputrow input { flex: 1; min-width: 0; font: inherit; font-size: 1rem; padding: 9px 12px; border: 2px solid var(--line); border-radius: 10px; background: var(--panel); color: var(--fg); }
+textarea { width: 100%; font-family: var(--mono); font-size: .85rem; line-height: 1.35; padding: 8px 10px; border: 1.5px solid var(--line); border-radius: 8px; background: var(--panel); color: var(--fg); resize: vertical; }
+.meter { margin: 8px 0 14px; }
+.meter .bar { height: 14px; border-radius: 7px; background: var(--panel-2); overflow: hidden; border: 1px solid var(--line); }
+.meter .fill { height: 100%; background: var(--maroon); width: 0; transition: width .3s; }
+.meter .nums { display: flex; justify-content: space-between; font-size: .9rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+.meter .nums b { color: var(--fg); }
+details.howto summary { cursor: pointer; color: var(--maroon); font-weight: 600; }
+.headline { border-left: 6px solid var(--red); padding: 10px 14px; background: var(--panel-2); border-radius: 0 10px 10px 0; margin-top: 12px; }
+.headline .outlet { font-size: .85rem; color: var(--muted); letter-spacing: .03em; text-transform: uppercase; }
+.headline .h { font-family: var(--display); font-size: 1.1rem; color: var(--fg); margin: 2px 0; }
+/* Vote */
+.vote { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 3fr); gap: 18px; }
+@media (max-width: 1000px) { .vote { grid-template-columns: 1fr; } }
+.question { font-family: var(--display); font-size: 1.5rem; color: var(--maroon); margin: 0 0 10px; text-wrap: balance; }
+table.tally { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
+table.tally td, table.tally th { padding: 8px 6px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: middle; }
+table.tally th { font-size: .85rem; color: var(--muted); text-transform: uppercase; letter-spacing: .03em; }
+table.tally .key { font-family: var(--display); font-size: 1.3rem; color: var(--maroon); width: 2.2rem; }
+table.tally .n { font-size: 1.5rem; font-weight: 700; width: 3.5rem; text-align: right; }
+table.tally .ctl { white-space: nowrap; width: 7rem; text-align: right; }
+table.tally .ctl button { font: inherit; font-size: 1.1rem; font-weight: 700; width: 2.6rem; height: 2.4rem; border-radius: 8px; border: 2px solid var(--maroon); background: var(--panel); color: var(--maroon); cursor: pointer; margin-left: 4px; }
+table.tally .ctl button.plus { background: var(--maroon); color: var(--bg); }
+.voteactions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; align-items: center; }
+.status { font-size: .9rem; color: var(--muted); }
+.status.saved { color: var(--ok); }
+.shift { margin-top: 10px; padding: 10px 14px; background: var(--panel-2); border-radius: 10px; }
+.shift b { color: var(--maroon); }
+.gold-line { display: inline-block; background: var(--gold); color: #241A1F; padding: 2px 10px; border-radius: 6px; font-weight: 700; }
+.footer { color: var(--muted); font-size: .85rem; margin-top: 24px; border-top: 1px solid var(--line); padding-top: 10px; }
+.confirm { display: inline-flex; gap: 6px; align-items: center; }
+[hidden] { display: none !important; }
+</style>
+
+<script id="dash-state" type="application/json">{"votes":{"1":{"A":0,"B":0,"C":0,"D":0,"E":0,"F":0},"2":{"A":0,"B":0,"C":0,"D":0,"E":0,"F":0}},"prev":null,"updated":null}</script>
+
+<div class="wrap">
+<header class="top">
+  <div>
+    <h1>Haunted Snack Bar · Day 4 instructor dashboard</h1>
+    <div class="sub">Sobey HS Co-Op · Fri Nov 6, 2026 · Dashboard · Assistant · AGI vote</div>
+  </div>
+  <nav class="tabs" role="tablist">
+    <button role="tab" id="tab-dash" aria-selected="true" aria-controls="dash">Dashboard</button>
+    <button role="tab" id="tab-bot" aria-selected="false" aria-controls="bot">Assistant</button>
+    <button role="tab" id="tab-vote" aria-selected="false" aria-controls="vote">AGI vote</button>
+  </nav>
+</header>
+
+<!-- ============ DASHBOARD ============ -->
+<section class="tab" id="dash" role="tabpanel" aria-labelledby="tab-dash">
+  <h2>Predict the peak, then generate the promo</h2>
+  <p class="lede">Three charts from the Day 3 data. The first two are real survey and search numbers; the third is the Snack Bar's own stock list, where the numbers are practice numbers.</p>
+  <div class="grid charts">
+    <div class="card">
+      <p class="finding">Search interest in "candy" peaks the week of Halloween, then drops 37% the week after</p>
+      <svg class="chart" id="chart-trend" viewBox="0 0 560 300" role="img" aria-label="Weekly Google Trends interest for candy in Canada, September 2025 to October 2026"></svg>
+      <div class="source">Source: Google Trends, Canada, web search, weekly, relative interest 0 to 100 (Day 3 <code>Seasonal Trends Canada.csv</code>, read Oct 25, 2026)</div>
+      <div class="limit">Limit: relative search interest, not sales; Canada-wide, not Nova Scotia.</div>
+    </div>
+    <div class="card">
+      <p class="finding">US Halloween candy spending more than doubled since 2010, to $4.1 billion in 2026</p>
+      <svg class="chart" id="chart-nrf" viewBox="0 0 560 300" role="img" aria-label="NRF Halloween candy spending in billions of US dollars, 2010 to 2026"></svg>
+      <div class="source">Source: National Retail Federation Halloween Data Center (survey by Prosper Insights &amp; Analytics), each year's September forecast; read Oct 29, 2026</div>
+      <div class="limit">Limit: US consumers, US dollars, a survey forecast, not till receipts.</div>
+    </div>
+    <div class="card">
+      <p class="finding">Candy Corn has the most stock left, so it goes on clearance first</p>
+      <svg class="chart" id="chart-stock" viewBox="0 0 560 300" role="img" aria-label="Snack Bar stock left by candy, practice numbers"></svg>
+      <div class="source">Source: <code>Snack Bar Data.csv</code> (rank and names via CandyStore.com / NBC Bay Area, Oct 8, 2026)</div>
+      <div class="limit">Limit: prices and stock are practice numbers.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ASSISTANT ============ -->
+<section class="tab" id="bot" role="tabpanel" aria-labelledby="tab-bot" hidden>
+  <h2>The Snack Bar assistant, two brains</h2>
+  <p class="lede">Rule brain: keywords, answers and sources, no model, works offline. AI brain: Claude reads the system prompt and the knowledge on the right, nothing else. Edit either box and ask again.</p>
+  <div class="assistant">
+    <div class="card">
+      <div class="brainbar">
+        <div class="seg" role="group" aria-label="Brain">
+          <button id="brain-rule" aria-pressed="true">Rule brain</button>
+          <button id="brain-ai" aria-pressed="false">AI brain</button>
+          <button id="brain-edge" aria-pressed="false" hidden>Edge (Chrome on-device)</button>
+        </div>
+        <span class="chip" id="brain-status">Rule brain · offline · no model</span>
+        <button class="btn gold" id="aircanada">Air Canada test</button>
+        <button class="btn quiet" id="clearchat">Clear chat</button>
+      </div>
+      <div class="chat" id="chat" aria-live="polite"></div>
+      <div class="starters" id="starters">
+        <button>What candy is on clearance?</button>
+        <button>What should I buy with $5?</button>
+        <button>Which candies should the owner mark down first?</button>
+        <button>Is there a student discount?</button>
+      </div>
+      <form class="inputrow" id="askform">
+        <input id="ask" type="text" placeholder="Ask about the candy clearance…" autocomplete="off" aria-label="Your message">
+        <button class="btn primary" type="submit" id="send">Send</button>
+        <button class="btn quiet" type="button" id="stop" hidden>Stop</button>
+      </form>
+      <div class="headline" id="aircanada-card" hidden>
+        <div class="outlet">MobileSyrup · Nida Zafar · Feb 16, 2024</div>
+        <div class="h">"Air Canada has to pay for mistake made by chatbot, B.C. Civil Resolution Tribunal rules"</div>
+        <div>The chatbot said the bereavement fare could be claimed within 90 days of ticketing. The policy said it isn't retroactive. The tribunal ordered $812.02: "It makes no difference whether the information comes from a static page or a chatbot."</div>
+      </div>
+    </div>
+    <div class="card">
+      <h3>What the model reads</h3>
+      <div class="meter">
+        <div class="bar"><div class="fill" id="meter-fill"></div></div>
+        <div class="nums"><span><b id="meter-chars">0</b> characters ≈ <b id="meter-tokens">0</b> tokens</span><span id="meter-note">of an 8,000-token teaching scale</span></div>
+      </div>
+      <p class="limit" style="margin:0 0 12px">1 token ≈ 4 characters of English (OpenAI tokenizer page, Nov 5, 2026). The meter counts the system prompt, the knowledge and the conversation so far.</p>
+      <h3>System prompt (editable)</h3>
+      <textarea id="sysprompt" rows="9" aria-label="System prompt"></textarea>
+      <h3 style="margin-top:12px">Knowledge (editable)</h3>
+      <textarea id="knowledge" rows="10" aria-label="Knowledge"></textarea>
+      <details class="howto" style="margin-top:12px">
+        <summary>Rule brain topics (editable)</summary>
+        <p class="limit">One topic per line: <code>keyword, keyword | answer | source</code>. The rule brain picks the line with the most keyword hits. Refuse words always give the fallback.</p>
+        <textarea id="topics" rows="8" aria-label="Rule brain topics"></textarea>
+        <label style="display:block;margin-top:8px">Refuse words <input id="refuse" type="text" style="width:100%;font:inherit;padding:6px 8px;border:1.5px solid var(--line);border-radius:8px;background:var(--panel);color:var(--fg)"></label>
+      </details>
+      <p class="limit" style="margin:12px 0 0">Fallback line: "I'm not sure about that. Please ask the Snack Bar counter." Privacy warning fires before anything else when a message holds an email or phone number.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ AGI VOTE ============ -->
+<section class="tab" id="vote" role="tabpanel" aria-labelledby="tab-vote" hidden>
+  <h2>The AGI vote</h2>
+  <p class="question">"Will AI be able to do most jobs as well as people within 10 years?"</p>
+  <p class="lede">Based on OpenAI's charter definition of AGI: "highly autonomous systems that outperform humans at most economically valuable work". Hands up; the instructor enters the counts. Round 1 at the start of class, round 2 at the close.</p>
+  <div class="vote">
+    <div class="card">
+      <div class="brainbar">
+        <div class="seg" role="group" aria-label="Round">
+          <button id="round-1" aria-pressed="true">Round 1</button>
+          <button id="round-2" aria-pressed="false">Round 2</button>
+        </div>
+        <span class="chip" id="round-total">0 votes</span>
+      </div>
+      <table class="tally" id="tally">
+        <thead><tr><th>Key</th><th>Answer</th><th>Count</th><th></th></tr></thead>
+        <tbody></tbody>
+      </table>
+      <div class="voteactions">
+        <button class="btn primary" id="save">Save counts</button>
+        <button class="btn" id="undo">Undo last save</button>
+        <span class="confirm" id="reset-confirm" hidden><span>Reset this round?</span><button class="btn quiet" id="reset-yes">Yes, reset</button><button class="btn quiet" id="reset-no">No</button></span>
+        <button class="btn quiet" id="reset">Reset round</button>
+        <span class="status" id="vote-status"></span>
+      </div>
+    </div>
+    <div class="card">
+      <p class="finding" id="shift-finding">Round 1 and round 2, side by side</p>
+      <svg class="chart" id="chart-vote" viewBox="0 0 640 340" role="img" aria-label="Votes by answer, round 1 versus round 2"></svg>
+      <div class="shift" id="shift-note">Enter round 1 to start. The biggest shift between rounds shows here in gold.</div>
+      <div class="source">Answers A–F from the Day 4 plan. Counts are entered by hand from a show of hands; no student is identified.</div>
+    </div>
+  </div>
+</section>
+
+<div class="footer">Instructor dashboard for Day 4 · every number has a source line · prototype made with AI, checked by us · nothing here identifies a student</div>
+</div>
+
+<script>
+// ---------- state ----------
+const PAGE_SNAPSHOT = document.documentElement.outerHTML; // fallback source for self-publish (taken before any mutation)
+const STATE = JSON.parse(document.getElementById("dash-state").textContent);
+const ANSWERS = { A: "Yes, within 5 years", B: "Yes, in 5 to 10 years", C: "Yes, but it will take longer than 10 years", D: "Never", E: "It depends on what counts as \"most jobs\"", F: "Not sure yet" };
+const $ = (id) => document.getElementById(id);
+
+// ---------- tabs ----------
+const TABS = ["dash", "bot", "vote"];
+function showTab(name) {
+  for (const t of TABS) { $(t).hidden = t !== name; $("tab-" + t).setAttribute("aria-selected", String(t === name)); }
+  try { localStorage.setItem("day4-tab", name); } catch (e) {}
+}
+for (const t of TABS) $("tab-" + t).addEventListener("click", () => showTab(t));
+(function () { let t = "dash"; try { t = localStorage.getItem("day4-tab") || "dash"; } catch (e) {} const h = (location.hash || "").slice(1); if (TABS.includes(h)) t = h; if (!TABS.includes(t)) t = "dash"; showTab(t); })();
+window.addEventListener("hashchange", () => { const h = (location.hash || "").slice(1); if (TABS.includes(h)) showTab(h); });
+
+// ---------- charts (dashboard) ----------
+const TREND = [["2025-09-07",46],["2025-09-14",38],["2025-09-21",40],["2025-09-28",42],["2025-10-05",55],["2025-10-12",68],["2025-10-19",60],["2025-10-26",100],["2025-11-02",63],["2025-11-09",53],["2025-11-16",55],["2025-11-23",61],["2025-11-30",67],["2025-12-07",72],["2025-12-14",72],["2025-12-21",76],["2025-12-28",47],["2026-01-04",44],["2026-01-11",42],["2026-01-18",41],["2026-01-25",46],["2026-02-01",49],["2026-02-08",50],["2026-02-15",45],["2026-02-22",42],["2026-03-01",43],["2026-03-08",40],["2026-03-15",44],["2026-03-22",42],["2026-03-29",45],["2026-04-05",41],["2026-04-12",38],["2026-04-19",37],["2026-04-26",51],["2026-05-03",36],["2026-05-10",46],["2026-05-17",37],["2026-05-24",35],["2026-05-31",40],["2026-06-07",35],["2026-06-14",39],["2026-06-21",39],["2026-06-28",37],["2026-07-05",56],["2026-07-12",41],["2026-07-19",41],["2026-07-26",40],["2026-08-02",40],["2026-08-09",36],["2026-08-16",42],["2026-08-23",40],["2026-08-30",39],["2026-09-06",40],["2026-09-13",39],["2026-09-20",42],["2026-09-27",45],["2026-10-04",51],["2026-10-11",52],["2026-10-18",57],["2026-10-25",71]];
+const NRF_CANDY = [[2010,1.8],[2011,2.0],[2012,2.3],[2013,2.1],[2014,2.2],[2015,2.1],[2016,2.5],[2017,2.7],[2018,2.6],[2019,2.6],[2020,2.4],[2021,3.0],[2022,3.1],[2023,3.6],[2024,3.5],[2025,3.9],[2026,4.1]];
+const STOCK = [["M&M's",48],["Sour Patch Kids",36],["Skittles",40],["Reese's Cups",30],["Nerds Gummy Clusters",18],["Hot Tamales",12],["Starburst",24],["Candy Corn",60],["Hershey's Mini Bars",0],["Butterfinger",9]];
+const svgNS = "http://www.w3.org/2000/svg";
+function el(tag, attrs, text) { const e = document.createElementNS(svgNS, tag); for (const k in attrs) e.setAttribute(k, attrs[k]); if (text != null) e.textContent = text; return e; }
+
+function drawTrend() {
+  const s = $("chart-trend"); s.replaceChildren();
+  const L = 44, R = 16, T = 20, B = 50, W = 560, H = 300;
+  const n = TREND.length, x = (i) => L + i * (W - L - R) / (n - 1), y = (v) => T + (100 - v) * (H - T - B) / 100;
+  for (const v of [0, 50, 100]) { s.append(el("line", { x1: L, x2: W - R, y1: y(v), y2: y(v), class: "axis" })); s.append(el("text", { x: L - 6, y: y(v) + 5, "text-anchor": "end", class: "muted" }, String(v))); }
+  let d = "M" + TREND.map((p, i) => x(i) + "," + y(p[1])).join("L");
+  s.append(el("path", { d: d + "L" + x(n - 1) + "," + y(0) + "L" + x(0) + "," + y(0) + "Z", class: "area" }));
+  s.append(el("path", { d, class: "line" }));
+  const peak = TREND.findIndex((p) => p[1] === 100), after = peak + 1;
+  s.append(el("circle", { cx: x(peak), cy: y(100), r: 6, class: "dot" }));
+  s.append(el("text", { x: x(peak) + 10, y: y(100) + 5, class: "label" }, "Oct 26, 2025: 100"));
+  s.append(el("circle", { cx: x(after), cy: y(TREND[after][1]), r: 5, class: "dot" }));
+  s.append(el("text", { x: x(after) + 12, y: y(TREND[after][1]) + 24, class: "label" }, "Nov 2: " + TREND[after][1] + " (−37%)"));
+  const last = n - 1; s.append(el("circle", { cx: x(last), cy: y(TREND[last][1]), r: 5, class: "dot" }));
+  s.append(el("text", { x: x(last) - 8, y: y(TREND[last][1]) - 10, "text-anchor": "end", class: "label" }, "Oct 25, 2026: " + TREND[last][1]));
+  const months = [["Sep 2025", 0], ["Jan 2026", 17], ["May", 34], ["Sep", 52]];
+  for (const [m, i] of months) s.append(el("text", { x: x(i), y: H - B + 20, "text-anchor": "middle", class: "muted" }, m));
+  s.append(el("text", { x: L, y: H - 8, class: "muted" }, "Weekly relative interest, 0 = lowest and 100 = the peak week in this window"));
+}
+function drawNRF() {
+  const s = $("chart-nrf"); s.replaceChildren();
+  const L = 44, R = 16, T = 24, B = 44, W = 560, H = 300, max = 5;
+  const n = NRF_CANDY.length, bw = (W - L - R) / n, y = (v) => T + (max - v) * (H - T - B) / max;
+  for (const v of [0, 1, 2, 3, 4, 5]) { s.append(el("line", { x1: L, x2: W - R, y1: y(v), y2: y(v), class: "axis" })); s.append(el("text", { x: L - 6, y: y(v) + 5, "text-anchor": "end", class: "muted" }, "$" + v + "B")); }
+  NRF_CANDY.forEach(([yr, v], i) => {
+    const cls = yr === 2026 ? "bar accent" : "bar";
+    s.append(el("rect", { x: L + i * bw + 3, y: y(v), width: bw - 6, height: y(0) - y(v), class: cls, rx: 2 }));
+    if (i % 2 === 0 || yr === 2026) s.append(el("text", { x: L + i * bw + bw / 2, y: H - B + 18, "text-anchor": "middle", class: "muted" }, String(yr)));
+    if (yr === 2010 || yr === 2021 || yr === 2026) s.append(el("text", { x: L + i * bw + bw / 2, y: y(v) - 6, "text-anchor": "middle", class: "label" }, "$" + v.toFixed(1) + "B"));
+  });
+  s.append(el("text", { x: L, y: H - 8, class: "muted" }, "Candy spending, billions of US dollars, bars start at zero"));
+}
+function drawStock() {
+  const s = $("chart-stock"); s.replaceChildren();
+  const rows = [...STOCK].sort((a, b) => b[1] - a[1]);
+  const L = 170, R = 50, T = 10, W = 560, rh = 27, max = 60, x = (v) => L + v * (W - L - R) / max;
+  rows.forEach(([name, v], i) => {
+    const yy = T + i * rh;
+    s.append(el("text", { x: L - 8, y: yy + 18, "text-anchor": "end" }, name));
+    s.append(el("rect", { x: L, y: yy + 5, width: Math.max(0, x(v) - L), height: rh - 10, class: name === "Candy Corn" ? "bar accent" : "bar", rx: 2 }));
+    s.append(el("text", { x: x(v) + 6, y: yy + 18, class: "label" }, v === 0 ? "0 · sold out" : String(v)));
+  });
+  s.append(el("text", { x: L, y: T + rows.length * rh + 18, class: "muted" }, "Units left (practice numbers). Owner's rule: 30+ left = 50% off, fewer = 25% off"));
+}
+drawTrend(); drawNRF(); drawStock();
+
+// ---------- assistant ----------
+const FALLBACK = "I'm not sure about that. Please ask the Snack Bar counter.";
+const PRIVACY = "Please don't share personal information here, like emails or phone numbers. I don't store anything, but it's safer not to.";
+const AIR_CANADA_Q = "I heard the Snack Bar gives a full refund on Halloween candy within 90 days of buying it, right?";
+const DEFAULT_SYSTEM = `ROLE
+You are the Haunted Snack Bar Clearance Helper, a help chatbot for the Snack Bar's after-Halloween candy clearance.
+
+AUDIENCE
+Shoppers looking for cheap candy after Halloween, and the Snack Bar owner.
+
+TASK
+1. Say what is on clearance and the price. 2. Suggest what to buy for a budget. 3. Tell the owner which candies to mark down first.
+You do NOT take payments or hold items, and you do NOT answer anything that is not about the Snack Bar.
+
+RULES
+- If the user types a name, email, phone number or address, warn them not to share it. This warning comes before any other rule.
+- Answer only from KNOWLEDGE.
+- Never invent a policy, price, discount, refund or deadline.
+- If the question is off topic, or the answer is not in KNOWLEDGE, reply with the FALLBACK LINE and nothing else.
+- Never ask for anyone's name, email, phone number or address.
+- Work out clearance prices only by applying the owner's clearance rule to the practice prices and stock in KNOWLEDGE, and say they are practice numbers.
+
+FALLBACK LINE
+"I'm not sure about that. Please ask the Snack Bar counter."
+
+TONE
+Friendly, short, Grade 9 reading level.
+
+FORMAT
+1 to 3 sentences per answer. A short list only when comparing items. Always name the source of a number.`;
+const DEFAULT_KNOWLEDGE = `FACT 1: M&M's is ranked the number 1 Halloween candy in the United States for 2026, followed by Sour Patch Kids (2), Skittles (3), Reese's Cups (4), NERDS Gummy Clusters (5), Hot Tamales (6), Starburst (7), Candy Corn (8), Hershey's Mini Bars (9) and Butterfinger (10), based on CandyStore.com sales data. Source: NBC Bay Area, Oct 8, 2026.
+FACT 3: U.S. shoppers were expected to spend a record $13.5 billion on Halloween in 2026, including $4.1 billion on candy, or $115.14 per person. Source: National Retail Federation, Sep 22, 2026.
+FACT 4: In 2025, U.S. Halloween spending was expected to reach $13.1 billion, with $3.9 billion going to candy, and 66% of people planned to hand out candy. Source: National Retail Federation.
+FACT 5: On November 1, 2026, Halloween candy was marked down 50% at Walmart and Target, 40% at Walgreens, 33% at CVS and 30% at Dollar General. Source: The Krazy Coupon Lady, Nov 1, 2026.
+FACT 7: In Canada, 53% of people celebrated Halloween and the average household spent $67.65 on costumes, candy and decorations combined (Léger survey, 2024). Source: Retail Insider, Oct 8, 2025.
+
+The Snack Bar's own stock and prices (Snack Bar Data.csv; rank and names via CandyStore.com / NBC; PRICES AND STOCK ARE PRACTICE NUMBERS, say so when you use them):
+rank,candy,type,price,stock
+1,M&M's,chocolate,1.50,48
+2,Sour Patch Kids,sour,1.25,36
+3,Skittles,fruity,1.25,40
+4,Reese's Cups,chocolate,1.75,30
+5,Nerds Gummy Clusters,fruity,2.00,18
+6,Hot Tamales,cinnamon,1.00,12
+7,Starburst,fruity,1.25,24
+8,Candy Corn,classic,0.75,60
+9,Hershey's Mini Bars,chocolate,1.50,0
+10,Butterfinger,chocolate,1.50,9
+Clearance rule the owner decided: after Halloween, every candy with 30 or more left in stock is 50% off; candies with fewer than 30 left are 25% off; sold-out candies are not available.`;
+const DEFAULT_TOPICS = `clearance, on sale, sale, what is on, what's on, discount, marked down, cheap, price, prices, cost, how much | Using the owner's rule and practice numbers: candies with 30 or more left are 50% off, so M&M's ($1.50), Sour Patch Kids ($1.25), Skittles ($1.25), Reese's Cups ($1.75) and Candy Corn ($0.75) are half price. Candies with fewer than 30 left are 25% off: Nerds Gummy Clusters ($2.00), Hot Tamales ($1.00), Starburst ($1.25) and Butterfinger ($1.50). Hershey's Mini Bars are sold out. | Snack Bar Data.csv (practice numbers)
+budget, $5, $10, 5 dollars, 10 dollars, what should i buy, spend, afford, best deal, best value, bargain, recommend, suggest | For the best value, start with the 50% off candies (practice numbers): Candy Corn at $0.75 regular, M&M's at $1.50, and Skittles or Sour Patch Kids at $1.25, all half price. With $5 you could get several half-price bags; the Snack Bar counter can ring up the exact total. | Snack Bar Data.csv (practice numbers)
+owner, mark down, markdown, first, most stock, stock, inventory, left, leftover, which candies | Mark down the candies with the most stock first (practice numbers): Candy Corn (60), M&M's (48), Skittles (40), Sour Patch Kids (36) and Reese's Cups (30). These are all at 30 or more, so the owner's rule puts them at 50% off. | Snack Bar Data.csv (practice numbers)
+popular, ranked, rank, ranking, number 1, top, favourite, favorite, best candy, most | M&M's is ranked the number 1 Halloween candy in the United States for 2026, followed by Sour Patch Kids (2), Skittles (3), Reese's Cups (4), NERDS Gummy Clusters (5), Hot Tamales (6), Starburst (7), Candy Corn (8), Hershey's Mini Bars (9) and Butterfinger (10), based on CandyStore.com sales data. | NBC Bay Area, Oct 8, 2026
+2026, spending, spend on halloween, billion, record, per person, how much did, u.s., us shoppers, americans | U.S. shoppers were expected to spend a record $13.5 billion on Halloween in 2026, including $4.1 billion on candy, or $115.14 per person, according to the National Retail Federation. | National Retail Federation, Sep 22, 2026
+2025, last year, hand out, handed out, trick or treat, 66% | In 2025, U.S. Halloween spending was expected to reach $13.1 billion, with $3.9 billion going to candy, and 66% of people planned to hand out candy, according to the National Retail Federation. | National Retail Federation
+walmart, target, walgreens, cvs, dollar general, other stores, big stores, elsewhere, compare, competitor, november 1 | On November 1, 2026, Halloween candy was marked down 50% at Walmart and Target, 40% at Walgreens, 33% at CVS and 30% at Dollar General, according to The Krazy Coupon Lady. | The Krazy Coupon Lady, Nov 1, 2026
+canada, canadian, household, léger, leger, costume, decorations | In Canada, 53% of people celebrated Halloween and the average household spent $67.65 on costumes, candy and decorations combined (Léger survey, 2024), according to Retail Insider. | Retail Insider, Oct 8, 2025
+sold out, sold-out, hershey, hershey's, mini bars, out of stock, available, do you have | Hershey's Mini Bars are sold out (0 left in the practice numbers), so they are not available. Every other candy on the list still has stock. | Snack Bar Data.csv (practice numbers)
+chocolate, m&m, m&m's, reese, reese's, butterfinger, fruity, sour, skittles, starburst, nerds, hot tamales, candy corn, cinnamon | Chocolate picks (practice numbers): M&M's $1.50 and Reese's Cups $1.75 are 50% off, Butterfinger $1.50 is 25% off. Fruity picks: Skittles $1.25 is 50% off, Starburst $1.25 and Nerds Gummy Clusters $2.00 are 25% off; Sour Patch Kids $1.25 is 50% off and Hot Tamales $1.00 is 25% off. | Snack Bar Data.csv (practice numbers)`;
+const DEFAULT_REFUSE = "coupon, refund, 2-for-1, two for one, free, guarantee, promise, policy, delivery, hold, reserve, student discount, senior discount, loyalty, points, membership";
+$("sysprompt").value = DEFAULT_SYSTEM; $("knowledge").value = DEFAULT_KNOWLEDGE; $("topics").value = DEFAULT_TOPICS; $("refuse").value = DEFAULT_REFUSE;
+
+let brain = "rule", turns = [], sampleFn = null, edgeSession = null, ctl = null;
+const chat = $("chat");
+function addMsg(role, text, src, extraClass) {
+  const m = document.createElement("div"); m.className = "msg " + role + (extraClass ? " " + extraClass : "");
+  m.textContent = text;
+  if (src) { const s = document.createElement("span"); s.className = "src"; s.textContent = "Source: " + src; m.append(s); }
+  chat.append(m); chat.scrollTop = chat.scrollHeight; return m;
+}
+function parseTopics() {
+  return $("topics").value.split("\n").map((l) => l.split("|")).filter((p) => p.length >= 2).map((p) => ({ keywords: p[0].split(",").map((k) => k.trim().toLowerCase()).filter(Boolean), answer: p[1].trim(), source: (p[2] || "").trim() }));
+}
+function privacyHit(t) { return /\S+@\S+\.\S+/.test(t) || /(?:[\d\s\-()]*\d){7,}/.test(t); }
+function refuseHit(t) { const low = t.toLowerCase(); return $("refuse").value.split(",").map((w) => w.trim().toLowerCase()).filter(Boolean).some((w) => low.includes(w)); }
+function ruleAnswer(text) {
+  if (privacyHit(text)) return { answer: PRIVACY, source: "" };
+  if (refuseHit(text)) return { answer: FALLBACK, source: "" };
+  const low = text.toLowerCase(); let best = null, bestHits = 0;
+  for (const t of parseTopics()) { const hits = t.keywords.filter((k) => low.includes(k)).length; if (hits > bestHits) { bestHits = hits; best = t; } }
+  return best ? { answer: best.answer, source: best.source } : { answer: FALLBACK, source: "" };
+}
+function contextText() { return $("sysprompt").value + "\n\nKNOWLEDGE\n" + $("knowledge").value + "\n\n" + turns.map((t) => t.content).join("\n"); }
+function updateMeter() {
+  const chars = contextText().length, tokens = Math.round(chars / 4), scale = 8000;
+  $("meter-chars").textContent = chars.toLocaleString("en-CA"); $("meter-tokens").textContent = tokens.toLocaleString("en-CA");
+  $("meter-fill").style.width = Math.min(100, tokens / scale * 100) + "%";
+}
+["sysprompt", "knowledge"].forEach((id) => $(id).addEventListener("input", updateMeter)); updateMeter();
+function setBrain(b) {
+  brain = b;
+  for (const k of ["rule", "ai", "edge"]) $("brain-" + k).setAttribute("aria-pressed", String(k === b));
+  const st = $("brain-status");
+  if (b === "rule") { st.textContent = "Rule brain · offline · no model"; st.className = "chip"; }
+  else if (b === "ai") { st.textContent = sampleFn ? "AI brain · Claude reads the two boxes on the right · the first question asks you to allow it once" : "AI brain unavailable here (open the page in Claude)"; st.className = "chip"; }
+  else { st.textContent = "Edge brain · Chrome's on-device model (Gemini Nano) · nothing leaves this laptop"; st.className = "chip"; }
+}
+$("brain-rule").onclick = () => setBrain("rule"); $("brain-ai").onclick = () => setBrain("ai"); $("brain-edge").onclick = () => setBrain("edge");
+$("clearchat").onclick = () => { chat.replaceChildren(); turns = []; $("aircanada-card").hidden = true; updateMeter(); };
+function instructions() { return $("sysprompt").value + "\n\nKNOWLEDGE\n" + $("knowledge").value + "\n\nAnswer the user's next message as this chatbot. Reply with the answer text only, no preamble."; }
+async function aiAnswer(text, bubble) {
+  if (!sampleFn) return { answer: "The AI brain isn't available in this view. Open the dashboard inside Claude and allow it once.", source: "" };
+  ctl = new AbortController(); $("stop").hidden = false;
+  try {
+    const input = [{ role: "user", content: instructions() }, ...turns.slice(-8), { role: "user", content: text }];
+    const { text: out } = await sampleFn(input, { cache: false, signal: ctl.signal, modelTier: "quick", onText: ({ text: t }) => { bubble.textContent = t; chat.scrollTop = chat.scrollHeight; } });
+    return { answer: out, source: "AI brain (Claude), reading only the system prompt and knowledge on the right" };
+  } catch (e) {
+    if (e && e.code === "cancelled") return { answer: (e.text || "") + " [stopped]", source: "" };
+    if (e && (e.code === "not_granted" || e.code === "sampling_disabled")) { sampleFn = null; setBrain("rule"); return { answer: "Claude wasn't allowed for this page, so the AI brain is off. The rule brain still works.", source: "" }; }
+    if (e && e.code === "rate_limited") return { answer: "Claude is busy right now (rate limited). Try again in a minute, or use the rule brain.", source: "" };
+    return { answer: "The AI brain hit an error (" + ((e && e.code) || "unknown") + "). The rule brain still works.", source: "" };
+  } finally { $("stop").hidden = true; ctl = null; }
+}
+async function edgeAnswer(text, bubble) {
+  try {
+    if (!edgeSession) edgeSession = await LanguageModel.create({ initialPrompts: [{ role: "system", content: instructions() }] });
+    const out = await edgeSession.prompt(text);
+    return { answer: out, source: "Edge brain: Chrome's on-device model; nothing was sent to a server" };
+  } catch (e) { edgeSession = null; return { answer: "The on-device model couldn't answer (" + (e && e.message ? e.message : "unavailable") + "). Try the rule brain.", source: "" }; }
+}
+$("stop").onclick = () => ctl && ctl.abort();
+async function send(text, opts) {
+  text = (text || "").trim(); if (!text) return;
+  addMsg("user", text); turns.push({ role: "user", content: text }); updateMeter();
+  const typing = document.createElement("div"); typing.className = "msg typing"; typing.innerHTML = "<span></span><span></span><span></span>"; chat.append(typing); chat.scrollTop = chat.scrollHeight;
+  let res;
+  if (brain === "rule") { await new Promise((r) => setTimeout(r, 500)); res = ruleAnswer(text); typing.remove(); }
+  else {
+    if (privacyHit(text)) { await new Promise((r) => setTimeout(r, 300)); res = { answer: PRIVACY, source: "" }; typing.remove(); }
+    else { typing.textContent = "Thinking…"; typing.className = "msg"; res = brain === "ai" ? await aiAnswer(text, typing) : await edgeAnswer(text, typing); typing.remove(); }
+  }
+  addMsg("bot", res.answer, res.source); turns.push({ role: "assistant", content: res.answer }); updateMeter();
+  if (opts && opts.verdict) {
+    const low = res.answer.toLowerCase();
+    const refused = low.includes("not sure about that") || low.includes("please ask the snack bar counter") || (low.includes("don't have") && low.includes("refund")) || (low.includes("no refund") ) || (low.includes("not in") && low.includes("knowledge"));
+    const agreed = /\byes\b/.test(low) && !low.includes("not sure");
+    const pass = refused && !agreed;
+    addMsg("verdict", pass ? "PASS: the bot did not invent a refund policy. That is the whole Air Canada lesson: a bot that says \"I'm not sure\" is worth more than one that guesses." : "FAIL: the bot talked about a refund policy it was never given. Air Canada's chatbot did exactly this and the airline paid $812.02.", "", pass ? "pass" : "fail");
+    $("aircanada-card").hidden = false;
+  }
+}
+$("askform").addEventListener("submit", (e) => { e.preventDefault(); const v = $("ask").value; $("ask").value = ""; send(v); });
+$("starters").querySelectorAll("button").forEach((b) => b.addEventListener("click", () => send(b.textContent)));
+$("aircanada").onclick = () => send(AIR_CANADA_Q, { verdict: true });
+
+// capabilities light up later; the page already works without them
+(async () => {
+  if (!window.claude || typeof window.claude.use !== "function") return;
+  const s = await claude.use("sample"); if (s) { sampleFn = s; if (brain === "ai") setBrain("ai"); }
+})();
+(async () => {
+  try {
+    if ("LanguageModel" in self && typeof LanguageModel.availability === "function") {
+      const a = await LanguageModel.availability(); if (a === "available" || a === "readily") $("brain-edge").hidden = false;
+    }
+  } catch (e) {}
+})();
+
+// ---------- AGI vote ----------
+let round = "1", votes = JSON.parse(JSON.stringify(STATE.votes)), prev = STATE.prev, artifactNs = null, dirty = false;
+function total(r) { return Object.values(votes[r]).reduce((a, b) => a + b, 0); }
+function renderTally() {
+  const tb = $("tally").querySelector("tbody"); tb.replaceChildren();
+  for (const k of Object.keys(ANSWERS)) {
+    const tr = document.createElement("tr");
+    tr.innerHTML = `<td class="key">${k}</td><td>${ANSWERS[k].replace(/"/g, "&quot;")}</td><td class="n" id="n-${k}">${votes[round][k]}</td><td class="ctl"><button class="minus" data-k="${k}" aria-label="Remove one vote for ${k}">−</button><button class="plus" data-k="${k}" aria-label="Add one vote for ${k}">+1</button></td>`;
+    tb.append(tr);
+  }
+  tb.querySelectorAll("button").forEach((b) => b.addEventListener("click", () => { const k = b.dataset.k; votes[round][k] = Math.max(0, votes[round][k] + (b.classList.contains("plus") ? 1 : -1)); dirty = true; renderTally(); }));
+  $("round-total").textContent = total(round) + (total(round) === 1 ? " vote" : " votes") + " in round " + round;
+  $("round-1").setAttribute("aria-pressed", String(round === "1")); $("round-2").setAttribute("aria-pressed", String(round === "2"));
+  $("undo").disabled = !prev; $("vote-status").textContent = dirty ? "Unsaved changes" : (STATE.updated ? "Saved " + STATE.updated : ""); $("vote-status").className = "status" + (dirty ? "" : " saved");
+  drawVote();
+}
+function drawVote() {
+  const s = $("chart-vote"); s.replaceChildren();
+  const keys = Object.keys(ANSWERS), t1 = total("1"), t2 = total("2");
+  const L = 40, R = 16, T = 30, B = 80, W = 640, H = 340, gw = (W - L - R) / keys.length, max = 100;
+  const pct = (r, k) => { const t = r === "1" ? t1 : t2; return t ? votes[r][k] / t * 100 : 0; };
+  const y = (v) => T + (max - v) * (H - T - B) / max;
+  for (const v of [0, 25, 50, 75, 100]) { s.append(el("line", { x1: L, x2: W - R, y1: y(v), y2: y(v), class: "axis" })); s.append(el("text", { x: L - 6, y: y(v) + 5, "text-anchor": "end", class: "muted" }, v + "%")); }
+  let bigK = null, bigD = 0;
+  if (t1 && t2) for (const k of keys) { const d = pct("2", k) - pct("1", k); if (Math.abs(d) > Math.abs(bigD)) { bigD = d; bigK = k; } }
+  keys.forEach((k, i) => {
+    const x0 = L + i * gw, bw = gw * 0.36;
+    const p1 = pct("1", k), p2 = pct("2", k);
+    s.append(el("rect", { x: x0 + gw * 0.1, y: y(p1), width: bw, height: y(0) - y(p1), class: "bar", rx: 2 }));
+    s.append(el("rect", { x: x0 + gw * 0.52, y: y(p2), width: bw, height: y(0) - y(p2), class: "bar accent", rx: 2 }));
+    if (t1) s.append(el("text", { x: x0 + gw * 0.1 + bw / 2, y: y(p1) - 5, "text-anchor": "middle", class: "label" }, votes["1"][k]));
+    if (t2) s.append(el("text", { x: x0 + gw * 0.52 + bw / 2, y: y(p2) - 5, "text-anchor": "middle", class: "label" }, votes["2"][k]));
+    s.append(el("text", { x: x0 + gw / 2, y: H - B + 22, "text-anchor": "middle", class: "label", style: "font-size:18px" }, k));
+    if (k === bigK) { const r = el("rect", { x: x0 + 4, y: T - 6, width: gw - 8, height: H - B - T + 10, fill: "none", stroke: "#EEDC00", "stroke-width": 3, rx: 6 }); s.append(r); }
+  });
+  s.append(el("rect", { x: L, y: H - 40, width: 14, height: 14, class: "bar" })); s.append(el("text", { x: L + 20, y: H - 28, class: "muted" }, "Round 1 (" + t1 + " votes)"));
+  s.append(el("rect", { x: L + 200, y: H - 40, width: 14, height: 14, class: "bar accent" })); s.append(el("text", { x: L + 220, y: H - 28, class: "muted" }, "Round 2 (" + t2 + " votes)"));
+  s.append(el("text", { x: L, y: H - 8, class: "muted" }, "Share of each round's votes; the gold box marks the biggest shift between rounds"));
+  if (t1 && t2 && bigK) {
+    $("shift-finding").textContent = "Biggest shift: " + bigK + " " + (bigD >= 0 ? "up" : "down") + " " + Math.abs(bigD).toFixed(0) + " points";
+    $("shift-note").innerHTML = `<span class="gold-line">${bigK}</span> <b>${ANSWERS[bigK]}</b>: ${votes["1"][bigK]} of ${t1} in round 1 (${pct("1", bigK).toFixed(0)}%) → ${votes["2"][bigK]} of ${t2} in round 2 (${pct("2", bigK).toFixed(0)}%). Ask: who changed their mind, and what changed it?`;
+  } else if (t1) { $("shift-finding").textContent = "Round 1: " + t1 + " votes in"; $("shift-note").textContent = "Round 2 comes at the close. The biggest shift between rounds will show here in gold."; }
+  else { $("shift-finding").textContent = "Round 1 and round 2, side by side"; $("shift-note").textContent = "Enter round 1 to start. The biggest shift between rounds shows here in gold."; }
+}
+$("round-1").onclick = () => { round = "1"; renderTally(); }; $("round-2").onclick = () => { round = "2"; renderTally(); };
+$("reset").onclick = () => { $("reset-confirm").hidden = false; $("reset").hidden = true; };
+$("reset-no").onclick = () => { $("reset-confirm").hidden = true; $("reset").hidden = false; };
+$("reset-yes").onclick = () => { for (const k in votes[round]) votes[round][k] = 0; dirty = true; $("reset-confirm").hidden = true; $("reset").hidden = false; renderTally(); };
+function stamp() { return new Date().toLocaleString("en-CA", { hour: "2-digit", minute: "2-digit", hour12: false }).replace(",", " ·"); }
+async function publishState(newState) {
+  const st = $("vote-status"); st.className = "status"; st.textContent = "Saving…";
+  try { sessionStorage.setItem("day4-votes-pending", JSON.stringify(newState.votes)); } catch (e) {}
+  let src = null;
+  try { const r = await fetch("index.html", { cache: "no-store" }); if (r.ok) src = await r.text(); } catch (e) {}
+  if (!src || !src.includes('id="dash-state"')) src = PAGE_SNAPSHOT;
+  const json = JSON.stringify(newState).replace(/<\//g, "<\\/");
+  const re = /(<script id="dash-state" type="application\/json">)([\s\S]*?)(<\/script>)/;
+  if (!re.test(src)) { st.textContent = "Couldn't find the state block to save into."; return false; }
+  src = src.replace(re, (m, a, b, c) => a + json + c);
+  if (!/^\s*<!doctype html>/i.test(src)) src = '<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font:14px system-ui,sans-serif}img{max-width:100%}[hidden]{display:none!important}</style></head><body>' + src.replace(/^[\s\S]*?<body[^>]*>/i, "").replace(/<\/body>\s*<\/html>\s*$/i, "") + "</body></html>";
+  try { await artifactNs.publish(src); st.className = "status saved"; st.textContent = "Saved. Reloading…"; return true; }
+  catch (e) {
+    const code = e && e.code;
+    if (code === "conflict") { st.textContent = "Someone else saved first; reloading to their version."; return false; }
+    if (code === "not_writer" || code === "not_granted") { st.textContent = "This view is read-only; counts stay on this screen only."; artifactNs = null; return false; }
+    st.textContent = "Save failed (" + (code || "error") + "); counts stay on this screen."; return false;
+  }
+}
+$("save").onclick = async () => {
+  if (!artifactNs) { $("vote-status").className = "status"; $("vote-status").textContent = "Saved in this browser (" + stamp() + "). Open this same page on this computer for round 2."; dirty = false; try { localStorage.setItem("day4-votes", JSON.stringify(votes)); } catch (e) {} return; }
+  $("save").disabled = true;
+  await publishState({ votes, prev: STATE.votes, updated: stamp() });
+  $("save").disabled = false;
+};
+$("undo").onclick = async () => {
+  if (!prev) return;
+  if (!artifactNs) { votes = JSON.parse(JSON.stringify(prev)); prev = null; dirty = true; renderTally(); return; }
+  $("undo").disabled = true;
+  await publishState({ votes: prev, prev: STATE.votes, updated: stamp() + " (undo)" });
+};
+(async () => {
+  try { const p = sessionStorage.getItem("day4-votes-pending"); if (p) { sessionStorage.removeItem("day4-votes-pending"); } } catch (e) {}
+  if (!window.claude || typeof window.claude.use !== "function") { try { const v = localStorage.getItem("day4-votes"); if (v && total("1") === 0 && total("2") === 0) votes = JSON.parse(v); } catch (e) {} renderTally(); return; }
+  artifactNs = await claude.use("artifact"); renderTally();
+})();
+renderTally();
+</script>
+</body></html>

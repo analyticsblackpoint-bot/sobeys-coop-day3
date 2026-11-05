@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Haunted Snack Bar Clearance Helper</title>
+<style>
+  :root { --main: #612141; --accent: #EEDC00; --bg: #faf7f2; --ink: #222; --bubble: #fff; }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: system-ui, -apple-system, "Segoe UI", Arial, sans-serif; font-size: 16px; color: var(--ink); background: var(--bg); line-height: 1.45; }
+  header { background: var(--main); color: #fff; padding: 16px 20px; }
+  header h1 { margin: 0; font-size: 1.5rem; }
+  header .logo { font-size: 2rem; vertical-align: middle; margin-right: 8px; }
+  header p { margin: 4px 0 0; }
+  header .tag { color: var(--accent); font-weight: 600; }
+  main { display: grid; grid-template-columns: 1fr; gap: 20px; max-width: 1100px; margin: 0 auto; padding: 20px 16px; }
+  @media (min-width: 900px) { main { grid-template-columns: 3fr 2fr; } }
+  section.card { background: #fff; border: 1px solid #ddd; border-radius: 12px; padding: 16px; }
+  #chat { height: 380px; overflow-y: auto; background: #f3eef0; border-radius: 10px; padding: 12px; display: flex; flex-direction: column; gap: 10px; }
+  .msg { max-width: 80%; padding: 10px 14px; border-radius: 14px; white-space: pre-wrap; }
+  .bot { align-self: flex-start; background: var(--bubble); border: 1px solid #ddd; border-bottom-left-radius: 4px; }
+  .user { align-self: flex-end; background: var(--main); color: #fff; border-bottom-right-radius: 4px; }
+  .src { display: block; font-size: 0.8rem; color: #555; margin-top: 6px; word-break: break-all; }
+  .src a { color: var(--main); }
+  .typing span { display: inline-block; width: 8px; height: 8px; margin: 0 2px; background: #888; border-radius: 50%; animation: blink 1s infinite; }
+  .typing span:nth-child(2) { animation-delay: .2s; } .typing span:nth-child(3) { animation-delay: .4s; }
+  @keyframes blink { 0%,80%,100% { opacity: .2; } 40% { opacity: 1; } }
+  .starters { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0; }
+  .starters button, #send, #drawerBtn { font-size: 16px; padding: 8px 14px; border-radius: 20px; border: 2px solid var(--main); background: #fff; color: var(--main); cursor: pointer; }
+  .starters button:hover, #drawerBtn:hover { background: var(--accent); }
+  .inputRow { display: flex; gap: 8px; }
+  #input { flex: 1; font-size: 16px; padding: 10px 12px; border: 2px solid #bbb; border-radius: 10px; }
+  #send { background: var(--main); color: #fff; }
+  h2 { color: var(--main); margin: 0 0 10px; font-size: 1.2rem; }
+  svg text { font-size: 13px; fill: var(--ink); }
+  .note { font-size: 0.9rem; color: #444; margin: 8px 0 0; }
+  #drawer { display: none; margin-top: 16px; }
+  #drawer.open { display: block; }
+  pre { white-space: pre-wrap; background: #f3eef0; border: 1px solid #ddd; border-radius: 8px; padding: 12px; font-size: 0.85rem; max-height: 300px; overflow-y: auto; }
+  footer { text-align: center; padding: 16px; color: #444; font-size: 0.95rem; }
+</style>
+</head>
+<body>
+<header>
+  <h1><span class="logo">🎃</span>Haunted Snack Bar Clearance Helper</h1>
+  <p class="tag">Leftover candy, lower prices, zero guessing.</p>
+  <p>For: Shoppers after Halloween, and the Snack Bar owner</p>
+</header>
+<main>
+  <section class="card">
+    <div id="chat"></div>
+    <div class="starters">
+      <button type="button">What candy is on clearance?</button>
+      <button type="button">What should I buy with $5?</button>
+      <button type="button">Which candies should the owner mark down first?</button>
+      <button type="button">What is the most popular Halloween candy?</button>
+    </div>
+    <div class="inputRow">
+      <input id="input" type="text" placeholder="Ask about the candy clearance..." autocomplete="off">
+      <button id="send" type="button">Send</button>
+    </div>
+  </section>
+  <section class="card">
+    <h2>What the data says</h2>
+    <svg id="chart" viewBox="0 0 420 260" width="100%" role="img" aria-label="Bar chart of candy stock"></svg>
+    <p class="note">Candy Corn has the most stock left (60), so it goes on clearance first. Stock is a practice number.</p>
+    <p class="note">Source: Snack Bar Data.csv (rank via CandyStore.com / NBC; prices and stock are practice numbers)</p>
+    <p><button id="drawerBtn" type="button">How this bot works</button></p>
+    <div id="drawer">
+      <h2>System prompt</h2>
+      <pre id="promptBox"></pre>
+      <h2>Rules and refuse words</h2>
+      <ul id="rulesList"></ul>
+      <h2>Sources</h2>
+      <ul id="sourcesList"></ul>
+    </div>
+  </section>
+</main>
+<footer>
+  <div>Prototype made with AI, checked by us. It can be wrong.</div>
+  <div>Team Demo · Nov 6, 2026</div>
+</footer>
+<script>
+const FALLBACK = "I'm not sure about that. Please ask the Snack Bar counter.";
+const PRIVACY = "Please don't share personal information here, like emails or phone numbers. I don't store anything, but it's safer not to.";
+const REFUSE = ["coupon", "refund", "2-for-1", "two for one", "free", "guarantee", "promise", "policy", "delivery", "hold", "reserve", "student discount", "senior discount", "loyalty", "points", "membership"];
+const CSV = "Snack Bar Data.csv (prices and stock are practice numbers)";
+const NBC = '<a href="https://www.nbcbayarea.com/holidays/most-popular-halloween-candy-2026/4155222/" target="_blank" rel="noopener">NBC Bay Area, Oct 8, 2026</a>';
+const NRF26 = '<a href="https://nrf.com/media-center/press-releases/nrf-halloween-survey-shows-consumer-spending-expected-to-reach-13-5-billion" target="_blank" rel="noopener">National Retail Federation, Sep 22, 2026</a>';
+const NRF25 = '<a href="https://nrf.com/research-insights/holiday-data-and-trends/halloween" target="_blank" rel="noopener">National Retail Federation</a>';
+const KCL = '<a href="https://thekrazycouponlady.com/2026/11/01/in-store-halloween-clearance-finds-up-to-70-off-at-target-walmart-more" target="_blank" rel="noopener">The Krazy Coupon Lady, Nov 1, 2026</a>';
+const RI = '<a href="https://retail-insider.com/retail-insider/2025/10/halloween-spending-trends-in-canada/" target="_blank" rel="noopener">Retail Insider, Oct 8, 2025</a>';
+const TOPICS = [
+  { keywords: ["clearance", "on sale", "sale", "what is on", "what's on", "discount", "marked down", "cheap", "price", "prices", "cost", "how much"],
+    answer: "Using the owner's rule and practice numbers: candies with 30 or more left are 50% off, so M&M's ($1.50), Sour Patch Kids ($1.25), Skittles ($1.25), Reese's Cups ($1.75) and Candy Corn ($0.75) are half price. Candies with fewer than 30 left are 25% off: Nerds Gummy Clusters ($2.00), Hot Tamales ($1.00), Starburst ($1.25) and Butterfinger ($1.50). Hershey's Mini Bars are sold out.",
+    source: CSV },
+  { keywords: ["budget", "$5", "$10", "5 dollars", "10 dollars", "what should i buy", "spend", "afford", "best deal", "best value", "bargain", "recommend", "suggest"],
+    answer: "For the best value, start with the 50% off candies (practice numbers): Candy Corn at $0.75 regular, M&M's at $1.50, and Skittles or Sour Patch Kids at $1.25, all half price. With $5 you could get several half-price bags; the Snack Bar counter can ring up the exact total.",
+    source: CSV },
+  { keywords: ["owner", "mark down", "markdown", "first", "most stock", "stock", "inventory", "left", "leftover", "which candies"],
+    answer: "Mark down the candies with the most stock first (practice numbers): Candy Corn (60), M&M's (48), Skittles (40), Sour Patch Kids (36) and Reese's Cups (30). These are all at 30 or more, so the owner's rule puts them at 50% off.",
+    source: CSV },
+  { keywords: ["popular", "ranked", "rank", "ranking", "number 1", "top", "favourite", "favorite", "best candy", "most"],
+    answer: "M&M's is ranked the number 1 Halloween candy in the United States for 2026, followed by Sour Patch Kids (2), Skittles (3), Reese's Cups (4), NERDS Gummy Clusters (5), Hot Tamales (6), Starburst (7), Candy Corn (8), Hershey's Mini Bars (9) and Butterfinger (10), based on CandyStore.com sales data.",
+    source: NBC },
+  { keywords: ["2026", "spending", "spend on halloween", "billion", "record", "per person", "how much did", "u.s.", "us shoppers", "americans"],
+    answer: "U.S. shoppers were expected to spend a record $13.5 billion on Halloween in 2026, including $4.1 billion on candy, or $115.14 per person, according to the National Retail Federation.",
+    source: NRF26 },
+  { keywords: ["2025", "last year", "hand out", "handed out", "trick or treat", "66%"],
+    answer: "In 2025, U.S. Halloween spending was expected to reach $13.1 billion, with $3.9 billion going to candy, and 66% of people planned to hand out candy, according to the National Retail Federation.",
+    source: NRF25 },
+  { keywords: ["walmart", "target", "walgreens", "cvs", "dollar general", "other stores", "big stores", "elsewhere", "compare", "competitor", "november 1"],
+    answer: "On November 1, 2026, Halloween candy was marked down 50% at Walmart and Target, 40% at Walgreens, 33% at CVS and 30% at Dollar General, according to The Krazy Coupon Lady.",
+    source: KCL },
+  { keywords: ["canada", "canadian", "household", "léger", "leger", "costume", "decorations"],
+    answer: "In Canada, 53% of people celebrated Halloween and the average household spent $67.65 on costumes, candy and decorations combined (Léger survey, 2024), according to Retail Insider.",
+    source: RI },
+  { keywords: ["sold out", "sold-out", "hershey", "hershey's", "mini bars", "out of stock", "available", "do you have"],
+    answer: "Hershey's Mini Bars are sold out (0 left in the practice numbers), so they are not available. Every other candy on the list still has stock.",
+    source: CSV },
+  { keywords: ["chocolate", "m&m", "m&m's", "reese", "reese's", "butterfinger", "fruity", "sour", "skittles", "starburst", "nerds", "hot tamales", "candy corn", "cinnamon"],
+    answer: "Chocolate picks (practice numbers): M&M's $1.50 and Reese's Cups $1.75 are 50% off, Butterfinger $1.50 is 25% off. Fruity picks: Skittles $1.25 is 50% off, Starburst $1.25 and Nerds Gummy Clusters $2.00 are 25% off; Sour Patch Kids $1.25 is 50% off and Hot Tamales $1.00 is 25% off.",
+    source: CSV }
+];
+const CHART = [["M&M's", 48], ["Sour Patch Kids", 36], ["Skittles", 40], ["Reese's Cups", 30], ["Nerds Gummy Clusters", 18], ["Starburst", 24], ["Candy Corn", 60]];
+const SYSTEM_PROMPT = `ROLE
+You are the Haunted Snack Bar Clearance Helper, a help chatbot for the Snack Bar's after-Halloween candy clearance.
+
+AUDIENCE
+Shoppers looking for cheap candy after Halloween, and the Snack Bar owner.
+
+TASK
+You do three things:
+1. Say what is on clearance and the price.
+2. Suggest what to buy for a budget.
+3. Tell the owner which candies to mark down first.
+You do NOT take payments or hold items, and you do NOT answer anything that is not about the Snack Bar.
+
+KNOWLEDGE
+Facts (use exactly as written):
+FACT 1: M&M's is ranked the number 1 Halloween candy in the United States for 2026, followed by Sour Patch Kids (2), Skittles (3), Reese's Cups (4), NERDS Gummy Clusters (5), Hot Tamales (6), Starburst (7), Candy Corn (8), Hershey's Mini Bars (9) and Butterfinger (10), based on CandyStore.com sales data. Source: NBC Bay Area, Oct 8, 2026, https://www.nbcbayarea.com/holidays/most-popular-halloween-candy-2026/4155222/
+FACT 3: U.S. shoppers were expected to spend a record $13.5 billion on Halloween in 2026, including $4.1 billion on candy, or $115.14 per person. Source: National Retail Federation, Sep 22, 2026, https://nrf.com/media-center/press-releases/nrf-halloween-survey-shows-consumer-spending-expected-to-reach-13-5-billion
+FACT 4: In 2025, U.S. Halloween spending was expected to reach $13.1 billion, with $3.9 billion going to candy, and 66% of people planned to hand out candy. Source: National Retail Federation, https://nrf.com/research-insights/holiday-data-and-trends/halloween
+FACT 5: On November 1, 2026, Halloween candy was marked down 50% at Walmart and Target, 40% at Walgreens, 33% at CVS and 30% at Dollar General. Source: The Krazy Coupon Lady, Nov 1, 2026, https://thekrazycouponlady.com/2026/11/01/in-store-halloween-clearance-finds-up-to-70-off-at-target-walmart-more
+FACT 7: In Canada, 53% of people celebrated Halloween and the average household spent $67.65 on costumes, candy and decorations combined (Léger survey, 2024). Source: Retail Insider, Oct 8, 2025, https://retail-insider.com/retail-insider/2025/10/halloween-spending-trends-in-canada/
+
+The Snack Bar's own stock and prices (from Snack Bar Data.csv; rank and candy names via CandyStore.com / NBC; PRICES AND STOCK ARE PRACTICE NUMBERS - say so whenever you use them):
+rank,candy,type,price,stock
+1,M&M's,chocolate,1.50,48
+2,Sour Patch Kids,sour,1.25,36
+3,Skittles,fruity,1.25,40
+4,Reese's Cups,chocolate,1.75,30
+5,Nerds Gummy Clusters,fruity,2.00,18
+6,Hot Tamales,cinnamon,1.00,12
+7,Starburst,fruity,1.25,24
+8,Candy Corn,classic,0.75,60
+9,Hershey's Mini Bars,chocolate,1.50,0
+10,Butterfinger,chocolate,1.50,9
+
+Clearance rule the owner decided: after Halloween, every candy with 30 or more left in stock is 50% off; candies with fewer than 30 left are 25% off; sold-out candies are not available.
+
+Chart table (candy, stock; practice numbers): M&M's 48 · Sour Patch Kids 36 · Skittles 40 · Reese's Cups 30 · Nerds Gummy Clusters 18 · Starburst 24 · Candy Corn 60
+
+RULES
+- If the user types a name, email, phone number or address, warn them not to share it. This warning comes before any other rule.
+- Answer only from KNOWLEDGE.
+- Never invent a policy, price, discount or deadline.
+- If the question is off topic, or the answer is not in KNOWLEDGE, reply with the FALLBACK LINE and nothing else.
+- Never ask for anyone's name, email, phone number or address.
+- Work out clearance prices only by applying the owner's clearance rule to the practice prices and stock in KNOWLEDGE, and say they are practice numbers.
+- Do not take payments or hold items. If asked, use the FALLBACK LINE.
+
+FALLBACK LINE
+"I'm not sure about that. Please ask the Snack Bar counter."
+
+TONE
+Friendly, short, Grade 9 reading level.
+
+FORMAT
+1 to 3 sentences per answer. Use a short list only when comparing items. Always name the source of a number (for example, "practice numbers from Snack Bar Data.csv" or "National Retail Federation").`;
+const RULES = [
+  "Privacy check first: if a message contains an email or phone number, the bot only replies with a warning and does not answer.",
+  "Answers come only from the facts and the practice stock list; no new facts, prices, discounts or policies.",
+  "Clearance prices follow the owner's rule: 30 or more in stock = 50% off, fewer than 30 = 25% off, sold out = not available.",
+  "If no topic matches, the bot replies: " + FALLBACK,
+  "Refuse words (always trigger the fallback): " + REFUSE.join(", "),
+  "The bot does not take payments, hold items, or collect any personal information. Nothing is saved to the browser."
+];
+const SOURCES = ["Snack Bar Data.csv (rank via CandyStore.com / NBC; prices and stock are practice numbers)", NBC, NRF26, NRF25, KCL, RI];
+const chat = document.getElementById("chat"), input = document.getElementById("input");
+function addMsg(html, who) {
+  const d = document.createElement("div"); d.className = "msg " + who;
+  if (who === "user") d.textContent = html; else d.innerHTML = html;
+  chat.appendChild(d); chat.scrollTop = chat.scrollHeight; return d;
+}
+function reply(text) {
+  const t = text.toLowerCase();
+  if (/\S+@\S+\.\S+/.test(text) || /(?:[\d\s\-()]*\d){7,}/.test(text)) return { answer: PRIVACY, source: "" };
+  if (REFUSE.some(w => t.includes(w))) return { answer: FALLBACK, source: "" };
+  let best = null, bestHits = 0;
+  for (const topic of TOPICS) {
+    const hits = topic.keywords.filter(k => t.includes(k)).length;
+    if (hits > bestHits) { bestHits = hits; best = topic; }
+  }
+  return best ? best : { answer: FALLBACK, source: "" };
+}
+function send(text) {
+  text = (text || input.value).trim(); if (!text) return;
+  addMsg(text, "user"); input.value = "";
+  const typing = addMsg('<span class="typing"><span></span><span></span><span></span></span>', "bot");
+  setTimeout(() => {
+    const r = reply(text); typing.remove();
+    const esc = r.answer.replace(/&/g, "&amp;").replace(/</g, "&lt;");
+    addMsg(esc + (r.source ? '<small class="src">Source: ' + r.source + '</small>' : ""), "bot");
+  }, 600);
+}
+document.getElementById("send").addEventListener("click", () => send());
+input.addEventListener("keydown", e => { if (e.key === "Enter") send(); });
+document.querySelectorAll(".starters button").forEach(b => b.addEventListener("click", () => send(b.textContent)));
+document.getElementById("drawerBtn").addEventListener("click", () => document.getElementById("drawer").classList.toggle("open"));
+document.getElementById("promptBox").textContent = SYSTEM_PROMPT;
+document.getElementById("rulesList").innerHTML = RULES.map(r => "<li>" + r.replace(/&/g, "&amp;").replace(/</g, "&lt;") + "</li>").join("");
+document.getElementById("sourcesList").innerHTML = SOURCES.map(s => "<li>" + s + "</li>").join("");
+(function drawChart() {
+  const svg = document.getElementById("chart"), max = Math.max(...CHART.map(r => r[1])), left = 150, width = 220, rowH = 34;
+  let out = "";
+  CHART.forEach((row, i) => {
+    const y = 12 + i * rowH, w = width * row[1] / max;
+    out += '<text x="' + (left - 8) + '" y="' + (y + 15) + '" text-anchor="end">' + row[0].replace(/&/g, "&amp;") + '</text>';
+    out += '<rect x="' + left + '" y="' + y + '" width="' + w + '" height="22" rx="4" fill="#612141"></rect>';
+    out += '<text x="' + (left + w + 6) + '" y="' + (y + 15) + '" font-weight="bold">' + row[1] + '</text>';
+  });
+  svg.innerHTML = out;
+})();
+addMsg("Hi! I'm the Haunted Snack Bar Clearance Helper 🎃 Ask me what's on clearance, what to buy for your budget, or which candies to mark down first. Prices and stock here are practice numbers.", "bot");
+</script>
+</body>
+</html>
