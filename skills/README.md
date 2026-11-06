@@ -4,7 +4,7 @@
 
 | Build step | Skill | What you paste in | What you get back |
 |---|---|---|---|
-| before the build | **Prompt Lab** (a page, not a chatbot skill; four tabs) | your hat, your assistant card, a prompt | a plan with checks; a score out of 10 (Role · Task · Context · Format · Check) and which skill fixes each gap; these same five boxes, pre-filled from your plan (Cards tab); a preview of the page |
+| before the build | **Prompt Lab** (a page, not a chatbot skill; four tabs) | your hat, a prompt, your assistant card | a score out of 10 (Role · Task · Context · Format · Check) and which skill fixes each gap; these same five boxes, pre-filled for your assistant (Cards tab); a preview of the page; the plan with checks |
 | 2 Knowledge | **Fact Finder + Source Check** | your problem line + 3 questions | a fact table with links + a small table for your chart |
 | 3 System prompt | **System Prompt Writer** | your assistant card + fact table | a system prompt + 3 test questions |
 | 4 Page | **Bot Builder** | card + system prompt + facts + table | ONE `.html` file: your chatbot page |

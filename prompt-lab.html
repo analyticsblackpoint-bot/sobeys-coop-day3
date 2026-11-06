@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -81,47 +81,49 @@ table.ex th { width: 30%; text-align: left; vertical-align: top }
 }
 .stack { display: grid; gap: 5px } .field label.mini { font-weight: normal; font-size: 12px; color: var(--ink2); margin: 2px 0 0 }
 
+/* ---- facelift: iOS-style, orchard white + baby blue, sharp inputs ---- */
+:root[data-theme="light"] { --bg:#FBFAF7; --card:#FFFFFF; --ink:#1C1C1E; --ink2:#5B5B60; --maroon:#1D6FD6; --red:#1D6FD6; --gold:#CFE8FF; --rule:#E3E6EB; --tint:#F2F7FD; --ok:#1F8A4C; --warn:#B8700A; --bad:#C62839; --blue:#8EC8FF; --sans:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Inter,Roboto,system-ui,sans-serif; --serif:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",Inter,system-ui,sans-serif; color-scheme: light }
+body { -webkit-font-smoothing: antialiased; letter-spacing: -0.005em }
+h1 { font-weight: 700; letter-spacing: -0.02em; font-size: 32px; color: var(--ink) } .tabtitle { font-weight: 700; letter-spacing: -0.015em; color: var(--ink); font-size: 24px }
+h2 { color: var(--maroon) } h3 { color: var(--ink); font-weight: 600 }
+.card, .skillcard { border: 1px solid var(--rule); border-radius: 14px; box-shadow: 0 1px 2px rgba(16,24,40,.04), 0 6px 20px rgba(16,24,40,.04) }
+.tabs { border-bottom: 0; background: #EEF1F5; border-radius: 12px; padding: 4px; gap: 2px; display: inline-flex; max-width: 100% }
+.tab { border: 0; border-radius: 9px; padding: 8px 14px; margin: 0; color: var(--ink2); font-weight: 500 } .tab[aria-selected="true"] { background: #fff; color: var(--ink); box-shadow: 0 1px 3px rgba(16,24,40,.12); border-bottom: 0 }
+.tab .n { background: #DCE3EC; color: var(--ink2) } .tab[aria-selected="true"] .n { background: var(--maroon); color: #fff } .tab.done .n { background: var(--ok); color: #fff }
+.tab .badge { font-size: 11px; font-weight: 600; color: var(--maroon); background: var(--tint); border-radius: 8px; padding: 1px 6px; margin-left: 4px } .tab .badge:empty { display: none }
+input[type="text"], .field input[type="text"], .field select, .pastes input[type="text"], textarea, .pastes textarea, select, input.word { border: 1px solid #D5DAE1; border-radius: 8px; background: #fff; box-shadow: inset 0 1px 1px rgba(16,24,40,.04); transition: border-color .12s, box-shadow .12s }
+input[type="text"]:focus, textarea:focus, select:focus, input.word:focus { outline: 0; border-color: var(--maroon); box-shadow: 0 0 0 3px rgba(29,111,214,.18) }
+.field .sug { color: var(--ink2) } .field.sug input, .field.sug textarea { border-style: solid }
+button { border-radius: 9px; font-weight: 500 } button.primary { background: var(--maroon); color: #fff } button.primary:hover { background: #185FBA } button:not(.primary):not(.tab):not(.chip):not(.next) { background: #F0F3F7; color: var(--ink) } button:not(.primary):not(.tab):not(.chip):not(.next):hover { background: #E4E9F0 }
+button.chip { border-radius: 999px; background: #fff; border: 1px solid #D5DAE1 } button.chip:hover { border-color: var(--maroon); color: var(--maroon) }
+.next { display: block; margin: 18px 0 0 auto; background: var(--ink); color: #fff; font-weight: 600; padding: 11px 18px; border-radius: 999px } .next:hover { background: #333 }
+.lesson, .obj { background: var(--gold); color: #0B3D7A; font-weight: 600 } .banner { background: var(--tint); border-left-color: var(--maroon) }
+.crit li { background: #F5F7FA; border-radius: 10px; border-left-width: 4px } .crit li.ok { background: #EEF8F1 } .crit li.warn { background: #FFF6E8 } .crit li.bad { background: #FDEEEF }
+.bar { background: #E8EDF3 } .bar i { background: var(--maroon) } .bar i.gold { background: var(--ok) } .big { color: var(--ink); font-weight: 700 }
+.box { background: #F7F9FC; border-color: #E3E6EB; border-radius: 10px } .box .fill { background: #DCEEFF; color: #0B3D7A } .box .fill.empty { background: #FDE2E5; color: #8A1C27 }
+.chip-status { background: #EEF1F5; color: var(--ink2); border-radius: 999px } .chip-status.ready { background: #DDF3E3; color: #145A2B }
+.bubble.bot { border-color: var(--rule) } .rulebox { background: #F7F9FC }
+.skill { color: var(--maroon) } .warnbox { background: #FFF3C4; color: #5A3B00 }
+#previewFrame { border-radius: 14px; box-shadow: 0 1px 2px rgba(16,24,40,.04), 0 6px 20px rgba(16,24,40,.04) }
+.foot { color: var(--ink2) }
+
 </style>
 </head>
 <body>
 <div class="wrap" id="head">
   <h1>Prompt Lab · Haunted Snack Bar</h1>
-  <p class="sub">Plan your assistant, score the prompt, get the five skill boxes filled in, see the page before you build it. Prices, stock and store facts are practice numbers. Nothing leaves this page: your plan saves in this browser only.</p>
+  <p class="sub">Score your prompt, get the five skill boxes filled in, see the page before you build it, then check the plan behind it. Prices, stock and store facts are practice numbers. Nothing leaves this page: your plan saves in this browser only.</p>
   <div class="row hatrow"><label for="hat"><b>My assistant helps:</b></label> <select id="hat"></select> <span class="small" id="hatPain"></span></div>
   <nav class="tabs" role="tablist" aria-label="Prompt Lab tabs">
-    <button class="tab" role="tab" data-tab="plan" aria-selected="true"><span class="n">1</span> Plan</button>
-    <button class="tab" role="tab" data-tab="prompt"><span class="n">2</span> Prompt</button>
-    <button class="tab" role="tab" data-tab="cards"><span class="n">3</span> Cards</button>
-    <button class="tab" role="tab" data-tab="preview"><span class="n">4</span> Preview</button>
+    <button class="tab" role="tab" data-tab="prompt" aria-selected="true"><span class="n">1</span> Prompt <span class="badge"></span></button>
+    <button class="tab" role="tab" data-tab="cards"><span class="n">2</span> Cards</button>
+    <button class="tab" role="tab" data-tab="preview"><span class="n">3</span> Preview</button>
+    <button class="tab" role="tab" data-tab="plan"><span class="n">4</span> Plan</button>
   </nav>
 </div>
 
-<div class="wrap" id="tab-plan" role="tabpanel">
-  <h2 class="tabtitle">1 · Plan: the assistant card</h2>
-  <p class="sub">Pick your assistant above. Every field starts with a suggestion from the workbook's hats table; change anything. The checks beside the card (below it on a phone) are the same rules the skills use. When the card says ready, copy it into the workbook (step 1) for the instructor's initials.</p>
-  <div class="grid plan">
-    <div class="card">
-      <div id="planForm"></div>
-      <div class="row">
-        <button id="planReset">Back to the suggestions</button>
-        <button id="planDownload">Download my plan (.json)</button>
-        <label class="filebtn" for="planLoad">Load a plan (.json)</label><input type="file" id="planLoad" accept=".json,application/json" hidden>
-        <span class="small" id="planMsg"></span>
-      </div>
-    </div>
-    <div class="card">
-      <h3 id="planProgress">Plan 0/9 ready</h3>
-      <ul class="crit" id="planChecks"></ul>
-      <details open><summary>What a good plan looks like (the Snack Bar example)</summary>
-        <table class="ex"><tr><th>Bot name</th><td>Haunted Snack Bar Clearance Helper</td></tr><tr><th>Who it's for</th><td>shoppers looking for cheap candy after Halloween, and the Snack Bar owner</td></tr><tr><th>3 things it does</th><td>says what's on clearance and the price · suggests what to buy for a budget · tells the owner which candies to mark down first</td></tr><tr><th>2 things it won't do</th><td>take payments or hold items · answer anything not about the Snack Bar</td></tr><tr><th>Success measure</th><td>a shopper finds a deal in 3 messages or fewer</td></tr><tr><th>Real contact</th><td>the Snack Bar counter</td></tr></table>
-      </details>
-      <div class="lesson">Who it's for is a kind of person, never a named person. The contact is a place or a role. The success measure has a number. Those three rules are what the instructor checks at the initials.</div>
-    </div>
-  </div>
-</div>
-
 <div class="wrap" id="tab-prompt" role="tabpanel" hidden>
-<h2 class="tabtitle">2 · Prompt: score it</h2>
+<h2 class="tabtitle">1 · Prompt: score it</h2>
 <p class="sub">What you'll learn: Day 1's recipe, <b>Role · Task · Context · Format · Check</b>, now scored. A good prompt says <b>who</b> the AI is and who it's talking to, the <b>task</b>, gives it the <b>facts</b>, the <b>shape</b> of the answer, and <b>what to do when it doesn't know</b>. Write a prompt for your Snack Bar assistant below; the lab scores it and shows what to fix. Prices, stock and store facts are practice numbers.</p>
 
 <div class="top">
@@ -186,14 +188,14 @@ table.ex th { width: 30%; text-align: left; vertical-align: top }
 </div>
 
 <div class="wrap" id="tab-cards" role="tabpanel" hidden>
-  <h2 class="tabtitle">3 · Cards: the five skill boxes, filled from your plan</h2>
-  <p class="sub">These are the same boxes as the workbook and the skills folder, with your plan written into the blanks. Copy a box into any free chatbot in a new chat and send it. Some blanks only exist after an earlier step: paste those results into the boxes under the card, and the card fills itself.</p>
+  <h2 class="tabtitle">2 · Cards: the five skill boxes, filled in for your assistant</h2>
+  <p class="sub">These are the same boxes as the workbook and the skills folder, with your assistant's plan (tab 4) written into the blanks. Copy a box into any free chatbot in a new chat and send it. Some blanks only exist after an earlier step: paste those results into the boxes under the card, and the card fills itself.</p>
   <div class="row"><button class="primary" id="copyAll">Copy all five cards</button><button id="printCards">Print the cards (one per page)</button><span class="small" id="cardsMsg"></span></div>
   <div id="cards"></div>
 </div>
 
 <div class="wrap" id="tab-preview" role="tabpanel" hidden>
-  <h2 class="tabtitle">4 · Preview: what the Bot Builder will make</h2>
+  <h2 class="tabtitle">3 · Preview: what the Bot Builder will make</h2>
   <div class="banner">Preview: what your Bot Builder prompt asks for. Your real page comes from the Bot Builder skill, built from your ✔ facts and your system prompt. This one is built by rules from your plan and the practice data, so you can see the shape before you build it.</div>
   <div class="row">
     <button class="primary" id="trapBtn">Try the trap question</button>
@@ -204,6 +206,30 @@ table.ex th { width: 30%; text-align: left; vertical-align: top }
   </div>
   <iframe id="previewFrame" title="Preview of your assistant"></iframe>
   <p class="small">The preview answers from 8 to 10 rules per assistant, the same way the Bot Builder page will. Count the keyword hits, pick the best rule, show the source. No rule matched, or a refuse word in the message, means the fallback line. An email or a phone number means the privacy warning, before anything else.</p>
+</div>
+
+<div class="wrap" id="tab-plan" role="tabpanel" hidden>
+  <h2 class="tabtitle">4 · Plan: the assistant card</h2>
+  <p class="sub">This is the card behind your cards and your preview, filled in for your assistant. Change anything; the checks beside it (below it on a phone) are the same rules the skills use. When it says ready, copy it into the workbook (step 1) for the instructor's initials.</p>
+  <div class="grid plan">
+    <div class="card">
+      <div id="planForm"></div>
+      <div class="row">
+        <button id="planReset">Reset this card</button>
+        <button id="planDownload">Download my plan (.json)</button>
+        <label class="filebtn" for="planLoad">Load a plan (.json)</label><input type="file" id="planLoad" accept=".json,application/json" hidden>
+        <span class="small" id="planMsg"></span>
+      </div>
+    </div>
+    <div class="card">
+      <h3 id="planProgress">Plan 0/8 ready</h3>
+      <ul class="crit" id="planChecks"></ul>
+      <details open><summary>What a good plan looks like (the Snack Bar example)</summary>
+        <table class="ex"><tr><th>Bot name</th><td>Haunted Snack Bar Clearance Helper</td></tr><tr><th>Who it's for</th><td>shoppers looking for cheap candy after Halloween, and the Snack Bar owner</td></tr><tr><th>3 things it does</th><td>says what's on clearance and the price · suggests what to buy for a budget · tells the owner which candies to mark down first</td></tr><tr><th>Success measure</th><td>a shopper finds a deal in 3 messages or fewer</td></tr><tr><th>Real contact</th><td>the Snack Bar counter</td></tr></table>
+      </details>
+      <div class="lesson">Who it's for is a kind of person, never a named person. The contact is a place or a role. The success measure has a number. Those three rules are what the instructor checks at the initials.</div>
+    </div>
+  </div>
 </div>
 
 <div class="wrap">
@@ -428,7 +454,7 @@ function score() {
   if (!/nov|today|week after|date|2026|first shift/.test(lt)) qs.push("What's the date? (Clearance and the trend depend on how long after Halloween it is.)");
   $("qs").innerHTML = qs.length ? `<h3 style="margin-top:12px">What a good ${h.name} would ask you back</h3><ul style="margin:4px 0 0 18px;padding:0">${qs.slice(0, 4).map(q => `<li>${q}</li>`).join("")}</ul>` : `<p class="small" style="margin-top:10px">No questions back: the prompt answers them already.</p>`;
   const rb = ruleBrain(raw, h); $("rule").textContent = rb.answer; $("ruleShown").textContent = rb.matched.length ? (rb.matched[0] === "(refuse word)" ? "IF the message contains a refuse word (refund, hold, coupon, free, 2-for-1, discount …)\nTHEN reply with the fallback line, nothing else." : "IF the message contains any of: " + rb.rule.join(", ") + "\nTHEN reply with: " + rb.answer.slice(0, 60) + "…\n(matched: " + rb.matched.join(", ") + ")") : "IF no rule's words appear in the message\nTHEN reply with the fallback line."; $("matched").innerHTML = rb.matched.length ? `Matched keywords: <span class="mono">${rb.matched.join(", ")}</span>. The rule brain ignores everything else you wrote, including the data you pasted: its facts are built in.` : `No keyword matched → the fallback line. The rule brain never guesses; it also never understands.`;
-  $("result").scrollIntoView({ behavior: "smooth", block: "nearest" });
+  if (!window.__liveScore) $("result").scrollIntoView({ behavior: "smooth", block: "nearest" });
 }
 function ruleBrain(raw, h) {
   const t = raw.toLowerCase().split(/use only this data|candy \| type|store facts \(practice|weekly search interest/)[0];
@@ -484,24 +510,22 @@ const FIELDS = [
   { k: "botName", label: "Bot name" }, { k: "tagline", label: "Tagline", opt: "8 words or fewer" },
   { k: "emoji", label: "Emoji", opt: "one, it is the logo", short: true }, { k: "who", label: "Who it's for", opt: "a kind of person, never a named person" },
   { k: "problem", label: "Problem line", custom: true },
-  { k: "does", label: "3 things it does", custom: true }, { k: "wont", label: "2 things it won't do", custom: true },
+  { k: "does", label: "3 things it does", custom: true },
   { k: "measure", label: "One success measure", opt: "with a number" }, { k: "contact", label: "Real contact for the fallback line", opt: "a place or a role, never a person" },
-  { k: "team", label: "Team", custom: true }, { k: "colours", label: "Colours", custom: true },
+  { k: "team", label: "Team", custom: true },
   { k: "cards", label: "Also used by the cards", custom: true }
 ];
 function inp(k, cls) { return `<input type="text" id="f_${k}" data-k="${k}" ${cls ? `class="${cls}"` : ""} value="${esc(PLAN[k] ?? "")}">`; }
 function renderPlanForm() {
   const h = curHat(), d = defaults(h);
-  const sugNote = (k) => (PLAN[k] === d[k] && d[k]) ? `<div class="sug">suggested; make it yours</div>` : "";
-  const wrap = (f, inner) => `<div class="field ${PLAN[f.k] === d[f.k] && d[f.k] ? "sug" : ""}" data-f="${f.k}"><label>${f.label}${f.opt ? ` <span class="opt">(${f.opt})</span>` : ""}</label>${inner}<div class="bad" id="bad_${f.k}"></div></div>`;
+  const sugNote = (k) => "";
+  const wrap = (f, inner) => `<div class="field" data-f="${f.k}"><label>${f.label}${f.opt ? ` <span class="opt">(${f.opt})</span>` : ""}</label>${inner}<div class="bad" id="bad_${f.k}"></div></div>`;
   $("planForm").innerHTML = FIELDS.map(f => {
     if (!f.custom) return wrap(f, inp(f.k) + sugNote(f.k));
-    if (f.k === "problem") return wrap(f, `<div class="problem"><span>Our bot helps</span>${inp("p0")}<span>do</span>${inp("p1")}<span>so that</span>${inp("p2")}</div><div class="sug">${esc(problemLine(PLAN))}</div>`);
+    if (f.k === "problem") return wrap(f, `<div class="stack"><label class="mini">Our bot helps …</label>${inp("p0")}<label class="mini">do …</label>${inp("p1")}<label class="mini">so that …</label>${inp("p2")}</div><div class="sug">${esc(problemLine(PLAN))}</div>`);
     if (f.k === "does") return wrap(f, `<div class="stack">${inp("does0")}${inp("does1")}${inp("does2")}</div>${sugNote("does0")}`);
-    if (f.k === "wont") return wrap(f, `<div class="stack">${inp("wont0")}${inp("wont1")}</div>${sugNote("wont0")}`);
     if (f.k === "team") return wrap(f, `<div class="twocol"><div><input type="text" id="f_teamName" data-k="teamName" placeholder="team name, no student names" value="${esc(PLAN.teamName)}"></div><div><select id="f_teamSize" data-k="teamSize"><option value="2" ${PLAN.teamSize === "2" ? "selected" : ""}>2 people</option><option value="3" ${PLAN.teamSize === "3" ? "selected" : ""}>3 people</option></select></div></div>`);
-    if (f.k === "colours") return wrap(f, `<div class="twocol">${inp("main")}${inp("accent")}</div><div class="sug">main colour, accent colour: a colour name like maroon, or a code like #612141</div>`);
-    return wrap(f, `<div class="sug" style="margin-bottom:4px">Fact Finder: three questions and a table topic. Bot Builder: refuse words. Change them if your plan needs others.</div><div class="stack"><label class="mini">Fact Finder question 1</label>${inp("q0")}<label class="mini">Question 2</label>${inp("q1")}<label class="mini">Question 3</label>${inp("q2")}<label class="mini">Table topic (3 to 8 rows)</label>${inp("tableTopic")}<label class="mini">Refuse words (offers your facts do not cover)</label>${inp("refuse")}</div>`);
+    return wrap(f, `<div class="sug" style="margin-bottom:4px">Fact Finder: three questions and a table topic. Bot Builder: refuse words.</div><div class="stack"><label class="mini">Fact Finder question 1</label>${inp("q0")}<label class="mini">Question 2</label>${inp("q1")}<label class="mini">Question 3</label>${inp("q2")}<label class="mini">Table topic (3 to 8 rows)</label>${inp("tableTopic")}<label class="mini">Refuse words (offers your facts do not cover)</label>${inp("refuse")}</div>`);
   }).join("");
   $("planForm").querySelectorAll("[data-k]").forEach(el => el.addEventListener("input", () => { PLAN[el.dataset.k] = el.value; savePlan(); runChecks(); refreshDerived(); }));
   runChecks();
@@ -517,18 +541,17 @@ function runChecks() {
   check(p.who.trim().length >= 3 && !personLike(p.who) && !pii(p.who), "who", personLike(p.who) ? "This looks like a named person. Write a kind of person: 'a shopper after Halloween', 'the owner'." : "Say who it is for: a kind of person.", "Who it's for");
   check([p.p0, p.p1, p.p2].every(x => x.trim().length >= 2), "problem", "Fill all three blanks: helps ___ do ___ so that ___.", "Problem line");
   const dw = [p.does0, p.does1, p.does2].map(x => x.trim().split(/\s+/).filter(Boolean).length); check(dw.every(n => n >= 3), "does", `Each thing it does needs 3 or more words (now ${dw.join(", ")}). Say what it does, for whom: 'says what is on clearance and the price'.`, "3 things it does");
-  check(p.wont0.trim().length >= 3 && p.wont1.trim().length >= 3, "wont", "Two things it won't do; these become refuse rules.", "2 things it won't do");
   check(/\d/.test(p.measure), "measure", "A success measure needs a number: 'finds a deal in 3 messages or fewer'.", "Success measure");
   check(p.contact.trim().length >= 3 && !/@|\d/.test(p.contact) && !personLike(p.contact), "contact", /@|\d/.test(p.contact) ? "No email or phone number: the contact is a place or a role ('the Snack Bar counter')." : personLike(p.contact) ? "That looks like a person. Use a place or a role: 'the Snack Bar counter', 'the owner'." : "Name a place or a role the bot can send people to.", "Real contact");
   check(p.teamName.trim().length >= 2 && !personLike(p.teamName) && !pii(p.teamName), "team", personLike(p.teamName) ? "A team name, not people's names." : "Write your team name (no student names); it goes on the page's footer.", "Team name");
   const anyPii = ["botName", "tagline", "who", "p0", "p1", "p2", "does0", "does1", "does2", "wont0", "wont1", "measure", "contact", "teamName", "q0", "q1", "q2", "refuse"].some(k => pii(p[k] || ""));
   const n = out.filter(o => o.ok).length;
-  $("planProgress").textContent = `Plan ${n}/9 ready` + (anyPii ? " · contains an email or phone number" : "");
+  $("planProgress").textContent = `Plan ${n}/8 ready` + (anyPii ? " · contains an email or phone number" : "");
   $("planChecks").innerHTML = out.map(o => `<li class="${o.ok ? "ok" : "warn"}">${o.ok ? "✔" : "→"} <b>${o.label}</b>${o.ok ? "" : ": " + esc(o.msg)}</li>`).join("") + (anyPii ? `<li class="bad">Take out the email address or phone number: no personal information in a prompt, a file or a bot (Bot Builder rule 7).</li>` : "");
-  document.querySelector('.tab[data-tab="plan"]').classList.toggle("done", n === 9 && !anyPii);
-  return n === 9 && !anyPii;
+  document.querySelector('.tab[data-tab="plan"]').classList.toggle("done", n === 8 && !anyPii);
+  return n === 8 && !anyPii;
 }
-$("planReset").onclick = () => { PLAN = defaults(curHat()); savePlan(); renderPlanForm(); refreshDerived(); $("planMsg").textContent = "Back to the suggestions for this assistant."; };
+$("planReset").onclick = () => { PLAN = defaults(curHat()); savePlan(); renderPlanForm(); refreshDerived(); $("planMsg").textContent = "Reset to the defaults for this assistant."; };
 $("planDownload").onclick = () => { const h = curHat(); download(`${PLAN.botName || h.name} plan.json`, JSON.stringify({ promptLab: "Day 4", hat: h.id, saved: new Date().toISOString().slice(0, 10), plan: PLAN }, null, 2), "application/json"); $("planMsg").textContent = "Downloaded. Load it on another device with 'Load a plan'."; };
 $("planLoad").onchange = (e) => { const f = e.target.files[0]; if (!f) return; const r = new FileReader(); r.onload = () => { try { const o = JSON.parse(r.result); const i = HATLIST.findIndex(h => h.id === o.hat); if (i < 0 || !o.plan) throw 0; $("hat").value = i; PLAN = Object.assign(defaults(HATLIST[i]), o.plan); savePlan(); onHatChange(false); $("planMsg").textContent = `Loaded a plan for the ${HATLIST[i].name}.`; } catch (err) { $("planMsg").textContent = "That file is not a Prompt Lab plan."; } }; r.readAsText(f); e.target.value = ""; };
 function download(name, text, type) { const a = document.createElement("a"); a.href = URL.createObjectURL(new Blob([text], { type: type || "text/html" })); a.download = name; document.body.appendChild(a); a.click(); setTimeout(() => { URL.revokeObjectURL(a.href); a.remove(); }, 500); }
@@ -695,17 +718,21 @@ startBtn.onclick = () => { const p = PLAN; const d0 = p.does0.trim(); $("prompt"
 const _analyse = analyse;
 analyse = function (raw, h) { const r = _analyse(raw, h); const t = raw.toLowerCase(); if (!r.audience && PLAN && (t.includes(PLAN.who.toLowerCase().trim()) || (PLAN.botName && t.includes(PLAN.botName.toLowerCase())))) { r.audience = 1; r.found.audience.aud = [PLAN.who]; r.total += 1; } return r; };
 const _score = score;
-score = function () { _score(); const n = +$("total").textContent; if (!isNaN(n)) { const b = bestOf(); if (n >= b.score) store.set(BEST_KEY(curHat()), { score: n, prompt: $("prompt").value }); document.querySelector('.tab[data-tab="prompt"]').classList.toggle("done", Math.max(n, b.score) >= 8); } };
+score = function (live) { window.__liveScore = !!live; _score(); window.__liveScore = false; const n = +$("total").textContent; bestBadge(); if (!isNaN(n)) { const b = bestOf(); if (n >= b.score) store.set(BEST_KEY(curHat()), { score: n, prompt: $("prompt").value }); document.querySelector('.tab[data-tab="prompt"]').classList.toggle("done", Math.max(n, b.score) >= 8); } };
 $("go").onclick = score;
 
 // ---------- tabs, hat changes, boot ----------
+const ORDER = ["prompt", "cards", "preview", "plan"], NEXT = { prompt: ["cards", "Next: get your cards"], cards: ["preview", "Next: preview the page"], preview: ["plan", "Next: check the plan"], plan: ["prompt", "Back to the prompt"] };
+document.querySelectorAll("[role=tabpanel]").forEach(p => { const t = p.id.replace("tab-", ""); if (!NEXT[t]) return; const b = document.createElement("button"); b.className = "next"; b.textContent = NEXT[t][1] + " →"; b.onclick = () => showTab(NEXT[t][0]); p.appendChild(b); });
+function bestBadge() { const b = bestOf(); const el = document.querySelector('.tab[data-tab="prompt"] .badge'); if (el) el.textContent = b.score ? `best ${b.score}/10` : ""; }
+let liveT = null; $("prompt").addEventListener("input", () => { clearTimeout(liveT); const v = $("prompt").value.trim(); if (v.split(/\s+/).length >= 6) liveT = setTimeout(() => score(true), 700); });
 function showTab(name) { document.querySelectorAll(".tab").forEach(b => b.setAttribute("aria-selected", b.dataset.tab === name ? "true" : "false")); ["plan", "prompt", "cards", "preview"].forEach(t => { $("tab-" + t).hidden = t !== name; }); if (name === "cards") renderCards(); if (name === "preview") renderPreview(); window.scrollTo({ top: 0 }); }
 document.querySelectorAll(".tab").forEach(b => b.onclick = () => showTab(b.dataset.tab));
 function refreshDerived() { if (!$("tab-cards").hidden) renderCards(); if (!$("tab-preview").hidden) renderPreview(); }
-function onHatChange(reload) { if (reload !== false) loadPlan(); $("hatPain").textContent = `"${curHat().pain}"`; renderPlanForm(); renderCards(); renderPreview(); const b = bestOf(); document.querySelector('.tab[data-tab="prompt"]').classList.toggle("done", b.score >= 8); }
+function onHatChange(reload) { if (reload !== false) loadPlan(); $("hatPain").textContent = `"${curHat().pain}"`; renderPlanForm(); renderCards(); renderPreview(); const b = bestOf(); document.querySelector('.tab[data-tab="prompt"]').classList.toggle("done", b.score >= 8); bestBadge(); }
 $("hat").addEventListener("change", () => onHatChange());
 onHatChange();
-const h0 = location.hash.replace("#", ""); showTab(["plan", "prompt", "cards", "preview"].includes(h0) ? h0 : "plan");
+const h0 = location.hash.replace("#", ""); showTab(ORDER.includes(h0) ? h0 : "prompt");
 
 </script>
 </body>

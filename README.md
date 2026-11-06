@@ -6,7 +6,7 @@ Everything for today is on the class page: **https://analyticsblackpoint-bot.git
 
 | What | Where |
 |---|---|
-| **Prompt Lab**, four tabs: plan your assistant, score your prompt out of 10, get the five skill boxes filled from your plan, preview the page before you build it | [prompt-lab.html](https://analyticsblackpoint-bot.github.io/sobeys-coop-day3/prompt-lab.html) |
+| **Prompt Lab**, four tabs: score your prompt out of 10, get the five skill boxes filled in for your assistant, preview the page before you build it, check the plan behind it | [prompt-lab.html](https://analyticsblackpoint-bot.github.io/sobeys-coop-day3/prompt-lab.html) |
 | **Student pack (zip, 5 MB)**: brief and rubric, build workbook, the five skills and cards, the Snack Bar example, the Prompt Lab for offline use, the slides | [pack/Day4_students_2026-11-06.zip](https://analyticsblackpoint-bot.github.io/sobeys-coop-day3/pack/Day4_students_2026-11-06.zip) |
 | **The worked example**: the Haunted Snack Bar Clearance Helper, from a real run of all five skills | [snack-bar-assistant.html](https://analyticsblackpoint-bot.github.io/sobeys-coop-day3/snack-bar-assistant.html) |
 | **AGI class vote** (the instructor tallies on the projector) | [dashboard.html#vote](https://analyticsblackpoint-bot.github.io/sobeys-coop-day3/dashboard.html#vote) |
