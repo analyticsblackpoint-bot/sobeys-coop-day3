@@ -4,25 +4,16 @@
   <meta charset="utf-8" />
   <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <title>Fact Finder + Source Check: facts with links, or &quot;not found&quot;</title>
+  <title>SKILL</title>
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: auto; overflow-x: auto;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-    /* The extra [class] is a hack that increases specificity enough to
-       override a similar rule in reveal.js */
-    ul.task-list[class]{list-style: none;}
-    ul.task-list li input[type="checkbox"] {
-      font-size: inherit;
-      width: 0.8em;
-      margin: 0 0.8em 0.2em -1.6em;
-      vertical-align: middle;
-    }
-    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+    ul.task-list{list-style: none;}
   </style>
-  <style>body{max-width:860px;margin:0 auto;padding:24px 16px;font-family:Calibri,Carlito,"Segoe UI",system-ui,sans-serif;font-size:16px;line-height:1.45;color:#2A1A22;background:#F6F2EC}
+<style>body{max-width:860px;margin:0 auto;padding:24px 16px;font-family:Calibri,Carlito,"Segoe UI",system-ui,sans-serif;font-size:16px;line-height:1.45;color:#2A1A22;background:#F6F2EC}
 h1,h2,h3{font-family:Cambria,Caladea,Georgia,serif;font-weight:normal;color:#612141} pre{background:#fff;border:1px solid #E2D9D3;border-radius:8px;padding:12px;white-space:pre-wrap;font-size:13.5px} code{font-size:13.5px}
 table{border-collapse:collapse;width:100%;font-size:14px} th,td{border:1px solid #D9D3D3;padding:4px 6px;vertical-align:top;text-align:left} th{background:#F4EEF1}
 a{color:#9D2235} .top{font-size:13px;letter-spacing:1px;text-transform:uppercase;color:#9D2235;font-weight:bold}
@@ -30,33 +21,19 @@ a{color:#9D2235} .top{font-size:13px;letter-spacing:1px;text-transform:uppercase
 </head>
 <body>
 <p class="top"><a href="../../index.html">← Day 4 home</a></p>
-<h1 id="fact-finder-source-check-facts-with-links-or-not-found">Fact
-Finder + Source Check: facts with links, or “not found”</h1>
-<p><em>Sobey HS Co-Op · Day 4 · Build step 2 (Knowledge, 10 min). Works
-in any free chatbot.</em></p>
+<h1 id="fact-finder-source-check-facts-with-links-or-not-found">Fact Finder + Source Check: facts with links, or “not found”</h1>
+<p><em>Sobey HS Co-Op · Day 4 · Build step 2 (Knowledge, 10 min). Works in any free chatbot.</em></p>
 <h2 id="what-its-for">What it’s for</h2>
-<p>Your chatbot needs real facts to answer with. This skill asks the AI
-for 5 to 8 facts about your problem, <strong>each with a link</strong>,
-plus one small table you can chart. If the AI can’t find a fact, it must
-write <strong>“not found”</strong> instead of making one up. Then your
-red-teamer opens every link and marks it ✔ or ✘.</p>
+<p>Your chatbot needs real facts to answer with. This skill asks the AI for 5 to 8 facts about your problem, <strong>each with a link</strong>, plus one small table you can chart. If the AI can’t find a fact, it must write <strong>“not found”</strong> instead of making one up. Then your red-teamer opens every link and marks it ✔ or ✘.</p>
 <h2 id="how-to-use-it-students">How to use it (students)</h2>
 <ol type="1">
-<li>Open your chatbot (any free one; follow the AI rules on the
-slide).</li>
-<li>Copy <strong>everything in the box below</strong>, from
-<code>BEGIN</code> to <code>END</code>, into the chat.</li>
-<li>Fill in the three blanks (delete the square brackets): your problem
-line, your 3 questions, and your table topic. No names of people, no
-personal information.</li>
-<li>Send it once. Copy the reply into the fact sheet page of your
-workbook.</li>
-<li><strong>Red-teamer: open every link.</strong> Mark ✔ if the page
-says what the table says. Mark ✘ if the link is dead, or the page says
-something different. Cross out every ✘ fact. Keep the ✔ facts only.</li>
+<li>Open your chatbot (any free one; follow the AI rules on the slide).</li>
+<li>Copy <strong>everything in the box below</strong>, from <code>BEGIN</code> to <code>END</code>, into the chat.</li>
+<li>Fill in the three blanks (delete the square brackets): your problem line, your 3 questions, and your table topic. No names of people, no personal information.</li>
+<li>Send it once. Copy the reply into the fact sheet page of your workbook.</li>
+<li><strong>Red-teamer: open every link.</strong> Mark ✔ if the page says what the table says. Mark ✘ if the link is dead, or the page says something different. Cross out every ✘ fact. Keep the ✔ facts only.</li>
 </ol>
-<h2 id="what-you-paste-in-with-the-snack-bar-example">What you paste in
-(with the Snack Bar example)</h2>
+<h2 id="what-you-paste-in-with-the-snack-bar-example">What you paste in (with the Snack Bar example)</h2>
 <table>
 <colgroup>
 <col style="width: 33%" />
@@ -73,17 +50,13 @@ something different. Cross out every ✘ fact. Keep the ✔ facts only.</li>
 <tbody>
 <tr class="odd">
 <td>MY PROBLEM LINE</td>
-<td>“Our bot helps ___ do ___ so that ___.” (a kind of person, not a
-named person)</td>
-<td>Our bot helps shoppers find after-Halloween candy deals at the
-Haunted Snack Bar so that leftover stock gets sold.</td>
+<td>"Our bot helps ___ do ___ so that ___." (a kind of person, not a named person)</td>
+<td>Our bot helps shoppers find after-Halloween candy deals at the Haunted Snack Bar so that leftover stock gets sold.</td>
 </tr>
 <tr class="even">
 <td>MY 3 QUESTIONS</td>
 <td>Three things your bot must know, as questions</td>
-<td>1. Which Halloween candies sell the most in North America? 2. How
-much do people spend on Halloween candy each year? 3. When do stores
-usually mark down Halloween candy, and by how much?</td>
+<td>1. Which Halloween candies sell the most in North America? 2. How much do people spend on Halloween candy each year? 3. When do stores usually mark down Halloween candy, and by how much?</td>
 </tr>
 <tr class="odd">
 <td>MY TABLE TOPIC</td>
@@ -114,54 +87,35 @@ MY TABLE TOPIC: [one thing to chart, 3 to 8 rows]
 END FACT FINDER</code></pre>
 <h2 id="what-you-get-back">What you get back</h2>
 <ul>
-<li><strong>PART A:</strong> a table, 5 to 8 rows, with a link and a
-confidence rating on every row. Some rows may say “not found”. That’s
-fine.</li>
-<li><strong>PART B:</strong> one tiny table (label, number) with a link
-under it. This is what your page’s chart will show.</li>
+<li><strong>PART A:</strong> a table, 5 to 8 rows, with a link and a confidence rating on every row. Some rows may say “not found”. That’s fine.</li>
+<li><strong>PART B:</strong> one tiny table (label, number) with a link under it. This is what your page’s chart will show.</li>
 </ul>
 <h2 id="how-to-check-it-red-teamer">How to check it (red-teamer)</h2>
 <ul class="task-list">
-<li><label><input type="checkbox" />Every row has a link, or says “not
-found”. No row has a number without a link.</label></li>
-<li><label><input type="checkbox" />You opened <strong>every</strong>
-link. Each one loads, and you found the same number on the page (use
-Ctrl+F to search the page for the number). Mark ✔ or ✘ on the fact
-sheet.</label></li>
-<li><label><input type="checkbox" />At least 5 facts are ✔. If not, send
-the second fix-it prompt below.</label></li>
-<li><label><input type="checkbox" />The PART B numbers match a ✔ fact
-exactly.</label></li>
-<li><label><input type="checkbox" />No person’s name anywhere in the
-reply.</label></li>
+<li><input type="checkbox" disabled="" />
+Every row has a link, or says “not found”. No row has a number without a link.</li>
+<li><input type="checkbox" disabled="" />
+You opened <strong>every</strong> link. Each one loads, and you found the same number on the page (use Ctrl+F to search the page for the number). Mark ✔ or ✘ on the fact sheet.</li>
+<li><input type="checkbox" disabled="" />
+At least 5 facts are ✔. If not, send the second fix-it prompt below.</li>
+<li><input type="checkbox" disabled="" />
+The PART B numbers match a ✔ fact exactly.</li>
+<li><input type="checkbox" disabled="" />
+No person’s name anywhere in the reply.</li>
 </ul>
-<h2 id="fix-it-prompts-send-one-line">Fix-it prompts (send one
-line)</h2>
+<h2 id="fix-it-prompts-send-one-line">Fix-it prompts (send one line)</h2>
 <ul>
-<li>“Row 3’s link does not say that. Replace row 3 with a fact that has
-a working link, or write not found.”</li>
-<li>“I need 2 more facts about [topic] with links. Same table format.
-Don’t ask me questions.”</li>
+<li>“Row 3’s link does not say that. Replace row 3 with a fact that has a working link, or write not found.”</li>
+<li>“I need 2 more facts about [topic] with links. Same table format. Don’t ask me questions.”</li>
 <li>“Make PART B a table of [label] vs [number] from row [#] only.”</li>
 </ul>
-<h2 id="why-these-rules-for-the-instructor">Why these rules (for the
-instructor)</h2>
+<h2 id="why-these-rules-for-the-instructor">Why these rules (for the instructor)</h2>
 <ul>
-<li><strong>“Not found” beats guessing:</strong> the whole lesson of Air
-Canada and Deloitte. A visible gap teaches more than a hidden
-fabrication.</li>
-<li><strong>Confidence column + “if you cannot browse”:</strong> many
-free chatbots have no live search. The column makes the model say how
-sure it is, and the red-teamer’s link check is the real test.</li>
-<li><strong>Two parts, fixed columns:</strong> the fact sheet and the
-chart table go straight into the Bot Builder prompt with no
-reformatting.</li>
-<li><strong>Red-teamer opens every link:</strong> the human check is the
-point. It is also the “source check” half of the skill name.</li>
-<li><strong>Snack Bar run (Nov 5):</strong> see
-<code>snackbar_run\02_fact_finder_*</code>. The reply and the link
-checks are in the folder; the result appears on the Fact Finder
-slide.</li>
+<li><strong>“Not found” beats guessing:</strong> the whole lesson of Air Canada and Deloitte. A visible gap teaches more than a hidden fabrication.</li>
+<li><strong>Confidence column + “if you cannot browse”:</strong> many free chatbots have no live search. The column makes the model say how sure it is, and the red-teamer’s link check is the real test.</li>
+<li><strong>Two parts, fixed columns:</strong> the fact sheet and the chart table go straight into the Bot Builder prompt with no reformatting.</li>
+<li><strong>Red-teamer opens every link:</strong> the human check is the point. It is also the “source check” half of the skill name.</li>
+<li><strong>Snack Bar run (Nov 5):</strong> see <code>snackbar_run\02_fact_finder_*</code>. The reply and the link checks are in the folder; the result appears on the Fact Finder slide.</li>
 </ul>
 </body>
 </html>

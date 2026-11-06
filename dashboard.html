@@ -540,8 +540,19 @@ async function publishState(newState) {
     st.textContent = "Save failed (" + (code || "error") + "); counts stay on this screen."; return false;
   }
 }
+// Browser-only mode (the class site, or a double-click): the counts live in this browser's localStorage.
+const LOCAL_NOTE = { "1": " Open this same page on this computer for round 2.", "2": " Both rounds are in; the gold box marks the biggest shift." };
+function localSave() {
+  try { const last = localStorage.getItem("day4-votes"); prev = last ? JSON.parse(last) : null; } catch (e) { prev = null; }
+  STATE.updated = "in this browser (" + stamp() + ")"; dirty = false;
+  try { localStorage.setItem("day4-votes", JSON.stringify(votes)); localStorage.setItem("day4-votes-meta", JSON.stringify({ prev, updated: STATE.updated })); } catch (e) {}
+  renderTally(); $("vote-status").textContent = "Saved " + STATE.updated + "." + (LOCAL_NOTE[round] || "");
+}
+function localLoad() {
+  try { const v = localStorage.getItem("day4-votes"); if (v && total("1") === 0 && total("2") === 0) votes = JSON.parse(v); const m = localStorage.getItem("day4-votes-meta"); if (m) { const o = JSON.parse(m); prev = o.prev || null; STATE.updated = o.updated || null; } } catch (e) {}
+}
 $("save").onclick = async () => {
-  if (!artifactNs) { $("vote-status").className = "status"; $("vote-status").textContent = "Saved in this browser (" + stamp() + "). Open this same page on this computer for round 2."; dirty = false; try { localStorage.setItem("day4-votes", JSON.stringify(votes)); } catch (e) {} return; }
+  if (!artifactNs) { localSave(); return; }
   $("save").disabled = true;
   await publishState({ votes, prev: STATE.votes, updated: stamp() });
   $("save").disabled = false;
@@ -554,7 +565,7 @@ $("undo").onclick = async () => {
 };
 (async () => {
   try { const p = sessionStorage.getItem("day4-votes-pending"); if (p) { sessionStorage.removeItem("day4-votes-pending"); } } catch (e) {}
-  if (!window.claude || typeof window.claude.use !== "function") { try { const v = localStorage.getItem("day4-votes"); if (v && total("1") === 0 && total("2") === 0) votes = JSON.parse(v); } catch (e) {} renderTally(); return; }
+  if (!window.claude || typeof window.claude.use !== "function") { localLoad(); renderTally(); return; }
   artifactNs = await claude.use("artifact"); renderTally();
 })();
 renderTally();

@@ -14,7 +14,7 @@ A **system prompt** is the instruction sheet a chatbot reads before every conver
 
 ## What you paste in (with the Snack Bar example)
 
-Start from your best Prompt Lab prompt (8 or more out of 10): its goal, context, audience, format and check lines are the blanks below, already in your words.
+Start from your best Prompt Lab prompt (8 or more out of 10). Its Role, Task, Context, Format and Check lines are the blanks below, already in your words.
 
 | Blank | What to write | Snack Bar example |
 |---|---|---|

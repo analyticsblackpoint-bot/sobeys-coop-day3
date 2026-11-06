@@ -4,7 +4,7 @@
 
 | Build step | Skill | What you paste in | What you get back |
 |---|---|---|---|
-| before the build | **Prompt Lab** (a page, not a chatbot skill) | a prompt for your hat's assistant | a score out of 10, what's missing, which skill fixes it; your best prompt (8+) feeds step 3 |
+| before the build | **Prompt Lab** (a page, not a chatbot skill; four tabs) | your hat, your assistant card, a prompt | a plan with checks; a score out of 10 (Role · Task · Context · Format · Check) and which skill fixes each gap; these same five boxes, pre-filled from your plan (Cards tab); a preview of the page |
 | 2 Knowledge | **Fact Finder + Source Check** | your problem line + 3 questions | a fact table with links + a small table for your chart |
 | 3 System prompt | **System Prompt Writer** | your assistant card + fact table | a system prompt + 3 test questions |
 | 4 Page | **Bot Builder** | card + system prompt + facts + table | ONE `.html` file: your chatbot page |
@@ -39,4 +39,4 @@ Our demo bot is the **Haunted Snack Bar after-Halloween clearance assistant**. I
 **Data:** `Snack Bar Data.csv` (10 rows: rank, candy, type, price, stock). Rank and candy names come from CandyStore.com's projected-sales model as reported by NBC. **Prices and stock are practice numbers**, and the bot says so.
 
 ## Where the real outputs are
-`snackbar_run\` (in the teacher pack) holds, for each skill, the exact prompt sent, the raw reply and a screenshot. `Snack Bar Assistant.html` is the finished page (the answer key).
+`snackbar_run\` (in the teacher pack) holds the exact prompt sent, the raw reply and a screenshot for each skill. `Snack Bar Assistant.html` is the finished page (the answer key).

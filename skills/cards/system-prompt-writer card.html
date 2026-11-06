@@ -4,40 +4,26 @@
   <meta charset="utf-8" />
   <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <title>System Prompt Writer card</title>
+  <title>system-prompt-writer card</title>
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: auto; overflow-x: auto;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-    /* The extra [class] is a hack that increases specificity enough to
-       override a similar rule in reveal.js */
-    ul.task-list[class]{list-style: none;}
-    ul.task-list li input[type="checkbox"] {
-      font-size: inherit;
-      width: 0.8em;
-      margin: 0 0.8em 0.2em -1.6em;
-      vertical-align: middle;
-    }
-    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+    ul.task-list{list-style: none;}
   </style>
-  <style>body{max-width:860px;margin:0 auto;padding:24px 16px;font-family:Calibri,Carlito,"Segoe UI",system-ui,sans-serif;font-size:16px;line-height:1.45;color:#2A1A22;background:#F6F2EC}
+<style>body{max-width:860px;margin:0 auto;padding:24px 16px;font-family:Calibri,Carlito,"Segoe UI",system-ui,sans-serif;font-size:16px;line-height:1.45;color:#2A1A22;background:#F6F2EC}
 h1,h2,h3{font-family:Cambria,Caladea,Georgia,serif;font-weight:normal;color:#612141} pre{background:#fff;border:1px solid #E2D9D3;border-radius:8px;padding:12px;white-space:pre-wrap;font-size:13.5px} code{font-size:13.5px}
 table{border-collapse:collapse;width:100%;font-size:14px} th,td{border:1px solid #D9D3D3;padding:4px 6px;vertical-align:top;text-align:left} th{background:#F4EEF1}
 a{color:#9D2235} .top{font-size:13px;letter-spacing:1px;text-transform:uppercase;color:#9D2235;font-weight:bold}
 </style>
 </head>
 <body>
-<p class="top"><a href="../index.html">← Day 4 home</a></p>
+<p class="top"><a href="../../index.html">← Day 4 home</a></p>
 <h1 id="system-prompt-writer-card">System Prompt Writer card</h1>
-<p><em>Sobey HS Co-Op · Day 4 · Build step 3 · System prompt · 10 min ·
-paste into any free chatbot</em></p>
-<p><strong>How to use it:</strong> 1. Copy everything in the box, BEGIN
-to END. 2. Fill in the blanks: your assistant card, your real contact,
-your ✔ facts. <strong>No names, no personal information.</strong> 3.
-Send it once. 4. Save the reply as system_prompt_v1.txt. Test the 3
-questions in a NEW chat; fix once; save v2.</p>
+<p><em>Sobey HS Co-Op · Day 4 · Build step 3 · System prompt · 10 min · paste into any free chatbot</em></p>
+<p><strong>How to use it:</strong> 1. Copy everything in the box, BEGIN to END. 2. Fill in the blanks: your assistant card, your real contact, your ✔ facts. <strong>No names, no personal information.</strong> 3. Send it once. 4. Save the reply as system_prompt_v1.txt. Test the 3 questions in a NEW chat; fix once; save v2.</p>
 <pre><code>BEGIN SYSTEM PROMPT WRITER
 You are an expert at writing instructions for customer-help chatbots. Write ONE system prompt for the bot described below, then 3 test questions.
 
@@ -64,12 +50,7 @@ REAL CONTACT: [a place or a role, not a person]
 MY ✔ FACTS (copy exactly):
 [paste the ✔ rows of your fact table, and your chart table]
 END SYSTEM PROMPT WRITER</code></pre>
-<p><strong>Check it (3 ticks):</strong> - [ ] All 8 headings, in order.
-KNOWLEDGE has only your facts. - [ ] In a new chat: Q1 and Q2 answered
-well; Q3 gets the fallback line only. - [ ] Ask about a discount that
-doesn’t exist. It must say the fallback line, not “yes”.</p>
-<p><em>The full skill (with the Snack Bar example, fix-it prompts and
-why the rules exist):
-<code>skills\system-prompt-writer\SKILL.md</code>.</em></p>
+<p><strong>Check it (3 ticks):</strong> - [ ] All 8 headings, in order. KNOWLEDGE has only your facts. - [ ] In a new chat: Q1 and Q2 answered well; Q3 gets the fallback line only. - [ ] Ask about a discount that doesn’t exist. It must say the fallback line, not “yes”.</p>
+<p><em>The full skill (with the Snack Bar example, fix-it prompts and why the rules exist): <code>skills\system-prompt-writer\SKILL.md</code>.</em></p>
 </body>
 </html>

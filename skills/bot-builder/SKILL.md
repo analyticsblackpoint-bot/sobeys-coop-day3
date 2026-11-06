@@ -3,7 +3,7 @@
 *Sobey HS Co-Op · Day 4 · Build step 4 (Page, 15 min). Works in any free chatbot. Output: `[your bot name].html`.*
 
 ## What it's for
-This skill turns your assistant card, system prompt, ✔ facts and chart table into **one HTML file** that works offline. The page has a chat window with starter buttons, a "brain" of 8 to 10 topics, a safe fallback, a privacy warning, a chart, and a panel that shows how the bot works. No keys, no internet, no library. Open the file in any browser and it runs.
+This skill turns your assistant card, system prompt, ✔ facts and chart table into **one HTML file** that works offline. The page has a chat window with starter buttons and a "brain" of 8 to 10 topics. It also has a safe fallback, a privacy warning, a chart, and a panel that shows how the bot works. No keys, no internet, no library. Open the file in any browser and it runs.
 
 ## How to use it (students)
 1. Open your chatbot. Copy **everything in the box below**, from `BEGIN` to `END`.
