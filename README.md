@@ -1,14 +1,22 @@
-# Day 4 class site (GitHub Pages)
+# Day 4 · Build an AI assistant, test it, pitch it
 
-One static folder: `index.html` (the landing page), `prompt-lab.html`, `dashboard.html` (Dashboard · Assistant · AGI vote; the vote saves in the browser of the computer that runs it, so run it on the projector laptop), `snack-bar-assistant.html`, `skills/`, `pack/Day4_students_2026-11-06.zip`. No build step, no accounts, nothing is sent anywhere.
+**Sobey High School Co-Op · Business Analytics & AI · Friday, November 6, 2026 · the final class**
 
-## Put it on GitHub Pages (about 5 minutes)
+Everything for today is on the class page: **https://analyticsblackpoint-bot.github.io/sobeys-coop-day3/**
 
-1. On github.com: **New repository** → name `day4` → Public → Create repository.
-2. **Add file → Upload files** → drag the *contents* of this folder (not the folder itself: `index.html` must sit at the top) → Commit changes. The zip is 5 MB; GitHub accepts it.
-3. **Settings → Pages** → Build and deployment: *Deploy from a branch* → Branch `main`, folder `/ (root)` → Save.
-4. Wait about a minute, refresh the Pages settings: the link is `https://<your-username>.github.io/day4/`.
-5. Open the link on your phone: landing page, Prompt Lab, the zip downloads, the vote page opens on the AGI vote tab.
-6. Write that one link on the board. Students need nothing else.
+| What | Where |
+|---|---|
+| **Prompt Lab**, four tabs: plan your assistant, score your prompt out of 10, get the five skill boxes filled from your plan, preview the page before you build it | [prompt-lab.html](https://analyticsblackpoint-bot.github.io/sobeys-coop-day3/prompt-lab.html) |
+| **Student pack (zip, 5 MB)**: brief and rubric, build workbook, the five skills and cards, the Snack Bar example, the Prompt Lab for offline use, the slides | [pack/Day4_students_2026-11-06.zip](https://analyticsblackpoint-bot.github.io/sobeys-coop-day3/pack/Day4_students_2026-11-06.zip) |
+| **The worked example**: the Haunted Snack Bar Clearance Helper, from a real run of all five skills | [snack-bar-assistant.html](https://analyticsblackpoint-bot.github.io/sobeys-coop-day3/snack-bar-assistant.html) |
+| **AGI class vote** (the instructor tallies on the projector) | [dashboard.html#vote](https://analyticsblackpoint-bot.github.io/sobeys-coop-day3/dashboard.html#vote) |
+| The five skills as web pages | [skills/README.html](https://analyticsblackpoint-bot.github.io/sobeys-coop-day3/skills/README.html) |
+| The Day 3 data the hats use (practice numbers) | `data/` |
 
-To change a page later: edit it in `_build\day4\site\`, upload again (replace), commit. The vote tally lives in the browser you use on the day; press Reset on the vote tab before class.
+**Submit by 12:18:** email your `.html` + a photo of your assistant card (with initials) and your red-team log to the address on the board. Subject line: your team name.
+
+**The rules, all day:** no real people in anything you generate · nothing explicit · no names, emails or phone numbers in a prompt, a file or a bot · facts with links only ("not found" beats a guess) · the bot never invents. When it doesn't know: *"I'm not sure about that. Please ask [your real contact]."*
+
+Prices, stock and store facts in the examples are practice numbers. Prototype pages made with AI, checked by us; they can be wrong. Nothing you type on these pages is sent anywhere.
+
+*Day 3 (Oct 30) materials were replaced by Day 4 on Nov 5, 2026; they remain in this repository's history.*
